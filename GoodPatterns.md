@@ -1,8 +1,11 @@
-# Progs
+# Good patterns
 
 # TOC
-1. [Logsniffer](#logsniffer)
+1. [Progs](#progs)
+    1. [Logsniffer](#logsniffer)
 
+
+# Progs <a name="progs"></a>
 
 ## Logsniffer <a name="logsniffer"></a>
 
@@ -12,3 +15,9 @@
     java -jar /app/logsniffer.war &    
     /home/tomcat/logsniffer
     http://localhost:8082/
+
+## Papercut <a name="papercut"></a>
+
+SMTP local
+
+## Postman <a name="postman"></a>
