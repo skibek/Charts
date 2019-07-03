@@ -1,9 +1,11 @@
 # JAVA - DevOps - Linux (RHEL > 7.5)
 
-# Table of contents
+# TOC
 1. [Linux Commands](#linux_commands)
 2. [Jenkins - JAR/WAR](#jenkins_jarwar)
-3. [Another paragraph](#others)
+3. [Others](#others)
+    1. [SpringBoot apps](#springboot_apps)
+4. [Links](#links)
 
 ## Linux Commands <a name="linux_commands"></a>
 
@@ -43,7 +45,7 @@ Sudo for user to work with Jenkins (without password)
 
 ## Others <a name="others"></a>
 
-### SpringBoot apps
+### SpringBoot apps <a name="springboot_apps"></a>
 
 #### Set service
 
@@ -94,7 +96,7 @@ Directly run: (to see log on screen)
     
 
 
-# Links
+# Links <a name="links"></a>
 
 Spring Boot install
 https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html
