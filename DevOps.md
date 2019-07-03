@@ -2,9 +2,8 @@
 
 # Table of contents
 1. [Linux Commands](#linux_commands)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
+2. [Jenkins - JAR/WAR](#jenkins_jarwar)
+3. [Another paragraph](#others)
 
 ## Linux Commands <a name="linux_commands"></a>
 
@@ -20,7 +19,7 @@ Check processes
     
     telnet ggg.com 22
 
-## Jenkins - JAR/WAR
+## Jenkins - JAR/WAR <a name="jenkins_jarwar"></a>
 
 Publish over SSH - connect to host, use one user - eg. tomcat
 
@@ -42,7 +41,7 @@ Sudo for user to work with Jenkins (without password)
     Cmnd_Alias MYAPP_CMNDS = /bin/systemctl start APP, /bin/systemctl stop APP
     tomcat ALL=(ALL) NOPASSWD: MYAPP_CMNDS
 
-## Others
+## Others <a name="others"></a>
 
 ### SpringBoot apps
 
