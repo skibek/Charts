@@ -1,6 +1,6 @@
-## JAVA - DevOps
+# JAVA - DevOps
 
-### Jenkins
+## Jenkins - JAR/WAR
 
 Publish over SSH - connect to host, use one user - eg. tomcat
 
@@ -22,11 +22,11 @@ Sudo for user to work with Jenkins (without password)
     Cmnd_Alias MYAPP_CMNDS = /bin/systemctl start APP, /bin/systemctl stop APP
     tomcat ALL=(ALL) NOPASSWD: MYAPP_CMNDS
 
-### Others
+## Others
 
-SpringBoot apps
+### SpringBoot apps
 
-Set service
+#### Set service
 
 File App.service
 
@@ -44,19 +44,20 @@ File App.service
 
 copy to /etc/systemd/system/app.service
     
-Autostart
+#### Autostart
 
     check - sudo systemctl is-enabled App
     set - sudo systemctl enable App.service
     
     return - Created symlink from /etc/systemd/system/multi-user.target.wants/App.service to /etc/systemd/system/App.service
 
-Config file - eg: uaa.conf
+#### Config file - eg: uaa.conf
 
     LOG_FOLDER=/app/microservice/smUaa/target/
     PID_FOLDER=/app/microservice/smUaa/target/
     JAVA_OPTS=-Dspring.profiles.active=dev-server
 
+#### Other cmds
 
     sudo chown -R tomcat:tomcat APPdir
     
