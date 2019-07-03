@@ -1,4 +1,24 @@
-# JAVA - DevOps
+# JAVA - DevOps - Linux (RHEL > 7.5)
+
+# Table of contents
+1. [Linux Commands](#linux_commands)
+2. [Some paragraph](#paragraph1)
+    1. [Sub paragraph](#subparagraph1)
+3. [Another paragraph](#paragraph2)
+
+## Linux Commands <a name="linux_commands"></a>
+
+Check processes
+
+    ps -aux | grep java
+    ps -aux | grep micro
+    
+    sudo /usr/sbin/alternatives --config java
+    
+    Check logs of service
+    sudo journalctl -xe
+    
+    telnet ggg.com 22
 
 ## Jenkins - JAR/WAR
 
@@ -51,6 +71,18 @@ copy to /etc/systemd/system/app.service
     
     return - Created symlink from /etc/systemd/system/multi-user.target.wants/App.service to /etc/systemd/system/App.service
 
+#### Service usage
+
+    sudo systemctl start app    
+
+Actions: start, stop, restart, status
+
+Directly run: (to see log on screen)
+    
+    java -jar /app/app.jar
+    
+    
+    
 #### Config file - eg: uaa.conf
 
     LOG_FOLDER=/app/microservice/smUaa/target/
@@ -61,3 +93,9 @@ copy to /etc/systemd/system/app.service
 
     sudo chown -R tomcat:tomcat APPdir
     
+
+
+# Links
+
+Spring Boot install
+https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html
