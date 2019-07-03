@@ -99,4 +99,6 @@ Directly run: (to see log on screen)
 # Links <a name="links"></a>
 
 Spring Boot install
-https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html
+
+[https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)
+
