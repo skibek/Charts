@@ -13,13 +13,29 @@ Check processes
 
     ps -aux | grep java
     ps -aux | grep micro
-    
+
+Select Java version
+
     sudo /usr/sbin/alternatives --config java
     
-    Check logs of service
+Check logs of service
+
     sudo journalctl -xe
-    
+
+Others
+
     telnet ggg.com 22
+
+Firewall
+    
+    sudo systemctl start firewalld
+    sudo firewall-cmd --list-all
+    sudo firewall-cmd --add-port=80/tcp
+    sudo firewall-cmd --add-masquerade
+    sudo firewall-cmd --add-forward-port=port=443:proto=tcp:toport=8443
+    sudo firewall-cmd --runtime-to-permanent
+    
+    sudo systemctl enable firewalld
 
 ## Jenkins - JAR/WAR <a name="jenkins_jarwar"></a>
 
@@ -101,4 +117,3 @@ Directly run: (to see log on screen)
 Spring Boot install
 
 [https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)
-
