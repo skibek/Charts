@@ -1,10 +1,23 @@
 # Docker Linux
 
 TOC
-1. [Cheat Sheet](#cheatsheet)
-2. [Install_Docker](#install_docker)
-3. [Install_SonarCube](#install_sonarcube)
-4. [Usefull ursl](#usefull_urls)
+- [Process](#process)
+- [Cheat Sheet](#cheatsheet)
+- [Install_Docker](#install_docker)
+- [Install_SonarCube](#install_sonarcube)
+- [Usefull ursl](#usefull_urls)
+
+## Process <a name="process"></a>
+
+```bash
+docker run -d --name testApp -p 8686:8686 testApp
+docker logs testApp
+docker exec -i -t testApp bash
+docker container ls --all
+
+docker stop testApp
+docker start testApp
+```
 
 ## CheatSheet <a name="cheatsheet"></a>
 
