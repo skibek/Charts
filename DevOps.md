@@ -11,8 +11,10 @@
 
 Check processes
 
+```Shell
     ps -aux | grep java
     ps -aux | grep micro
+```
 
 Select Java version
 
