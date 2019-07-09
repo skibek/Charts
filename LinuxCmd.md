@@ -127,3 +127,33 @@ Firewall:
     sudo systemctl enable firewalld
     sudo iptables -S
     
+
+## VI simple
+
+STARTING vi
+
+     vi filename    edit a file named "filename"
+
+     vi newfile     create a new file named "newfile"
+
+ 
+
+ENTERING TEXT
+
+     i            insert text left of cursor
+
+     a            append text right of cursor
+
+ 
+
+ESC – go to Command mode
+
+ 
+
+CLOSING AND SAVING A FILE
+
+     ZZ            save file and then quit
+
+     :w            save file
+
+     :q!            discard changes and quit file
