@@ -1,6 +1,7 @@
 Main:
 
 ```Bash
+alias, where, which
 whoami
 id  # shows uid and groups
 whoami /groups  # shows groups
@@ -44,8 +45,8 @@ Set Java version as Main:
 
 
 Others:
-    
-    alias
+
+```Bash
     . ~/.bashrc
     cat /etc/passwd | grep ks
     reset
@@ -67,6 +68,7 @@ Others:
     
     chown -R jboss:jboss /opt/jboss
     tar -zcvf archive-name.tar.gz directory-name
+```
 
 Disk space:
 
