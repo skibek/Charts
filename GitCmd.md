@@ -1,21 +1,24 @@
-    git init
-    git remote add origin https://git/repo 
+   
+```Bash
+git init
+git remote add origin https://git/repo 
     
-    git status
-    git commit –am “init”
-    git push origin master
-    -- User i pass
+git status
+git commit –am “init”
+git push origin master
+-- User i pass
     
-    Gitcp
+Gitcp
     
-    git pull
-    git diff FILE
-    git add FILE
+git pull
+git diff FILE
+git add FILE
     
-    git commit –m "comment"
-    git reset –hard
+git commit –m "comment"
+git reset –hard
     
-    git clone https://git/repo
+git clone https://git/repo
+```
 
 Problems with certs:
 
