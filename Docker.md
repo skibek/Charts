@@ -1,6 +1,6 @@
 # Docker Linux
 
-# TOC
+TOC
 1. [Cheat Sheet](#cheatsheet)
 2. [Install_Docker](#install_docker)
 3. [Install_SonarCube](#install_sonarcube)
@@ -12,6 +12,9 @@
     docker info
     ip a list docker0
     
+    docker stats  # shows CPU%, MEM usage, Net I/O Block I/O, Pids
+    
+    docker images
     docker image ls
     
     docker container ls --all
@@ -21,11 +24,13 @@
     docker ps -a
 
     docker exec my-nginx-c1 ls /etc/nginx
-    docker exec -i -t my-nginx-c1 bash
+    docker run -i -t <containerIdOrName> /bin/bash
+    docker exec -it <containerIdOrName> bash
+        exit
     
-    docker start image
-    docker stop image
-    docker rm image
+    docker start IMAGE_ID
+    docker stop IMAGE_ID
+    docker rm IMAGE_ID    docker rmi IMAGE_ID
        
     docker login
     docker tag image username/repository:tag
@@ -48,6 +53,12 @@
     docker tag <image> username/repository:tag  # Tag <image> for upload to registry
     docker push username/repository:tag            # Upload tagged image to registry
     docker run username/repository:tag                   # Run image from a registry
+    
+    docker-machine ip [name of Docker VM]
+    
+    docker compose up
+    
+    docker network create reverse-proxy
 
 SWARM - todo
 
