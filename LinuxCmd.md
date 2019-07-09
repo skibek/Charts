@@ -9,9 +9,22 @@ sudo su -
 sudo su - tomcat
 sudo mc
 ps -aux | grep java
+ps -ef | grep sonar
 kill -9 PID
 
+yum install jenkins
+mysql -u root -p
+
 CTRL + SHIFT + R - cmd history
+```
+
+New user:
+```Bash
+useradd username
+passwd username
+sudo visudo
+sudo usermod -aG wheel username
+chmod 755 -R dir
 ```
 
 System Manager (SysV, systemd, Upstart)
