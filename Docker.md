@@ -5,6 +5,7 @@ TOC
 - [Cheat Sheet](#cheatsheet)
 - [Install_Docker](#install_docker)
 - [Install_SonarCube](#install_sonarcube)
+- [Free space](#free_space)
 - [Usefull ursl](#usefull_urls)
 
 ## Process <a name="process"></a>
@@ -135,6 +136,13 @@ docker run -d --name sonarqube \
     -e sonar.jdbc.url=jdbc:postgresql://localhost/sonar \
     sonarqube
 
+
+## Free space <a name="free_space"></a>
+
+```Bash
+docker rm -v $(docker ps -a -q -f status=exited)
+docker rmi $(docker images -f "dangling=true" -q)
+```
 
 ## Usefull ursl <a name="usefull_urls"></a>
 
