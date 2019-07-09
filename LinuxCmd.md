@@ -1,12 +1,15 @@
-
 Main:
 
-    sudo su -
-    sudo su - tomcat
-    sudo mc
-    ps -aux | grep java
+```Bash
+whoami
+sudo su -
+sudo su - tomcat
+sudo mc
+ps -aux | grep java
+kill -9 PID
 
-    CTRL + SHIFT + R - cmd history
+CTRL + SHIFT + R - cmd history
+```
 
 System Manager (SysV, systemd, Upstart)
 
