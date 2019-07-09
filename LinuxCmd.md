@@ -2,6 +2,8 @@ Main:
 
 ```Bash
 whoami
+id  # shows uid and groups
+whoami /groups  # shows groups
 sudo su -
 sudo su - tomcat
 sudo mc
@@ -56,7 +58,6 @@ Others:
     echo $(pwd)
     ll
     ls -l --block-size=M       lub G
-    id
     last
     CTRL-D
     w
