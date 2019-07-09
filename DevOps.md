@@ -1,11 +1,11 @@
 # JAVA - DevOps - Linux (RHEL > 7.5)
 
 # TOC
-1. [Linux Commands](#linux_commands)
-2. [Jenkins - JAR/WAR](#jenkins_jarwar)
-3. [Others](#others)
-    1. [SpringBoot apps](#springboot_apps)
-4. [Links](#links)
+- [Linux Commands](#linux_commands)
+- [Jenkins - JAR/WAR](#jenkins_jarwar)
+- [Others](#others)
+    - [SpringBoot apps](#springboot_apps)
+- [Links](#links)
 
 ## Linux Commands <a name="linux_commands"></a>
 
@@ -26,22 +26,7 @@ Check logs of service
 
     sudo journalctl -xe
 
-Others
-
-    telnet ggg.com 22
-
-Firewall
-
-```Shell
-sudo systemctl start firewalld
-sudo firewall-cmd --list-all
-sudo firewall-cmd --add-port=80/tcp
-sudo firewall-cmd --add-masquerade
-sudo firewall-cmd --add-forward-port=port=443:proto=tcp:toport=8443
-sudo firewall-cmd --runtime-to-permanent
-   
-sudo systemctl enable firewalld
-```
+Firewall - in Linux CheatSheet
 
 ## Jenkins - JAR/WAR <a name="jenkins_jarwar"></a>
 
@@ -68,6 +53,8 @@ Sudo for user to work with Jenkins (without password)
 ## Others <a name="others"></a>
 
 ### SpringBoot apps <a name="springboot_apps"></a>
+
+TODO
 
 #### Set service
 
