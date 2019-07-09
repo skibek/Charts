@@ -21,3 +21,14 @@
 SMTP local
 
 ## Postman <a name="postman"></a>
+
+
+## Estimates
+
+COCOMO (ang. constructive cost model) – model szacowania liczby osobogodzin w procesie tworzenia oprogramowania.
+
+https://pl.wikipedia.org/wiki/COCOMO
+
+
+
+http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
