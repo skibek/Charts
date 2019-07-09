@@ -1,5 +1,6 @@
 TODO
 
+```js
 db.getCollection('jobs-definition').find({})
 db.getCollection('jobs-definition').find({}, { jobClass: 1, jobType: 1, name: 1 })
 db.getCollection('account-name-masks').find({}).count()
@@ -33,3 +34,4 @@ db.getCollection('clients').find({ nrbList: { $size : 2 } } )
  
 Distinct
 db.getCollection('clients').distinct( "distributionChannelForStatements" )
+```
