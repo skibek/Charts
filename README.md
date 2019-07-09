@@ -2,6 +2,51 @@
 
 [- DevOps](DevOps.md)
 
+For KS:
+**bold**
+*italic*
+[link to Google!](http://google.com)
+ - mongod
+>Sharding
+
+| 구분 | Full Diectory      | 예제 파일                              |
+| ---- | ------------------ | -------------------------------------- |
+| home | /mongodb           | bin/mongo, bin/mongod                  |
+| data | /dbdata/mongotest  | data_01/journal 및 Collection 파일들   |
+| log  | /logs              | mongos.log,mongod_01.log               |
+| conf | /mongodb/conf      | shard_mongos.conf,shard_mongod_01.conf |
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+```yaml
+net:
+  bindIp: 127.0.0.1,192.168.0.47
+  port: 30000
+```
+
+- Dashes work just as well
+- And if you have sub points, put two spaces before the dash or star:
+  - Like this
+  - And this
+  
+You can use one `#` all the way up to `######` six for different heading sizes.
+
+```javascript
+if (isAwesome){
+  return true
+}
+```
+
+like ~~this~~
+
+- [x] This is a complete item
+- [ ] This is an incomplete item
+
+https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/skibek/Charts/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
