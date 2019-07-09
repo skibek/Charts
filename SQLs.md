@@ -56,3 +56,12 @@ begin
   end loop;           
 end;
 ```
+
+Size of a Schema
+```sql
+select 
+   sum(bytes)/1024/1024/1024 schema_size_gig
+from 
+   user_segments;
+
+```
