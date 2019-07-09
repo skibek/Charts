@@ -2,7 +2,22 @@
 
 [- AppsAndDocs](docs/AppsAndDocs.md)
 
-[- DevOps](DevOps.md)
+[- DevOps](docs/DevOps.md)
+
+[- Docker](docs/Docker.md)
+
+[- GitCmd](docs/GitCmd.md)
+
+[- LinuxCmd](docs/LinuxCmd.md)
+
+[- SQLs](docs/SQLs.md)
+
+[- Tomcat](docs/Tomcat.md)
+
+[- Maven](docs/Maven.md)
+
+[- MongoDB](docs/MongoDB.md)
+
 
 For KS:
 **bold**
