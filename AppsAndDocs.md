@@ -5,7 +5,7 @@ TOC
     1. [Logsniffer](#logsniffer)
 
 
-# Progs <a name="progs"></a>
+# Server Progs <a name="server_progs"></a>
 
 ## Logsniffer <a name="logsniffer"></a>
 
@@ -16,12 +16,56 @@ TOC
     /home/tomcat/logsniffer
     http://localhost:8082/
 
+## Jenkins
+
+## GitLab
+
+## Nexus
+
+## Sonar
+
+## Webmin
+
+
+
+# Progs
+
 ## Papercut <a name="papercut"></a>
 
 SMTP local
 
 ## Postman <a name="postman"></a>
 
+## RoboMongo Robo3T <a name="postman"></a>
+
+SQLDeveloper - by Oracle
+
+## PortableApps 
+- jdGui
+- Notepad++, Sublime Text, Atom, VisualStudio Code
+- ConEmu
+- KeePass
+- LightScreen
+- MobaXTerm
+- Rapid Environment Editor
+- WinSCP
+- GitHub Desktop
+- LdapAdmin
+- KeyStore Explorer
+- ProcessHacker
+- TreeSize
+- WinMd5
+- Wireshark
+
+Inne:
+- Astrogrep, grepWin
+- Curl
+- HostFileEditor
+- Speccy
+- Pencil
+
+
+## MC
 
 ## Estimates
 
