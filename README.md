@@ -1,5 +1,6 @@
 [https://skibek.github.io/Charts/](https://skibek.github.io/Charts/)
 
+[- AppsAndDocs](docs/AppsAndDocs.md)
 [- DevOps](DevOps.md)
 
 For KS:
