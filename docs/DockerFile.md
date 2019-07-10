@@ -1,5 +1,8 @@
-Dockerfile example
-- - - - - - -
+# Docker with Dockerfile
+
+[TOC]
+
+## Dockerfile example
 ```
 # Alpine Linux with OpenJDK JRE
 FROM openjdk:8-jre-alpine
@@ -48,13 +51,13 @@ run.sh
 java -Dspring.profiles.active=$1 -Dlogging.config=/logback.xml -jar /app.war
 ```
 
-Command to build
+## Command to build
 
 ```bash
 docker build -t spring-boot-app:latest
 ```
 
-Run docker image
+## Run docker image
 ```bash
 docker image ls
 docker run -d --name bootapp -v /var/log/app:/var/log/Application/ -p 8080:8080 spring-boot-app:latest
@@ -74,7 +77,7 @@ grep profiles /var/log/webapp/application.log
 
 > -p map port 8080 on the host machine to port 8080 in the container
 
-Publish docker image
+## Publish docker image
 ```bash
 docker login
 docker tag spring-boot-app baeldung/spring-boot-app:.0.0.1
