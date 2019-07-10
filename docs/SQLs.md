@@ -1,6 +1,6 @@
-ORACLE
+# ORACLE
 
-List table names in Schema
+### List table names in Schema
 
 ```sql
 SELECT OBJECT_NAME
@@ -8,23 +8,27 @@ FROM USER_OBJECTS
 WHERE OBJECT_TYPE = 'TABLE' order by OBJECT_NAME;
 ```
 
-Data Size
+### Data Size, Size of a Schema
 
 ```sql
+select 
+   sum(bytes)/1024/1024/1024 schema_size_gig
+from 
+   user_segments;
+   
 select owner, table_name, round((num_rows*avg_row_len)/(1024*1024)) MB , num_rows
 from all_tables
-where owner like 'COREP_TEST%'  -- Exclude system tables.
+where owner like 'TEST%'  -- Exclude system tables.
 and num_rows > 0  -- Ignore empty Tables.
 order by MB desc -- Biggest first.
 ;
- 
- 
+  
 begin
-   dbms_stats.gather_table_stats('COREP_TEST','DATA_KONTRAKTY_WYNIKI');
+   dbms_stats.gather_table_stats('TEST','DATA_KONT');
 end;
 ```
 
-Fast delete tables
+### Fast delete tables
 
 ```sql
 begin
@@ -57,24 +61,10 @@ begin
 end;
 ```
 
-Size of a Schema
-```sql
-select 
-   sum(bytes)/1024/1024/1024 schema_size_gig
-from 
-   user_segments;
 
-select owner, table_name, round((num_rows*avg_row_len)/(1024*1024)) MB , num_rows
-from all_tables 
-where owner like 'TEST%'  -- Exclude system tables.
-and num_rows > 0  -- Ignore empty Tables.
-order by MB desc -- Biggest first.
-;
-
-```
 
 - - - 
-Other SQLs - almost ETL
+### Other SQLs - almost ETL
 ```sql
 select SUM(AKT_WAZ_RYZ_BILANS_PO_MSP_WSP) + SUM(AKT_WAZ_RYZ_POZAB) * 0.08
 from TEST.DATA_K
@@ -143,4 +133,122 @@ left join DATA_K kl ON ks.ID_KLIENTA = kl.ID_KLIENTA AND ks.DATA_DANYCH = kl.DAT
 left join rozter r ON ks.ID_KLIENTA = r.ID_KLIENTA AND ks.DATA_DANYCH = r.DATA_DANYCH
 where ks.DATA_DANYCH = '2018-04-30';
 
+```
+
+## ETL
+
+Create a script
+
+```sql
+SELECT DISTINCT
+        k.DATA_DANYCH, k.ID_KLIENTA, k.MODULO, k.NAZWA_KLIENTA,
+        k.TYP_NBP_KOD, k.TYP_KLIENTA_KOD, k.KRAJ_KLIENTA_KOD,
+        k.ILOSC_ZATR, k.PKD, k.PKD2007, k.NIP, k.PESEL_REGON, k.EKZ,
+        mk.NACE,
+        hk.AKTYWA_NETTO as AKTYWA_NETTO,
+        hk.OBROTY_ROCZNE as OBROTY_ROCZNE,
+        hk_kr.AKTYWA_NETTO as AKTYWA_NETTO_ROK,
+        hk_kr.OBROTY_ROCZNE as OBROTY_ROCZNE_ROK,
+        kk.LEI as KOD_LEI
+      FROM M.KLI k
+        LEFT JOIN M.M_KONTRAKTY mk
+          ON k.ID_KLIENTA = mk.ID_KLIENTA AND k.DATA_DANYCH = mk.DATA_DANYCH
+        LEFT JOIN H.KLIENCI hk
+          ON k.ID_KLIENTA = hk.ID_KLIENTA
+        LEFT JOIN H.KLIENCI_KR hk_kr
+          ON k.ID_KLIENTA = hk_kr.ID_KLIENTA
+        LEFT JOIN EXT_K.CPTY kk
+          ON k.MODULO = kk.MODULO AND k.DATA_DANYCH = kk.DATA_DANYCH
+      WHERE
+        k.DATA_DANYCH = TO_DATE ('17/03/30', 'YY/MM/DD');
+```
+
+Creating Table from script
+
+```sql
+CREATE TABLE tmp_klienci_1
+AS  
+
+	  SELECT DISTINCT
+        k.DATA_DANYCH, k.ID_KLIENTA, k.MODULO, k.NAZWA_KLIENTA,
+        k.TYP_NBP_KOD, k.TYP_KLIENTA_KOD, k.KRAJ_KLIENTA_KOD,
+        k.ILOSC_ZATR, k.PKD, k.PKD2007, k.NIP, k.PESEL_REGON, k.EKZ,
+        mk.NACE,
+        hk.AKTYWA_NETTO as AKTYWA_NETTO,
+        hk.OBROTY_ROCZNE as OBROTY_ROCZNE,
+        hk_kr.AKTYWA_NETTO as AKTYWA_NETTO_ROK,
+        hk_kr.OBROTY_ROCZNE as OBROTY_ROCZNE_ROK,
+        kk.LEI as KOD_LEI
+      FROM M.M_KLIENCI k
+        LEFT JOIN M.M_KONTRAKTY mk
+          ON k.ID_KLIENTA = mk.ID_KLIENTA AND k.DATA_DANYCH = mk.DATA_DANYCH
+        LEFT JOIN H.KLIENCI hk
+          ON k.ID_KLIENTA = hk.ID_KLIENTA
+        LEFT JOIN H.KLIENCI_KR hk_kr
+          ON k.ID_KLIENTA = hk_kr.ID_KLIENTA
+        LEFT JOIN EXT_K.CPTY kk
+          ON k.MODULO = kk.MODULO AND k.DATA_DANYCH = kk.DATA_DANYCH
+      WHERE
+        k.DATA_DANYCH = TO_DATE ('17/03/30', 'YY/MM/DD');
+```
+
+Generating DDL of newly created table - this is for instalation scripts
+
+Create INSERT for existing structure
+
+```sql
+INSERT INTO  tmp_klienci_1
+
+      SELECT DISTINCT
+        k.DATA_DANYCH, k.ID_KLIENTA, k.MODULO, k.NAZWA_KLIENTA,
+        k.TYP_NBP_KOD, k.TYP_KLIENTA_KOD, k.KRAJ_KLIENTA_KOD,
+        k.ILOSC_ZATR, k.PKD, k.PKD2007, k.NIP, k.PESEL_REGON, k.EKZ,
+        mk.NACE,
+        hk.AKTYWA_NETTO as AKTYWA_NETTO,
+        hk.OBROTY_ROCZNE as OBROTY_ROCZNE,
+        hk_kr.AKTYWA_NETTO as AKTYWA_NETTO_ROK,
+        hk_kr.OBROTY_ROCZNE as OBROTY_ROCZNE_ROK,
+        kk.LEI as KOD_LEI
+      FROM M.M_KLIENCI k
+        LEFT JOIN M.M_KONTRAKTY mk
+          ON k.ID_KLIENTA = mk.ID_KLIENTA AND k.DATA_DANYCH = mk.DATA_DANYCH
+        LEFT JOIN H.KLIENCI hk
+          ON k.ID_KLIENTA = hk.ID_KLIENTA
+        LEFT JOIN H.KLIENCI_KR hk_kr
+          ON k.ID_KLIENTA = hk_kr.ID_KLIENTA
+        LEFT JOIN EXT_K.CPTY kk
+          ON k.MODULO = kk.MODULO AND k.DATA_DANYCH = kk.DATA_DANYCH
+      WHERE
+        k.DATA_DANYCH = TO_DATE ('17/03/30', 'YY/MM/DD');
+```
+
+Finally, creating Procedure in Packet
+```sql
+CREATE OR REPLACE PACKAGE BODY KLIENCI_ETL IS	
+PROCEDURE krok1(p_data_danych IN DATE) IS
+    BEGIN
+      EXECUTE IMMEDIATE 'TRUNCATE TABLE tmp_klienci_1';
+      INSERT INTO  tmp_klienci_1
+        SELECT DISTINCT
+          k.DATA_DANYCH, k.ID_KLIENTA, k.MODULO, k.NAZWA_KLIENTA,
+          k.TYP_NBP_KOD, k.TYP_KLIENTA_KOD, k.KRAJ_KLIENTA_KOD,
+          k.ILOSC_ZATR, k.PKD, k.PKD2007, k.NIP, k.PESEL_REGON, k.EKZ,
+          mk.NACE,
+          hk.AKTYWA_NETTO as AKTYWA_NETTO,
+          hk.OBROTY_ROCZNE as OBROTY_ROCZNE,
+          hk_kr.AKTYWA_NETTO as AKTYWA_NETTO_ROK,
+          hk_kr.OBROTY_ROCZNE as OBROTY_ROCZNE_ROK,
+          kk.LEI as KOD_LEI
+        FROM M.M_KLIENCI k
+          LEFT JOIN M.M_KONTRAKTY mk
+            ON k.ID_KLIENTA = mk.ID_KLIENTA AND k.DATA_DANYCH = mk.DATA_DANYCH
+          LEFT JOIN H.KLIENCI hk
+            ON k.ID_KLIENTA = hk.ID_KLIENTA
+          LEFT JOIN H.KLIENCI_KR hk_kr
+            ON k.ID_KLIENTA = hk_kr.ID_KLIENTA
+          LEFT JOIN EXT_K.CPTY kk
+            ON k.MODULO = kk.MODULO AND k.DATA_DANYCH = kk.DATA_DANYCH
+        WHERE
+          k.DATA_DANYCH = p_data_danych;
+    END;
 ```
