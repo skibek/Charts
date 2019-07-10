@@ -92,3 +92,5 @@ docker run  # Pulls image from hub
 https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
 https://docs.docker.com/config/containers/start-containers-automatically/
+
+https://blog.softwaremill.com/editing-files-in-a-docker-container-f36d76b9613c
