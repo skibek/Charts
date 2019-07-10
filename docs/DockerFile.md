@@ -1,6 +1,5 @@
 # Docker with Dockerfile
 
-[TOC]
 
 ## Dockerfile example
 ```
