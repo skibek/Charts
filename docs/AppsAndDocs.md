@@ -8,6 +8,7 @@ TOC
 - [Docs](#docs)
 
 - [Containers](#containers)
+- [Microservices](#microservices)
 - [Tech news](#tech_news)
 
 
@@ -105,6 +106,78 @@ Helm - https://helm.sh/docs/  - like devfiles
 https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
 
 
+
+
+# Microservices <a name="microservices"></a>
+
+Hexadiagonal architecture
+> Technology  - many technologies
+> Deployment
+> Data
+> Resilence - failure
+> People
+> Scalability
+> Authonomy - teams and theirs product
+
+Scaling
+> Vertical - CPU, Memory
+> Horizontal - Instances
+
+Microservices - break complexity, though change without
+
+High cohesion - logic should concrete bussines functionality
+
+One Microservice - One DB
+
+## Monitoring
+
+> Spring Cloud Sleuth
+> Zipkin
+> ELK - Elasticstack, Logstash, Kibana
+> Prometheus
+
+
+# BPM
+
+Business perspective
+> Process Modeler
+> Workflow Engine --- in microservices - N x Process Orchestrators
+> System Integration
+> Common UI
+> Reporting
+
+Architecture perspective
+> User
+> UI Controller
+> History/Audits
+> Reporting
+> User and Access Manager
+> Human tasks - Tasklist
+> Workflow engine
+> Database
+
+Event Command Transformation Pattern
+
+
+
+# Apache Kafka
+
+Consumer, Producers
+
+Publish events, Topics, Filtering ...
+
+
+# EIP - Enterprise Integration Patterns
+
+> Command message
+> Event message
+> Process manager
+> Transactional client
+> Event driven consumer
+> Idempotent receiver
+
+
+
 # Tech news <a name="tech_news"></a>
 
 ## AWS
@@ -112,3 +185,9 @@ https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
 Amazon Rekognition Service
 
 https://aws.amazon.com/rekognition/
+
+https://www.websequencediagrams.com/
+
+Bartek Slota
+
+GitHub - DDD by Examples / library
