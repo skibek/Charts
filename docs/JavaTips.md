@@ -1,6 +1,6 @@
 
 
-Print properties to logs on start
+### Print properties to logs on start
 
 ```Java
 
@@ -20,4 +20,19 @@ public class SimpleConfig {
         log.info("PROPERTIES: test = " + test);
     }
 }
+```
+
+### Scheduler in Spring
+
+```Java
+/*
+https://www.freeformatter.com/cron-expression-generator-quartz.html - here is 7 elements but after deleteing last char '?' this is OK for Spring
+https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html
+
+second, minute, hour, day of month, month, day(s) of week
+https://o7planning.org/en/11131/running-background-scheduled-tasks-in-spring
+
+ @Scheduled(cron = "0 0 0 1,10,20 * *")
+ @Scheduled(cron = "0 5 11 * * MON-FRI")
+*/
 ```
