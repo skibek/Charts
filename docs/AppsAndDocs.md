@@ -3,12 +3,13 @@
 TOC
 - [Server Progs](#server_progs)
     - [Logsniffer](#logsniffer)
-    
 - [Progs](#progs)
 - [Docs](#docs)
-
 - [Containers](#containers)
 - [Microservices](#microservices)
+- [BPM](#bpm)
+- [Apache Kafka](#apache_kafka)
+- [EIP - Enterprise Integration Patterns](#eip)
 - [Tech news](#tech_news)
 
 
@@ -137,7 +138,7 @@ One Microservice - One DB
 > Prometheus
 
 
-# BPM
+# BPM <a name="bpm"></a>
 
 Business perspective
 > Process Modeler
@@ -160,14 +161,14 @@ Event Command Transformation Pattern
 
 
 
-# Apache Kafka
+# Apache Kafka <a name="apache_kafka"></a>
 
 Consumer, Producers
 
 Publish events, Topics, Filtering ...
 
 
-# EIP - Enterprise Integration Patterns
+# EIP - Enterprise Integration Patterns <a name="eip"></a>
 
 > Command message
 > Event message
@@ -191,3 +192,9 @@ https://www.websequencediagrams.com/
 Bartek Slota
 
 GitHub - DDD by Examples / library
+
+https://bartslota.blogspot.com/
+
+
+
+https://www.testcontainers.org/
