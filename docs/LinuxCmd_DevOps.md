@@ -1,4 +1,4 @@
-# Linux Commands & DevOps
+# Linux Commands (RHEL > 7.5) & DevOps
 
 TOC
 - [Commands - general](#commands_general)
