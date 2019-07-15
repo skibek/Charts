@@ -7,6 +7,9 @@ TOC
 - [Progs](#progs)
 - [Docs](#docs)
 
+- [Containers](#containers)
+- [Tech news](#tech_news)
+
 
 # Server Progs <a name="server_progs"></a>
 
@@ -28,6 +31,8 @@ TOC
 ## Sonar
 
 ## Webmin
+
+Webmin: https://hub.docker.com/r/chsliu/docker-webmin/
 
 
 
@@ -82,3 +87,26 @@ https://pl.wikipedia.org/wiki/COCOMO
 
 
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
+
+
+
+# Containers <a name="containers"></a>
+
+by RedHat - https://quay.io/tour/
+
+Kubernetes - Cluster
+
+Helm - https://helm.sh/docs/  - like devfiles
+
+## Docker:
+
+https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
+
+
+# Tech news <a name="tech_news"></a>
+
+## AWS
+
+Amazon Rekognition Service
+
+https://aws.amazon.com/rekognition/
