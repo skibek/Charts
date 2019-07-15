@@ -84,10 +84,12 @@ COCOMO (ang. constructive cost model) – model szacowania liczby osobogodzin w 
 
 https://pl.wikipedia.org/wiki/COCOMO
 
-
-
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 
+
+## Testing
+
+https://www.javacodegeeks.com/2019/07/regression-testing-tools-techniques.html
 
 
 # Containers <a name="containers"></a>
