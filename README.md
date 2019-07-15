@@ -2,15 +2,13 @@
 
 [- AppsAndDocs](docs/AppsAndDocs.md)
 
-[- DevOps](docs/DevOps.md)
-
 [- Docker](docs/Docker.md)
 
 [- DockerFile](docs/DockerFile.md)
 
 [- GitCmd](docs/GitCmd.md)
 
-[- LinuxCmd](docs/LinuxCmd.md)
+[- LinuxCmd_DevOps](docs/LinuxCmd_DevOps.md)
 
 [- SQLs](docs/SQLs.md)
 
