@@ -1,6 +1,14 @@
 # ORACLE
 
-### List table names in Schema
+TOC
+- [List table names in Schema](#list_table)
+- [Data Size, Size of a Schema](#data_size)
+- [Fast delete tables](#fast_delete)
+- [Sequence](#sequence)
+- [Other SQLs - almost ETL](#almost_etl)
+- [ETL](#etl)
+
+### List table names in Schema <a name="list_table"></a>
 
 ```sql
 SELECT OBJECT_NAME
@@ -8,7 +16,7 @@ FROM USER_OBJECTS
 WHERE OBJECT_TYPE = 'TABLE' order by OBJECT_NAME;
 ```
 
-### Data Size, Size of a Schema
+### Data Size, Size of a Schema <a name="data_size"></a>
 
 ```sql
 select 
@@ -28,7 +36,7 @@ begin
 end;
 ```
 
-### Fast delete tables
+### Fast delete tables <a name="fast_delete"></a>
 
 ```sql
 begin
@@ -61,10 +69,17 @@ begin
 end;
 ```
 
+### Sequence <a name="sequence"></a>
 
+```sql
+#if we copy from database to database this can break sequence
+ALTER SEQUENCE PLIK_KOMUNIKACJI_SEQ INCREMENT BY 100;
+select PLIK_KOMUNIKACJI_SEQ.nextval from dual;
+ALTER SEQUENCE PLIK_KOMUNIKACJI_SEQ INCREMENT BY 1;
+```
 
 - - - 
-### Other SQLs - almost ETL
+### Other SQLs - almost ETL <a name="almost_etl"></a>
 ```sql
 select SUM(AKT_WAZ_RYZ_BILANS_PO_MSP_WSP) + SUM(AKT_WAZ_RYZ_POZAB) * 0.08
 from TEST.DATA_K
@@ -135,7 +150,7 @@ where ks.DATA_DANYCH = '2018-04-30';
 
 ```
 
-## ETL
+## ETL <a name="etl"></a>
 
 Create a script
 
