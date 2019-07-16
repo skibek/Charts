@@ -36,3 +36,31 @@ https://o7planning.org/en/11131/running-background-scheduled-tasks-in-spring
  @Scheduled(cron = "0 5 11 * * MON-FRI")
 */
 ```
+
+### Java 8
+
+Functional programming - Paradigmat of programming
+
+eg: LISP, Haskell
+
+-- wielowątkowe i rozproszone aplikacje łatwiej
+
+In JAVA - Lambda - (params...) -> {code}
+```Java
+Collections.sort(words, (o1, o2) -> o2.compareTo(o1));
+Collections.sort(words, String::compareTo);
+```
+
+Streams:
+```Java
+words.stream().forEach((String s) -> {System.out.println(s);});
+words.stream().forEach(s -> System.out.println(s));
+words.stream().forEach(System.out::println);
+words.stream().filter(s -> s.length() > 3).forEach(System.out::println);
+long count = words.stream.filter(s -> s.length() > 3).peek(System.out::println).count();
+
+List<String> newWords = words.stream().map(String::toUpperCase).collect(Collectors.toList());
+newWords.stream().filter(s -> s.length() > 3).forEach(System.out::println);
+=
+words.stream().map(String::toUpperCase).filter(s -> s.length() > 3).forEach(System.out::println);
+```
