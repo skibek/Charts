@@ -33,6 +33,10 @@ TOC
 
 ## Sonar
 
+For IDE - SonarLint
+
+Run from Mvn, Jenkins
+
 ## Webmin
 
 Webmin: https://hub.docker.com/r/chsliu/docker-webmin/
