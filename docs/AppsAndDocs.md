@@ -184,6 +184,15 @@ Selenium - https://www.javacodegeeks.com/2019/07/test-automation-selenium-webdri
 
 https://www.testcontainers.org/
 
+Testing SMTP email
+
+GreenMail
+
+http://www.icegreen.com/greenmail/#examples
+
+https://codecouple.pl/2018/02/09/26-spring-boot-testowanie-z-greenmail/
+
+
 # Tech news <a name="tech_news"></a>
 
 ## AWS
