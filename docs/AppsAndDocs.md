@@ -10,6 +10,7 @@ TOC
 - [BPM](#bpm)
 - [Apache Kafka](#apache_kafka)
 - [EIP - Enterprise Integration Patterns](#eip)
+- [Testing](#testing)
 - [Tech news](#tech_news)
 
 
@@ -177,7 +178,11 @@ Publish events, Topics, Filtering ...
 > Event driven consumer
 > Idempotent receiver
 
+# Testing <a name="testing"></a>
 
+Selenium - https://www.javacodegeeks.com/2019/07/test-automation-selenium-webdriver.html
+
+https://www.testcontainers.org/
 
 # Tech news <a name="tech_news"></a>
 
@@ -197,4 +202,4 @@ https://bartslota.blogspot.com/
 
 
 
-https://www.testcontainers.org/
+
