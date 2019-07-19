@@ -1,3 +1,12 @@
+Oferty:
+
+https://nofluffjobs.com/
+
+https://justjoin.it/
+
+pracuj.pl
+
+
 
 https://www.bankier.pl/narzedzia/kalkulator-placowy
 
