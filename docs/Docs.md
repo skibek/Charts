@@ -1,4 +1,4 @@
-# AppsAndDocs
+# Docs
 
 TOC
 - [Docs](#docs)
