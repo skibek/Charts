@@ -1,4 +1,9 @@
+# Java Tips
 
+TOC
+
+
+## Code exchange
 
 ### Print properties to logs on start
 
