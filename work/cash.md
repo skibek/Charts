@@ -2,7 +2,11 @@ Oferty:
 
 https://nofluffjobs.com/
 
+https://nofluffjobs.com/jobs/warszawa?criteria=java%20city%3Dwarszawa%20salary%3EPLN21950M%20seniority%3Dsenior,expert
+
 https://justjoin.it/
+
+https://justjoin.it/warszawa/java/all/21k
 
 pracuj.pl
 
