@@ -2,6 +2,13 @@
 
 TOC
 - [Docs](#docs)
+  - [Java helpers](#java_helpers)
+  - [Spring](#spring)
+  - [Groovy](#groovy)
+  - [Angular (TypeScript)](#angular)
+  - [Estimates](#estimates)
+  - [Design Patterns](#design_patterns)
+  - [Testing](#testing)
 - [Containers](#containers)
 - [Microservices](#microservices)
 - [BPM](#bpm)
@@ -15,7 +22,7 @@ TOC
 # Docs <a name="docs"></a>
 
 
-## Java helpers
+## Java helpers <a name="java_helpers"></a>
 
 Lombock - anti boiler plate implementation
 
@@ -29,7 +36,7 @@ Jest - HTTP/Rest packager for ElastiSearch by HTTP
 
 Scoop - windows like a bash YUM (installer)
 
-## Spring 
+## Spring <a name="spring"></a>
 
 Spring Boot
 
@@ -55,11 +62,13 @@ Swagger
 
 SpringFox - JSON API documentation
 
-## Groovy
+
+## Groovy <a name="groovy"></a>
 
 Grape - JAR manager (@Grab annotation)
 
-## Angular (TypeScript)
+
+## Angular (TypeScript) <a name="angular"></a>
 
 Service (ng g s shared/car/car), Component (ng g c car-list), Module, START (ng serve - starts on port 4200)
 
@@ -67,7 +76,7 @@ Angular CLI
 
 material.angular.io
 
-## Estimates
+## Estimates <a name="estimates"></a>
 
 COCOMO (ang. constructive cost model) – model szacowania liczby osobogodzin w procesie tworzenia oprogramowania.
 
@@ -75,7 +84,7 @@ https://pl.wikipedia.org/wiki/COCOMO
 
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 
-## Design Patterns
+## Design Patterns <a name="design_patterns"></a>
 
 GoF
 
@@ -84,9 +93,13 @@ SAFE
 
 
 
-## Testing
+## Testing <a name="testing"></a>
 
 https://www.javacodegeeks.com/2019/07/regression-testing-tools-techniques.html
+
+
+
+
 
 
 # Containers <a name="containers"></a>
