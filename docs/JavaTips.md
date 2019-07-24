@@ -68,4 +68,8 @@ List<String> newWords = words.stream().map(String::toUpperCase).collect(Collecto
 newWords.stream().filter(s -> s.length() > 3).forEach(System.out::println);
 =
 words.stream().map(String::toUpperCase).filter(s -> s.length() > 3).forEach(System.out::println);
+Collection<Words> coll = words
+    .stream()
+    .filter(s -> s.getName().toLowerCase().contains( name.toLowerCase())
+    .collect(Collectors.ToList());
 ```
