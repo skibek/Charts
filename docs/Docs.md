@@ -102,6 +102,8 @@ Spring Batch
 
 Spring Shell - command CLI
 
+Spring Statemachine
+
 Spring Boot Admin
 
 ### Security
