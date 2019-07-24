@@ -12,9 +12,60 @@ TOC
 
 
 
-
-
 # Docs <a name="docs"></a>
+
+
+## Java helpers
+
+Lombock - anti boiler plate implementation
+
+Fluxtion - embeddable streaming event processing engine
+
+Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
+
+ElasticSearch - search engine build on top of Apache Lucene
+
+Jest - HTTP/Rest packager for ElastiSearch by HTTP
+
+Scoop - windows like a bash YUM (installer)
+
+## Spring 
+
+Spring Boot
+
+Spring Boot CLI - SDKMAN (Software Development Kit Manager)
+
+Spring WebFlux - Rest API with streaming data
+
+WebSockets, React, RxJS
+
+### Security
+
+OpenID Connect (Authentication)- OICD (layer on OAuth2 with ID token - JWT)
+
+OAuth 2.0 (Authorization)
+
+OKTA - Auth online
+
+CORS - Cross-Origin Resource Sharing
+
+### API
+
+Swagger
+
+SpringFox - JSON API documentation
+
+## Groovy
+
+Grape - JAR manager (@Grab annotation)
+
+## Angular (TypeScript)
+
+Service (ng g s shared/car/car), Component (ng g c car-list), Module, START (ng serve - starts on port 4200)
+
+Angular CLI
+
+material.angular.io
 
 ## Estimates
 
@@ -29,6 +80,7 @@ http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 GoF
 
 SAFE
+
 
 
 
