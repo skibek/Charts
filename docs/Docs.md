@@ -129,6 +129,8 @@ SpringFox - JSON API documentation
 
 Lombock - anti boiler plate implementation
 
+jOOQ (LINQ, JPA) - SQL in Java
+
 Fluxtion - embeddable streaming event processing engine
 
 Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
@@ -140,6 +142,24 @@ Jest - HTTP/Rest packager for ElastiSearch by HTTP
 Scoop - windows like a bash YUM (installer)
 
 Resin (by Caucho) WebServer
+
+Lighthouse - automated tool for improving the quality of web pages
+
+Zipkin - tracing, logs
+
+Hashicorp's Vault, Square's Keywhiz - Use "secrets as a service" solution
+
+**SAAS**
+
+AWS, Alibaba, DigitalOcean, Heroku - Clouds
+
+algolia - search
+
+Twilio - contact with customer
+
+SendGrid, Mailgun, HubSpot - Emails, Email Validation
+
+slack
 
 
 
