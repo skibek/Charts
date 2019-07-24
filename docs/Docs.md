@@ -38,6 +38,25 @@ Scoop - windows like a bash YUM (installer)
 
 ## Spring <a name="spring"></a>
 
+https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
+
+### Modules - core
+
+@Core - Resources, Validation, Data Binding, Type conversion, Spring Expression Language (SpEL), Aspect Oriented Programming AOP (standard AspectJ), Null safety, Data Buffer
+
+@Testing - Unit testing, Integration testing (JUnit4, JUnit Juniper - JUnit5)
+
+@Data Access - Transaction Management, DAO, Data Access with JDBC, ORM Object Relational Mapping, Marshalling XML
+
+@Web Servlet - Web MVC - DispatcherServlet (provides a shared algorithm for request processing), Filters, Asynchronous Requests, CORS (Cross-Origin Resource Sharing), Web security, Caching, View techs (Themeleaf, FreeMarker, JSP, Tiles, Jackson, XSLT ...), REST clients (RestTemplate, WebClient), Testing, WebScoket, Others(JSF, Apache Struts, Tapestry)
+
+@WebReactive (fully non-blocking, supports Reactive Streams[JDK9 standard] back pressure) - WebFlux, Reactive, Functional, WebClient, WebSockets
+
+@Integration - Remoting (Remote Method Invocation (RMI), HTTP invoker, Hessian(Caucho), JAX-WS, JMS (Java Message Service), AMQP), JMX (Java Management Extensions), JCA (Java EE Connector Architecture) CCI (Common Client Interface) , Email (JavaMail), Scheduling (eg. Quartz), Cache (JCache (JSR-107))
+
+@Languages - Kotlin, Apache Groovy, Dynamic Language Support
+
+
 ### Bean Scopes
 
 - singleton (default) - not compilant with JSR-330 Dependency Injection standard for Java
@@ -45,11 +64,10 @@ Scoop - windows like a bash YUM (installer)
 - WebApp
   - request
   - session
-  - global-session
   - application
   - websocket
 
-### Transaction
+### Transaction - works on top of AOP
 
 https://dzone.com/articles/how-does-spring-transactional
 
@@ -83,7 +101,7 @@ The persistence context is in JPA the EntityManager, implemented internally usin
 
 The persistence context is just a synchronizer object that tracks the state of a limited set of Java objects and makes sure that changes on those objects are eventually persisted back into the database.
 
-### Modules
+### Modules - others
 
 Spring Boot
 
@@ -132,6 +150,22 @@ https://pl.wikipedia.org/wiki/COCOMO
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 
 ## Design Patterns <a name="design_patterns"></a>
+
+- Main elements:
+
+Inheritance, Interface ...
+
+Dependency Injection, Inversion of Control (in Spring)
+
+> Dependency injection (DI) is a process whereby objects define their dependencies (that is, the other objects with which they work) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies on its own by using direct construction of classes or the Service Locator pattern.
+
+> Code is cleaner with the DI principle, and decoupling is more effective when objects are provided with their dependencies. The object does not look up its dependencies and does not know the location or class of the dependencies. As a result, your classes become easier to test, particularly when the dependencies are on interfaces or abstract base classes, which allow for stub or mock implementations to be used in unit tests.
+
+> DI exists in two major variants: Constructor-based dependency injection and Setter-based dependency injection.
+
+> Other elements: Autowiring, Lazy Beans, Lookup, Application Context
+
+- BigOne:
 
 GoF
 
