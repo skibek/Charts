@@ -98,7 +98,11 @@ Spring WebFlux - Rest API with streaming data
 
 WebSockets, React, RxJS
 
-Spring Batch, Shell, 
+Spring Batch
+
+Spring Shell - command CLI
+
+Spring Boot Admin
 
 ### Security
 
