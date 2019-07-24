@@ -38,6 +38,53 @@ Scoop - windows like a bash YUM (installer)
 
 ## Spring <a name="spring"></a>
 
+### Bean Scopes
+
+- singleton (default) - not compilant with JSR-330 Dependency Injection standard for Java
+- prototype (as new) - default with JSR-330
+- WebApp
+  - request
+  - session
+  - global-session
+  - application
+  - websocket
+
+### Transaction
+
+https://dzone.com/articles/how-does-spring-transactional
+
+```java
+
+# Standard
+UserTransaction utx = entityManager.getTransaction(); 
+try { 
+    utx.begin(); 
+    businessLogic();
+    utx.commit(); 
+} catch(Exception ex) { 
+    utx.rollback(); 
+    throw ex; 
+} 
+
+#Spring annotation
+@Transactional
+public void businessLogic() {
+... use entity manager inside a transaction ...
+}
+```
+
+To @Transactional to work - @EnableTransactionManagement
+
+transaction propagation are handled automatically (called method can join transaction)
+
+The transactional annotation itself defines the scope of a single database transaction. The database transaction happens inside the scope of apersistence context.
+
+The persistence context is in JPA the EntityManager, implemented internally using an Hibernate Session (when using Hibernate as the persistence provider).
+
+The persistence context is just a synchronizer object that tracks the state of a limited set of Java objects and makes sure that changes on those objects are eventually persisted back into the database.
+
+### Modules
+
 Spring Boot
 
 Spring Boot CLI - SDKMAN (Software Development Kit Manager)
