@@ -2,8 +2,9 @@
 
 TOC
 - [Docs](#docs)
-  - [Java helpers](#java_helpers)
+
   - [Spring](#spring)
+  - [Java helpers](#java_helpers)
   - [Groovy](#groovy)
   - [Angular (TypeScript)](#angular)
   - [Estimates](#estimates)
@@ -21,20 +22,6 @@ TOC
 
 # Docs <a name="docs"></a>
 
-
-## Java helpers <a name="java_helpers"></a>
-
-Lombock - anti boiler plate implementation
-
-Fluxtion - embeddable streaming event processing engine
-
-Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
-
-ElasticSearch - search engine build on top of Apache Lucene
-
-Jest - HTTP/Rest packager for ElastiSearch by HTTP
-
-Scoop - windows like a bash YUM (installer)
 
 ## Spring <a name="spring"></a>
 
@@ -126,6 +113,29 @@ CORS - Cross-Origin Resource Sharing
 Swagger
 
 SpringFox - JSON API documentation
+
+
+
+
+
+
+## Java helpers <a name="java_helpers"></a>
+
+Lombock - anti boiler plate implementation
+
+Fluxtion - embeddable streaming event processing engine
+
+Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
+
+ElasticSearch - search engine build on top of Apache Lucene
+
+Jest - HTTP/Rest packager for ElastiSearch by HTTP
+
+Scoop - windows like a bash YUM (installer)
+
+
+
+
 
 
 ## Groovy <a name="groovy"></a>
