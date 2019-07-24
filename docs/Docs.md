@@ -98,6 +98,8 @@ Spring WebFlux - Rest API with streaming data
 
 WebSockets, React, RxJS
 
+Spring Batch, Shell, 
+
 ### Security
 
 OpenID Connect (Authentication)- OICD (layer on OAuth2 with ID token - JWT)
@@ -133,7 +135,7 @@ Jest - HTTP/Rest packager for ElastiSearch by HTTP
 
 Scoop - windows like a bash YUM (installer)
 
-
+Resin (by Caucho) WebServer
 
 
 
