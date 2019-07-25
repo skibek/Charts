@@ -6,8 +6,12 @@ TOC
 # Angular (TypeScript) <a name="angular"></a>
 
 ```
-Service (ng g s shared/car/car)
-Component (ng g c car-list)
+Service - classes that send data and functionality across components - (ng g s shared/car/car)
+  import { class } from '/.file/other';
+  injectable
+Component - section of UI - (ng g c car-list) - @angular/core
+  selector
+  template
 Routing
 Testing
 Build Tools
@@ -25,8 +29,22 @@ TypeScript
 
 Module, 
 
-START (ng serve - starts on port 4200)
+Angular CLI - @angular/cli
 
+```bash
+ng new app  # generate new app
+ng serve  # starts on port 4200
+```
+
+Dependencies - Node.js & NPM
+
+## TypeScript
+
+Super set of JavaScript
+
+Created by Microsoft
+
+Class based OOP - Object Oriented Programming
 
 ## Tools
 
