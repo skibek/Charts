@@ -32,7 +32,7 @@ Module,
 
 Angular CLI - @angular/cli
 
-```bash
+```shell
 ng new app  # generate new app
 ng serve  # starts on port 4200
 ```
@@ -56,7 +56,7 @@ app.component.ts  # root component
 ```
 
 Coding (Backend):
-```
+```typescript
 String interpolation, Data Binding - {{name}}
 
 Variables / model
