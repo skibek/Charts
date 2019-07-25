@@ -5,7 +5,6 @@ TOC
   - [Spring](#spring)
   - [Java helpers](#java_helpers)
   - [Groovy](#groovy)
-  - [Angular (TypeScript)](#angular)
   - [Estimates](#estimates)
 - [Containers](#containers)
 - [Microservices](#microservices)
@@ -197,14 +196,6 @@ Tools for coding: Apache Commons, Google Guava
 
 Grape - JAR manager (@Grab annotation)
 
-
-## Angular (TypeScript) <a name="angular"></a>
-
-Service (ng g s shared/car/car), Component (ng g c car-list), Module, START (ng serve - starts on port 4200)
-
-Angular CLI
-
-material.angular.io
 
 ## Estimates <a name="estimates"></a>
 
