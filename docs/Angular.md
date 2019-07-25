@@ -40,7 +40,7 @@ ng serve  # starts on port 4200
 Dependencies - Node.js & NPM
 
 Files:
-```
+```shell
 package.json  # like manifest in java, dependencies
 e2e - End to end testing
 
@@ -70,16 +70,20 @@ interface Address{
 ...
 }
 
-
 Init methods:
-constructor
-ngOnInit
+constructor()
+ngOnInit()
 
+Arrays
+  push  # insert on end
+  unshift  # insert on begin
+  splice  # delete
 
 ```
 
 
 Coding (Frontend):
+
 ```html
 <ul>
   <li *ngFor="let listElem of list; let i = index">{{i + 1}}: {{listElem}}</li>
@@ -88,6 +92,12 @@ Coding (Frontend):
 Events
 
 <button (click)="onClick()">test</button>
+<form (submit)="addTest(test.value)">
+  <input type="text" #test>
+</form>
+
+Two way Data Binding
+<input type="text" [(ngModel)]="test">
 ```
 
 ## TypeScript
