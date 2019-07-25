@@ -17,6 +17,10 @@ TOC
 
 ## Jenkins
 
+## Confluence
+
+## JIRA, Bugzilla, ...
+
 ## GitLab
 
 ## Nexus
