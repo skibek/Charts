@@ -2,20 +2,20 @@
 
 TOC
 - [Docs](#docs)
-
   - [Spring](#spring)
   - [Java helpers](#java_helpers)
   - [Groovy](#groovy)
   - [Angular (TypeScript)](#angular)
   - [Estimates](#estimates)
-  - [Design Patterns](#design_patterns)
-  - [Testing](#testing)
+- [Design Patterns](#design_patterns)
 - [Containers](#containers)
 - [Microservices](#microservices)
+  - [Monitoring](#monitoring)
 - [BPM](#bpm)
 - [Apache Kafka](#apache_kafka)
 - [EIP - Enterprise Integration Patterns](#eip)
 - [Testing](#testing)
+- [AWS](#aws)
 - [Tech news](#tech_news)
 
 
@@ -94,6 +94,10 @@ Spring Boot
 
 Spring Boot CLI - SDKMAN (Software Development Kit Manager)
 
+Spring Data - Repository (CRUDRepository, PagingAndSortingRepository)
+
+Spring Actuator - metrics, healt
+
 Spring WebFlux - Rest API with streaming data
 
 WebSockets, React, RxJS
@@ -105,6 +109,16 @@ Spring Shell - command CLI
 Spring Statemachine
 
 Spring Boot Admin
+
+Spring Cloud Dataflow - orchestrate
+
+Spring HATEOAS (Hypermedia As The Engine Of Application State) - REST API + return related actions (Links) you can perform on the resource
+
+Spring REST Docs (Swagger RAML, Markdown, AsciiDoc, Wikis, Testing)
+
+Spring WebFlow - flow of view on top of Spring MVC
+
+Spring Integration - support for EIP Enterprise Integration Patterns
 
 ### Security
 
@@ -122,8 +136,7 @@ Swagger
 
 SpringFox - JSON API documentation
 
-
-
+ORM - JPA, Hibernate, MyBatis ...
 
 
 
@@ -151,11 +164,27 @@ Zipkin - tracing, logs
 
 Hashicorp's Vault, Square's Keywhiz - Use "secrets as a service" solution
 
+Advanced Message Queuing Protocol (AMQP) - standard for stream not messages with API, wire protocol
+
+Apache Storm - paraller computation on tuples (stream, spout, bolt)
+
+Apache Samza - steam processing framework
+
+Tensorflow - CNN - Convolutional neural network - eg. clasification
+
+Hibernate Envers - auditing
+
+Hibernate Validator, Validation API
+
+Jackson - JSON
+
+Apache NiFi - powerful and scalable directed graphs of data routing, transformation, and system mediation logic
+
 **SAAS**
 
 AWS, Alibaba, DigitalOcean, Heroku - Clouds
 
-algolia - search
+Algolia - search
 
 Twilio - contact with customer
 
@@ -163,7 +192,7 @@ SendGrid, Mailgun, HubSpot - Emails, Email Validation
 
 slack
 
-
+Tools for coding: Apache Commons, Google Guava
 
 
 ## Groovy <a name="groovy"></a>
@@ -187,11 +216,17 @@ https://pl.wikipedia.org/wiki/COCOMO
 
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 
-## Design Patterns <a name="design_patterns"></a>
+
+
+
+
+
+
+# Design Patterns <a name="design_patterns"></a>
 
 - Main elements:
 
-Inheritance, Interface ...
+Inheritance (person is human), Interface, Composition (human has hearth) ...
 
 Dependency Injection, Inversion of Control (in Spring)
 
@@ -212,15 +247,6 @@ SAFE
 
 
 
-## Testing <a name="testing"></a>
-
-https://www.javacodegeeks.com/2019/07/regression-testing-tools-techniques.html
-
-
-
-
-
-
 # Containers <a name="containers"></a>
 
 by RedHat - https://quay.io/tour/
@@ -228,6 +254,8 @@ by RedHat - https://quay.io/tour/
 Kubernetes - Cluster
 
 Helm - https://helm.sh/docs/  - like devfiles
+
+Istio (service mesh) - provides building blocks to build distributed microservices in a more Kubernetes-native way and takes the complexity and responsibility of maintaining those blocks away from you. This means you do not have to worry about maintaining the code or deployments for service discovery, tracing and so on
 
 ## Docker:
 
@@ -257,12 +285,16 @@ High cohesion - logic should concrete bussines functionality
 
 One Microservice - One DB
 
-## Monitoring
+
+## Monitoring <a name="monitoring"></a>
 
 > Spring Cloud Sleuth
 > Zipkin
 > ELK - Elasticstack, Logstash, Kibana
 > Prometheus
+> Jaeger - open source, end-to-end distributed tracing, Monitor and troubleshoot transactions in complex distributed systems
+> Watch dog
+
 
 
 # BPM <a name="bpm"></a>
@@ -290,9 +322,22 @@ Event Command Transformation Pattern
 
 # Apache Kafka <a name="apache_kafka"></a>
 
-Consumer, Producers
+Apache Kafka - API on messaging, real time
+ - Cluster
+ - APIs
+	- Producer - send streams of data to topics in the Kafka cluster 
+	- Consumer - read streams of data from topics in the Kafka cluster
+	- Connect - implementing connectors that continually pull from some source system or application into Kafka or push from Kafka into some sink system or application.
+	- AdminClient - allows managing and inspecting topics, brokers, and other Kafka objects.
+	- Streams API (key/value) - transform and enrich data, transforming streams of data from input topics to output topics
 
 Publish events, Topics, Filtering ...
+
+Zookeeper - monitoring
+
+like AciveMQ, RabbitMQ
+
+Apache BooKeeper - log 
 
 
 # EIP - Enterprise Integration Patterns <a name="eip"></a>
@@ -304,14 +349,22 @@ Publish events, Topics, Filtering ...
 > Event driven consumer
 > Idempotent receiver
 
-# Testing <a name="testing"></a>
+
+# Testing - TDD <a name="testing"></a>
+
+TDD - Test-Driven Development (Red, 'Document', Green, Refactor)
+
+Js - Karma
 
 SonarQube to test and analyse of Coverage
-
 
 Selenium - https://www.javacodegeeks.com/2019/07/test-automation-selenium-webdriver.html
 
 https://www.testcontainers.org/
+
+API Test: Spock, Mockito, AssertJ, Arquillian
+
+https://www.javacodegeeks.com/2019/07/regression-testing-tools-techniques.html
 
 ## Testing SMTP email
 
@@ -321,25 +374,91 @@ http://www.icegreen.com/greenmail/#examples
 
 https://codecouple.pl/2018/02/09/26-spring-boot-testowanie-z-greenmail/
 
-## TDD
 
-Js - Karma
+
+# Coding patterns
+
+CodeReview - GitLab with merge request, Gerrit
+
+GitFlow - branching model for Git - https://nvie.com/posts/a-successful-git-branching-model/
+
+Continous Integration CI - CD
+
+
+Gold coding patterns:
+
+http://itcraftsman.pl/uzyteczne-koncepty-projektowe-kiss-dry-yagni-tda-oraz-separation-of-concerns/
+
+http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
+
+SOLID - https://pl.wikipedia.org/wiki/SOLID_(programowanie_obiektowe)
+
+  - Single responsibility principle 
+  - Open/closed principle
+  - Liskov substitution principle
+  - Interface segregation principle
+  - Dependency inversion principle
+
+KISS - Keep It Simple Stupid [BUZI (Bez Udziwnień Zapisu, Idioto]
+
+DRY - Dont Repeat Yourself
+
+YAGNI - You Ain't Gonna Need It
+
+TDA - Tell Don't Ask
+
+SCA - Separation Of Concerns
+
+
+
+# AWS <a name="aws"></a>
+
+Amazon Rekognition Service - https://aws.amazon.com/rekognition/
+
+AWS Kinesis - analyze wideo and Data Streams in real time
+
+AWS Rekognition Video
+
+AWS SageMaker - Machine Learning
+
+AWS EC2 - Virtual server
+
+AWS Lambda
+
+AWS S3 - Simple Storage Service
+
+AWS Aurora - relation DB
+
+AWS Redshift - data warehouse
+
+AWS Elasticsearch
+
+AWS DynamoDB - nosql DB
+
+Amazon SQS - Simple Queue Service
+
+Amazon SNS - Simple Notification Service - topic pub/sub
+
+Amazon MQ - message broker
+
+Amazon EventBridge - event bus
+
+Amazon Chime - chat, video, audio like skype
+
+Amazon Corretto - OpenJDK
+
 
 # Tech news <a name="tech_news"></a>
 
-## AWS
-
-Amazon Rekognition Service
-
-https://aws.amazon.com/rekognition/
+## Others - TODO
 
 https://www.websequencediagrams.com/
 
-Bartek Slota
+Bartek Slota - https://bartslota.blogspot.com/
 
 GitHub - DDD by Examples / library
 
-https://bartslota.blogspot.com/
+
 
 
 
