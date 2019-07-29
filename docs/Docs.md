@@ -87,110 +87,75 @@ The persistence context is just a synchronizer object that tracks the state of a
 
 ### Modules - others
 
+```
 Spring Boot
-
 Spring Boot CLI - SDKMAN (Software Development Kit Manager)
-
 Spring Data - Repository (CRUDRepository, PagingAndSortingRepository)
-
 Spring Actuator - metrics, healt
-
 Spring WebFlux - Rest API with streaming data
-
 WebSockets, React, RxJS
-
 Spring Batch
-
 Spring Shell - command CLI
-
 Spring Statemachine
-
 Spring Boot Admin
-
 Spring Cloud Dataflow - orchestrate
-
 Spring HATEOAS (Hypermedia As The Engine Of Application State) - REST API + return related actions (Links) you can perform on the resource
-
 Spring REST Docs (Swagger RAML, Markdown, AsciiDoc, Wikis, Testing)
-
 Spring WebFlow - flow of view on top of Spring MVC
-
 Spring Integration - support for EIP Enterprise Integration Patterns
+```
 
 ### Security
 
+```
 OpenID Connect (Authentication)- OICD (layer on OAuth2 with ID token - JWT)
-
 OAuth 2.0 (Authorization)
-
 OKTA - Auth online
-
 CORS - Cross-Origin Resource Sharing
+```
 
 ### API
 
+```
 Swagger
-
 SpringFox - JSON API documentation
-
 ORM - JPA, Hibernate, MyBatis ...
-
-
+```
 
 ## Java helpers <a name="java_helpers"></a>
 
+```
 Lombock - anti boiler plate implementation
-
 jOOQ (LINQ, JPA) - SQL in Java
-
 Fluxtion - embeddable streaming event processing engine
-
 Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
-
 ElasticSearch - search engine build on top of Apache Lucene
-
 Jest - HTTP/Rest packager for ElastiSearch by HTTP
-
 Scoop - windows like a bash YUM (installer)
-
 Resin (by Caucho) WebServer
-
 Lighthouse - automated tool for improving the quality of web pages
-
 Zipkin - tracing, logs
-
 Hashicorp's Vault, Square's Keywhiz - Use "secrets as a service" solution
-
 Advanced Message Queuing Protocol (AMQP) - standard for stream not messages with API, wire protocol
-
 Apache Storm - paraller computation on tuples (stream, spout, bolt)
-
 Apache Samza - steam processing framework
-
 Tensorflow - CNN - Convolutional neural network - eg. clasification
-
 Hibernate Envers - auditing
-
 Hibernate Validator, Validation API
-
 Jackson - JSON
-
 Apache NiFi - powerful and scalable directed graphs of data routing, transformation, and system mediation logic
+```
 
 **SAAS**
 
+```
 AWS, Alibaba, DigitalOcean, Heroku - Clouds
-
 Algolia - search
-
 Twilio - contact with customer
-
 SendGrid, Mailgun, HubSpot - Emails, Email Validation
-
 slack
-
 Tools for coding: Apache Commons, Google Guava
-
+```
 
 ## Groovy <a name="groovy"></a>
 
@@ -221,7 +186,6 @@ Istio (service mesh) - provides building blocks to build distributed microservic
 ## Docker:
 
 https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
-
 
 
 
@@ -326,46 +290,44 @@ http://www.icegreen.com/greenmail/#examples
 
 https://codecouple.pl/2018/02/09/26-spring-boot-testowanie-z-greenmail/
 
+## API Testing
 
+Test your front-end against a real API
 
-
+```
+http://httpbin.org/
+JSONPlaceholder - Fake Online REST API for Testing and Prototyping - https://jsonplaceholder.typicode.com/
+https://reqres.in/
+http://ptsv2.com
+https://putsreq.com/
+https://webhook.site
+https://biotools.readthedocs.io/en/latest/what_is_biotools.html
+http://www.jsontest.com/
+https://www.mocky.io/
+https://github.com/softwaremill/softwaremill-common/tree/master/softwaremill-test/softwaremill-test-server
+```
 
 # AWS <a name="aws"></a>
 
+```
 Amazon Rekognition Service - https://aws.amazon.com/rekognition/
-
 AWS Kinesis - analyze wideo and Data Streams in real time
-
 AWS Rekognition Video
-
 AWS SageMaker - Machine Learning
-
 AWS EC2 - Virtual server
-
 AWS Lambda
-
 AWS S3 - Simple Storage Service
-
 AWS Aurora - relation DB
-
 AWS Redshift - data warehouse
-
 AWS Elasticsearch
-
 AWS DynamoDB - nosql DB
-
 Amazon SQS - Simple Queue Service
-
 Amazon SNS - Simple Notification Service - topic pub/sub
-
 Amazon MQ - message broker
-
 Amazon EventBridge - event bus
-
 Amazon Chime - chat, video, audio like skype
-
 Amazon Corretto - OpenJDK
-
+```
 
 # Tech news <a name="tech_news"></a>
 
