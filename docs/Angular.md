@@ -2,9 +2,13 @@
 
 TOC
   - [Angular (TypeScript)](#angular)
+  - [Coding (Backend](#coding_back)
+  - [Coding (Frontend](#coding_front)
+  - [Others](#others)
 
 # Angular (TypeScript) <a name="angular"></a>
 
+Service, Component, Module
 ```
 Service - classes that send data and functionality across components - (ng g/generate s/service shared/car/car)
   import { class } from '/.file/other';
@@ -14,6 +18,9 @@ Component - reusable section of UI - (ng g/generate c/components car-list) - @an
   template / templateUrl - HTML
   styleUrls - CSS
 Module
+```
+
+```
 Classes
 forEach, map, filter
 Routing
@@ -71,7 +78,7 @@ app.component.ts  # root component
 
 
 
-Coding (Backend):
+## Coding (Backend) <a name="coding_back"></a>
 
 ```typescript
 String interpolation, Data Binding - {{name}}
@@ -117,7 +124,7 @@ RouterModule.forRoot(appRoutes)
 ```
 
 
-Coding (Frontend):
+## Coding (Frontend) <a name="coding_front"></a>
 
 ```html
 <ul *ngIf=isEdit>
@@ -151,6 +158,8 @@ RouterModule, Routes
 EventEmitter, Input, Output
 ```
 
+# Others <a name="others"></a>
+
 ## TypeScript
 
 Super set of JavaScript
@@ -172,5 +181,6 @@ State managers - ngrx, Redux
 URLs
 ```
 angular.io
+https://angular.io/resources
 material.angular.io
 ```
