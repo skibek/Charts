@@ -49,7 +49,7 @@ TOC
 
 SMTP local
 
-## Postman <a name="postman"></a>
+## Postman / Insomnia <a name="postman"></a>
 
 ## RoboMongo Robo3T <a name="postman"></a>
 
