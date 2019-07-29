@@ -2,8 +2,8 @@
 
 TOC
   - [Angular (TypeScript)](#angular)
-  - [Coding (Backend](#coding_back)
-  - [Coding (Frontend](#coding_front)
+  - [Coding (Backend)](#coding_back)
+  - [Coding (Frontend)](#coding_front)
   - [Others](#others)
 
 # Angular (TypeScript) <a name="angular"></a>
