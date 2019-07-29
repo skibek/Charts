@@ -127,6 +127,21 @@ RouterModule.forRoot(appRoutes)
 ## Coding (Frontend) <a name="coding_front"></a>
 
 ```html
+# ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive.
+<div *ngFor="let product of products" />
+
+# interpolation {{ }}
+{{ product.name }}
+
+# property binding [ ] 
+<a [title]="product.name + ' details'">
+  
+<p *ngIf="product.description">
+
+# Event binding ( )
+<button (click)="share()">
+  
+  
 <ul *ngIf=isEdit>
   <li *ngFor="let listElem of list; let i = index">{{i + 1}}: {{listElem}}</li>
 </ul>
@@ -159,6 +174,12 @@ EventEmitter, Input, Output
 ```
 
 # Others <a name="others"></a>
+
+PWA - Progressive Web Apps
+
+Native - by Cordova, Ionic, NativeScript
+
+Testing - Karma
 
 ## TypeScript
 
