@@ -339,7 +339,9 @@ Bartek Slota - https://bartslota.blogspot.com/
 
 GitHub - DDD by Examples / library
 
+https://github.com/MK-PL/Prezentacje-IT---nietechniczne
 
+https://github.com/MK-PL/Front-End_lista-przydatnych-odnosnikow
 
 
 
