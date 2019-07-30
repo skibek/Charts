@@ -58,6 +58,7 @@ Collections.sort(words, String::compareTo);
 
 Streams:
 ```Java
+filter | findAny | orElse | collect | peek | map | mapToObj/mapToLong | allMatch
 words.stream().forEach((String s) -> {System.out.println(s);});
 words.stream().forEach(s -> System.out.println(s));
 words.stream().forEach(System.out::println);
@@ -72,4 +73,8 @@ Collection<Words> coll = words
     .stream()
     .filter(s -> s.getName().toLowerCase().contains( name.toLowerCase())
     .collect(Collectors.ToList());
+    
+List<String> collect = persons.stream()
+    .map(Person::getName)  //convert stream to String
+    .collect(Collectors.toList());
 ```
