@@ -161,6 +161,67 @@ Two way Data Binding
 
 ROUTER
 <a routerLink-"/">Test</a>
+  
+  
+Component interaction
+
+# @Input decorator indicates that the property value will be passed in from the component's parent (in this case, the product list component)
+
+@Input() product;
+
+# @Output decorator and an instance of event emitter. This makes it possible for the product alert component to emit an event when the value of the notify property changes.
+
+@Output() notify = new EventEmitter();
+
+<button (click)="notify.emit()">Notify Me</button>
+
+onNotify() {
+  window.alert('You will be notified when the product goes on sale');
+}
+  
+<app-product-alerts
+  [product]="product"
+  (notify)="onNotify()">
+</app-product-alerts> 
+
+
+
+
+Lifecycle hooks
+ngOnChanges()
+ngOnInit()
+ngDoCheck()
+...
+
+
+
+<div [ngSwitch]="hero?.emotion">
+  <app-happy-hero    *ngSwitchCase="'happy'"    [hero]="hero"></app-happy-hero>
+  <app-sad-hero      *ngSwitchCase="'sad'"      [hero]="hero"></app-sad-hero>
+  <app-confused-hero *ngSwitchCase="'confused'" [hero]="hero"></app-confused-hero>
+  <app-unknown-hero  *ngSwitchDefault           [hero]="hero"></app-unknown-hero>
+</div>
+
+
+asterisk (*) prefix
+<div *ngIf="hero" class="name">{{hero.name}}</div>
+===
+<ng-template [ngIf]="hero">
+  <div class="name">{{hero.name}}</div>
+</ng-template>
+
+<div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd">
+  ({{i}}) {{hero.name}}
+</div>
+===
+<ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+  <div [class.odd]="odd">({{i}}) {{hero.name}}</div>
+</ng-template>
+
+
+Pipes
+{{ birthday | date:"MM/dd/yy" }}
+  
 ```
 
 Modules:
@@ -204,4 +265,6 @@ URLs
 angular.io
 https://angular.io/resources
 material.angular.io
+https://angular-ui.github.io/bootstrap/
+https://ng-bootstrap.github.io/#/home
 ```
