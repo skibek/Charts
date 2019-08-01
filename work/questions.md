@@ -12,3 +12,15 @@ Translate
 https://pl.bab.la
 https://www.diki.pl
 ```
+
+Interview
+```
+https://howtodoinjava.com/java-interview-questions/
+
+What to say at your job interview (all my BEST phrases and tips!)
+https://www.youtube.com/watch?v=hcyKWsEL2XM
+
+Phrases: (key words)
+- significant amount of feature
+- althout it was rather difficult
+```
