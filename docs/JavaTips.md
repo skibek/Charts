@@ -3,6 +3,19 @@
 TOC
 
 
+## Useful links
+
+https://howtodoinjava.com
+
+Swagger:
+
+https://howtodoinjava.com/swagger2/swagger-spring-mvc-rest-example/
+
+JHipster Mini-Book
+
+https://www.programmableweb.com/
+
+
 ## Code exchange
 
 ### Print properties to logs on start
@@ -78,3 +91,10 @@ List<String> collect = persons.stream()
     .map(Person::getName)  //convert stream to String
     .collect(Collectors.toList());
 ```
+
+
+## Microbenchmarking
+
+https://www.baeldung.com/java-microbenchmark-harness
+
+https://openjdk.java.net/projects/code-tools/jmh/
