@@ -79,6 +79,26 @@ https://howtodoinjava.com/gang-of-four-java-design-patterns/
 - Template method - defines the sequential steps to execute a multi-step algorithm and optionally can provide a default implementation as well (based on requirements).
 - Visitor - used when we want a hierarchy of objects to modify their behavior but without modifying their source code.
 
+## others <a name="others"></a>
+
+```
+Inheritance (person is human), Interface, Composition (human has hearth) ...
+
+Polymorphism - Polymorphism is the ability to create a variable, a function, or an object that has more than one form
+Abstraction - is more about hiding the implementation details. In Java abstraction is achieved through abstract classes and interfaces
+Encapsulation is realization of your desired abstraction
+
+Method Overloading/Overriding
+
+Dependency Injection, Inversion of Control (in Spring)
+
+> Dependency injection (DI) is a process whereby objects define their dependencies (that is, the other objects with which they work) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies on its own by using direct construction of classes or the Service Locator pattern.
+
+BigOne:
+SAFE
+
+Event sourcing
+```
 
 # EIP - Enterprise Integration Patterns <a name="eip"></a>
 
