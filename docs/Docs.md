@@ -191,6 +191,8 @@ https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
 
 # Microservices <a name="microservices"></a>
 
+https://dzone.com/articles/mastering-spring-cloud
+
 Hexadiagonal architecture
 > Technology  - many technologies
 > Deployment
@@ -210,6 +212,25 @@ High cohesion - logic should concrete bussines functionality
 
 One Microservice - One DB
 
+Cloud Native Computing Foundation
+
+https://www.cncf.io/
+
+https://opentracing.io/
+
+## Hystrix
+```
+@EnableCircuitBreaker
+@HystrixCommand
+(consume exception)
+hystrix.stream - info
+Hystrix Dashboard
+@CircuitBreaker (exception)
+
+@EnableRetry
+@Retryable
+@Recover - Exception
+```
 
 ## Monitoring <a name="monitoring"></a>
 
