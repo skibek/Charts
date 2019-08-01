@@ -194,23 +194,25 @@ https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
 https://dzone.com/articles/mastering-spring-cloud
 
 Hexadiagonal architecture
-> Technology  - many technologies
-> Deployment
-> Data
-> Resilence - failure
-> People
-> Scalability
-> Authonomy - teams and theirs product
+- Technology  - many technologies
+- Deployment
+- Data
+- Resilence - failure
+- People
+- Scalability
+- Authonomy - teams and theirs product
 
 Scaling
-> Vertical - CPU, Memory
-> Horizontal - Instances
+- Vertical - CPU, Memory
+- Horizontal - Instances
 
+```
 Microservices - break complexity, though change without
 
 High cohesion - logic should concrete bussines functionality
 
 One Microservice - One DB
+```
 
 Cloud Native Computing Foundation
 
