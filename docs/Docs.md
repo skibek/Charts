@@ -11,7 +11,9 @@ TOC
   - [Monitoring](#monitoring)
 - [BPM](#bpm)
 - [Apache Kafka](#apache_kafka)
-- [Testing](#testing)
+- [Testing TDD](#testing)
+  - Testing SMTP email
+  - API Testing
 - [AWS](#aws)
 - [Tech news](#tech_news)
 
@@ -193,6 +195,8 @@ https://blog.docker.com/2019/07/10-reasons-developers-love-docker/
 
 https://dzone.com/articles/mastering-spring-cloud
 
+https://dzone.com/articles/top-5-spring-microservices-courses-with-spring-boo
+
 Hexadiagonal architecture
 - Technology  - many technologies
 - Deployment
@@ -318,6 +322,7 @@ https://codecouple.pl/2018/02/09/26-spring-boot-testowanie-z-greenmail/
 Test your front-end against a real API
 
 ```
+REST
 http://httpbin.org/
 JSONPlaceholder - Fake Online REST API for Testing and Prototyping - https://jsonplaceholder.typicode.com/
 https://reqres.in/
@@ -328,6 +333,9 @@ https://biotools.readthedocs.io/en/latest/what_is_biotools.html
 http://www.jsontest.com/
 https://www.mocky.io/
 https://github.com/softwaremill/softwaremill-common/tree/master/softwaremill-test/softwaremill-test-server
+
+WS
+http://www.dneonline.com/calculator.asmx
 ```
 
 # AWS <a name="aws"></a>
