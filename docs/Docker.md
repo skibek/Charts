@@ -1,14 +1,25 @@
 # Docker Linux
 
 TOC
-- [Process](#process)
-- [Cheat Sheet](#cheatsheet)
-- [Install_Docker](#install_docker)
-- [Install_SonarCube](#install_sonarcube)
-- [Free space](#free_space)
-- [Usefull ursl](#usefull_urls)
+- [Docker usage](#docker_usage)
+    - [Process for App](#process)
+    - [Docker run](#docker_run)
+    - [Set AutoStart](#set_autostart)
+    - [Cheat Sheet](#cheatsheet)
+- [SWARM - todo](#swarm)
+- [Install](#install)
+    - [Install_Docker](#install_docker)
+    - [Install_SonarCube](#install_sonarcube)
+    - [Free space](#free_space)
 - [Docker with Dockerfile](docekr_with_dockerfiles)
+    - Dockerfile example
+    - Command to build
+    - Run docker image
+    - Publish docker image
+- [URLs](#urls)
 - [MVN](mvn)
+
+# Docker usage <a name="docker_usage"></a>
 
 ## Process for App <a name="process"></a>
 
@@ -24,7 +35,7 @@ docker start testApp
 docker rmi testApp  # delete an image from local image store
 ```
 
-## Docker run
+## Docker run <a name="docker_run"></a>
 
 ```bash
 docker run
@@ -46,7 +57,18 @@ docker ps  # List the running containers
 docker rm -f $(docker ps -aq)  # Delete all running and stopped containers
 docker exec -it web bash  # Create a new bash process inside the container and connect it to the terminal
 docker logs --tail 100 web  # Print the last 100 lines of a container’s logs
+```
 
+## Set AutoStart <a name="set_autostart"></a>
+
+Set autorun after machine restart (docker service autostart on)
+
+https://docs.docker.com/config/containers/start-containers-automatically/
+
+```bash
+docker run -d --name sonarqube -p 9000:9000 sonarqube --restart unless-stopped
+# or if image was run earlier
+docker update --restart unless-stopped sonarqube
 ```
 
 ## CheatSheet <a name="cheatsheet"></a>
@@ -107,7 +129,7 @@ docker compose up
 docker network create reverse-proxy
 ```
 
-### SWARM - todo
+# SWARM - todo <a name="swarm"></a>
 
     docker stack ls                                            # List stacks or apps
     docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
@@ -117,6 +139,8 @@ docker network create reverse-proxy
     docker container ls -q                                      # List container IDs
     docker stack rm <appname>                             # Tear down an application
     docker swarm leave --force      # Take down a single node swarm from the manager
+
+# Install <a name="install"></a>
 
 ## Install Docker <a name="install_docker"></a>
 
@@ -149,6 +173,14 @@ Change directory:
     sudo ln -s /app/docker /var/lib/docker
     sudo service docker start
 
+Install
+
+https://docs.docker.com/install/linux/linux-postinstall/
+
+https://www.cyberciti.biz/faq/install-use-setup-docker-on-rhel7-centos7-linux/
+
+https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169
+
 
 ## Install Sonarcube <a name="install_sonarcube"></a>
 
@@ -176,18 +208,6 @@ docker run -d --name sonarqube \
 docker rm -v $(docker ps -a -q -f status=exited)
 docker rmi $(docker images -f "dangling=true" -q)
 ```
-
-## Usefull ursl <a name="usefull_urls"></a>
-
-DOCKER
-https://blog.docker.com/2019/07/intro-guide-to-dockerfile-best-practices/
-
-Install
-https://docs.docker.com/install/linux/linux-postinstall/
-https://www.cyberciti.biz/faq/install-use-setup-docker-on-rhel7-centos7-linux/
-https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169
-
-
 
 
 # Docker with Dockerfile <a name="docekr_with_dockerfiles"></a>
@@ -278,13 +298,13 @@ docker push baeldung/spring-boot-app:.0.0.1
 docker run  # Pulls image from hub
 ```
 
-## URLs
+## URLs <a name="urls"></a>
 
 https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
-https://docs.docker.com/config/containers/start-containers-automatically/
-
 https://blog.softwaremill.com/editing-files-in-a-docker-container-f36d76b9613c
+
+https://blog.docker.com/2019/07/intro-guide-to-dockerfile-best-practices/
 
 
 # MVN <a name="mvn"></a>
