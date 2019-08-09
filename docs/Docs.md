@@ -6,6 +6,7 @@ TOC
   - [Java helpers](#java_helpers)
   - [Groovy](#groovy)
   - [Estimates](#estimates)
+- [Profile](#profile)
 - [Containers](#containers)
 - [Microservices](#microservices)
   - [Monitoring](#monitoring)
@@ -173,6 +174,48 @@ https://pl.wikipedia.org/wiki/COCOMO
 http://csse.usc.edu/csse/research/COCOMOII/cocomo_main.html
 
 
+
+
+
+# Profile <a name="profile"></a>
+
+Spring Boot
+
+-Ddebug - shows whole elements by startup
+
+
+PROFILING
+```
+vmstat 1
+ApacheBench
+
+CPU
+Profiling - Flame Graph (shows methods callable)
+Race condition - synchronized
+
+Blocking bottlenecks
+Wallclock profiling
+Locking strategy - (eg synchronized on object per client)
+
+
+Performance testing
+Real Systems, Data and Workload
+Requires Low Overhead Profiler
+	Async-profiler
+	Honest profiler
+	Flight Recorder
+	Solaris studio
+		
+Test property
+- Fast
+- Isolated
+- Repeatable
+- Self-validating  - Asserts
+- Timely (Thorough)
+
+JFC/JFR - Java Flight Control / Java Flight Recorder
+JMC - Java Mission Controll
+```
 
 
 # Containers <a name="containers"></a>
