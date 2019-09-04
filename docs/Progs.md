@@ -35,13 +35,6 @@ Run from Mvn, Jenkins
 
 Webmin: https://hub.docker.com/r/chsliu/docker-webmin/
 
-# PROGS
-
-TOC
-- [Server Progs](#server_progs)
-    - [Logsniffer](#logsniffer)
-- [Progs](#progs)
-
 
 # Progs <a name="progs"></a>
 
