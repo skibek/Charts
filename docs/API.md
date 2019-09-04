@@ -58,3 +58,10 @@ https://psd2api.nestbank.pl
 
 https://apiportal.cloud.ideabank.pl/#default/home
 ```
+
+GraphQL
+
+```
+https://www.graphile.org/postgraphile/
+https://fauna.com/
+```
