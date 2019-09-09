@@ -17,7 +17,8 @@ TOC
   - API Testing
 - [AWS](#aws)
 - [Tech news](#tech_news)
-
+  - [Mobile apps](#mobile_apps)
+  - [Others - TODO](#others_todo)
 
 
 # Docs <a name="docs"></a>
@@ -403,9 +404,23 @@ Amazon Chime - chat, video, audio like skype
 Amazon Corretto - OpenJDK
 ```
 
+
 # Tech news <a name="tech_news"></a>
 
-## Others - TODO
+
+
+## Mobile apps <a name="mobile_apps"></a>
+
+Flutter - Android i IOS by Google
+
+https://flutter.dev/
+
+https://github.com/flutter/flutter-intellij
+
+
+
+
+## Others - TODO <a name="others_todo"></a>
 
 https://www.websequencediagrams.com/
 
