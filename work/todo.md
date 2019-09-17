@@ -1,4 +1,10 @@
-Motto: Look how simple it is
+Motto: 
+```
+Look how simple it is
+KISS - Keep it simple, stupid
+
+Shut up ... or run away
+```
 
 
 
