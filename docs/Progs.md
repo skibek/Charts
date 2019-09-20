@@ -16,6 +16,14 @@ TOC
     /home/tomcat/logsniffer
     http://localhost:8082/
 
+Jeśli problem z uruchomieniem uruchomić bez trybu w tle:
+
+    sudo java -jar /app/logsniffer.war
+
+wtedy będą logi.
+
+
+
 ## Jenkins
 
 ## Confluence
