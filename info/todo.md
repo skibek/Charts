@@ -77,3 +77,9 @@ Po roku 2014 lifting
 Nowością na pokładzie jest również system Collision Prevention Assist Plus. Rozbudowana wersja odróżnia się od układu montowanego standardowo w kompaktowych modelach marki tym, że poza funkcją ostrzegania przed kolizją za pomocą komunikatu na desce rozdzielczej oraz sygnału akustycznego, nie tylko wspomaga nagłe hamowanie, ale również potrafi automatycznie je rozpocząć, gdy po wykryciu ryzyka kolizji z samochodem znajdującym się z przodu kierowca nie zareaguje na sygnały ostrzegawcze. W zależności od prędkości, system przyczyni się do jej zmniejszenia, co ograniczy skutków kolizji, lub całkowicie wyhamuje pojazd.
 Nominalne i zarazem optymalne do niego to 205/55 R16, choć dopuszcza się zamienniki 225/40 R18, na których faktycznie będziesz czuć każdy kamyczek na drodze. Auto na osiemnastkach wygląda czadowo i ........ i tyle. O komforcie jazdy można zapomnieć.
 ```
+
+Huawei D
+
+https://www.laptopmain.com/huawei-matebook-d-2018-disassembly-ssd-ram-hdd-upgrade-options/
+
+https://allegro.pl/kategoria/podzespoly-komputerowe-pamiec-ram-257226?string=dimm%20ddr%204&bmatch=baseline-cl-dict41-eyesa-bp-ele-1-5-0918&typ-pamieci=DDR4&pojemnosc-calkowita=16%20GB&taktowanie-szyny-pamieci-mhz=2400&order=p&vat_invoice=1
