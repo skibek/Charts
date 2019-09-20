@@ -141,6 +141,8 @@ ENTERING TEXT
 
 ESC – go to Command mode
 
+position the cursor over the character to be deleted and type x
+
 CLOSING AND SAVING A FILE
 
      ZZ            save file and then quit
