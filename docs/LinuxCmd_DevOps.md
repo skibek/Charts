@@ -2,13 +2,35 @@
 
 TOC
 - [Commands - general](#commands_general)
+    - [Main](#commands_main)
+    - [New user](#commands_newuser)
+    - [System Manager (SysV, systemd, Upstart)](#commands_system_manager)
+    - Check Linux ver
+    - Users in system
+    - Ports
+    - Others
+    - Disk space
+    - Free disk space
+    - Memory space
+    - Processes
+    - Firewall    
 - [VI simple](#vi_simple)
 - [Services - Java](#services_java)
+    - Set Java version as Main
+    - Check processes
+    - Check logs of service
+    - Set service
+    - Autostart
+    - Service usage
+    - Config file - eg: uaa.conf
+    - Other cmds
+    - After changes in service file
+- [SpringBoot apps](#springboot_apps)
 - [Jenkins - JAR/WAR](#jenkins_jarwar)
 
 ## Commands - General <a name="commands_general"></a>
 
-### Main
+### Main <a name="commands_main"></a>
 
 ```Bash
 alias, where, which
@@ -27,7 +49,7 @@ mysql -u root -p
 CTRL + SHIFT + R - cmd history
 ```
 
-### New user
+### New user <a name="commands_newuser"></a>
 
 ```Bash
 useradd username
@@ -37,7 +59,7 @@ sudo usermod -aG wheel username
 chmod 755 -R dir
 ```
 
-### System Manager (SysV, systemd, Upstart)
+### System Manager (SysV, systemd, Upstart)  <a name="commands_system_manager"></a>
 
 https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-system
     
@@ -59,7 +81,7 @@ https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-syste
     sudo netstat -pln   (busy ports)
     sudo netstat -tulpn | grep :8082
 
-### Others:
+### Others
 
 ```Bash
     . ~/.bashrc
@@ -85,7 +107,7 @@ https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-syste
     tar -zcvf archive-name.tar.gz directory-name
 ```
 
-### Disk space:
+### Disk space
 
     df -a
     df -h 
@@ -93,7 +115,7 @@ https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-syste
     MC - CTRL+SPACE on dir
     sudo iotop -P -a
 
-### Free disk space:
+### Free disk space
 
     sudo apt-get autoremove
     sudo apt-get clean
@@ -104,12 +126,12 @@ https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-syste
     free -g
     free -m
 
-### Processes:
+### Processes
 
     ps -aux | grep java
     kill -9 PID
    
-### Firewall:
+### Firewall
 
     sudo systemctl start firewalld
     sudo firewall-cmd --list-all
@@ -126,6 +148,10 @@ https://linuxconfig.org/detecting-which-system-manager-is-running-on-linux-syste
     sudo systemctl status firewalld
     sudo systemctl enable firewalld
     sudo iptables -S
+
+
+
+
 
 ## VI simple <a name="vi_simple"></a>
 
@@ -148,6 +174,11 @@ CLOSING AND SAVING A FILE
      ZZ            save file and then quit
      :w            save file
      :q!            discard changes and quit file
+
+
+
+
+
 
 
 ## Services - Java <a name="services_java"></a>
@@ -225,7 +256,7 @@ Directly run: (to see log on screen)
 
     sudo chown -R tomcat:tomcat APPdir
     
-### After changes in service file:
+### After changes in service file
 
     sudo systemctl daemon-reload
     
@@ -240,6 +271,11 @@ TODO
 Spring Boot install
 
 [https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html)
+
+
+
+
+
 
 
 ## Jenkins - JAR/WAR <a name="jenkins_jarwar"></a>
