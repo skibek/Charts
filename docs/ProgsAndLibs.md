@@ -1,8 +1,31 @@
 TOC
+- [Libs](#libs)
 - [Server Progs](#server_progs)
     - [Logsniffer](#logsniffer)
 - [Progs](#progs)
 - [Services - SAAS](#saas)
+
+
+# Libs <a name="libs"></a>
+
+## Distributed tracing / logger
+
+Cloud Native Computing Foundation (CNCF) 
+
+```
+https://www.javacodegeeks.com/microservices-distributed-tracing.html
+
+OpenZipkin - in Twitter
+OpenTracing - standard, initiative
+Brave
+Jaeger - in Uber
+OpenCensus
+OpenTelemetry
+Haystack
+Apache SkyWalking
+Spring Cloud Sleuth
+```
+
 
 
 # Server Progs <a name="server_progs"></a>
