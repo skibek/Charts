@@ -32,6 +32,7 @@ SOLID - https://pl.wikipedia.org/wiki/SOLID_(programowanie_obiektowe)
   - Liskov substitution principle
   - Interface segregation principle
   - Dependency inversion principle
+  TODO - add examples in code!!!
 
 KISS - Keep It Simple Stupid [BUZI (Bez Udziwnień Zapisu, Idioto]
 
