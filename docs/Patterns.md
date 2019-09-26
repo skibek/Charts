@@ -27,13 +27,15 @@ http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
 
 SOLID - https://pl.wikipedia.org/wiki/SOLID_(programowanie_obiektowe)
 
-  - Single responsibility principle 
-  - Open/closed principle
-  - Liskov substitution principle
-  - Interface segregation principle
-  - Dependency inversion principle
-  
-  TODO - add examples in code!!!
+  - Single responsibility principle  - One class should have one and only one responsibility
+  - Open/closed principle  - Software components should be open for extension, but closed for modification
+  - Liskov substitution principle  - Derived types must be completely substitutable for their base types
+  - Interface segregation principle  - Clients should not be forced to implement unnecessary methods which they will not use
+  - Dependency inversion principle  - Depend on abstractions, not on concretions
+```
+https://howtodoinjava.com/best-practices/5-class-design-principles-solid-in-java/
+https://www.baeldung.com/solid-principles
+```
 
 KISS - Keep It Simple Stupid [BUZI (Bez Udziwnień Zapisu, Idioto]
 
