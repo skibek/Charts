@@ -1,7 +1,7 @@
 # GIT
 
 TOC
-- [General 8](#general)
+- [General](#general)
 
 ## General <a name="general"></a>
 
