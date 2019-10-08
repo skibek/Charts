@@ -256,6 +256,10 @@ Class based OOP - Object Oriented Programming
 
 Angular CLI
 
+Angular Docs
+
+https://compodoc.app/
+
 State managers - ngrx, Redux
 
 ## Additional elems
