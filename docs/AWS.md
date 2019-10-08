@@ -4,7 +4,8 @@ TODO
 
 Amazon Web Services
   Amazon S3 - Amazon Simple Storage Service  (Bucket = folder)
-  Amazon Glacier - archive
+  https://www.hostersi.pl/amazon-s3-bez-tajemnic/
+    Amazon Glacier - archive
   AWS IAM - Identity and Access Management
 
 ```
