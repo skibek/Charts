@@ -1,3 +1,7 @@
+```
+Search in GitHub: term in:file,path
+```
+
 [https://skibek.github.io/Charts/](https://skibek.github.io/Charts/)
 
 Charts with knowledge
