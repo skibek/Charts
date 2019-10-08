@@ -1,4 +1,12 @@
-API
+# API
+
+TOC
+- [API general](#apigeneral)
+- [PSD2](#psd2)
+- [GraphQL](#graphql)
+
+
+## API general <a name="apigeneral"></a>
 
 ```
 Granular access control provides security down to the API level.
@@ -42,7 +50,7 @@ https://docs.wso2.com/display/AM260/Quick+Start+Guide#6f3639905ab542de823144525e
 
 ```
 
-PSD2
+## PSD2 <a name="psd2"></a>
 ```
 Spis Banków opartych o Polish API
 https://polishapi.org/commercial-banks/
@@ -59,7 +67,7 @@ https://psd2api.nestbank.pl
 https://apiportal.cloud.ideabank.pl/#default/home
 ```
 
-GraphQL
+## GraphQL <a name="graphql"></a>
 
 ```
 https://www.graphile.org/postgraphile/
