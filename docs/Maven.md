@@ -1,3 +1,13 @@
+# MAVEN
+
+TOC
+- [General](#general)
+- [Proxy for Maven](#proxy)
+
+
+
+## General <a name="general"></a>
+
 settings.xml
 
 .m2
@@ -5,7 +15,7 @@ settings.xml
 Nexus
 
 
-## Proxy for Maven
+## Proxy for Maven <a name="proxy"></a>
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
