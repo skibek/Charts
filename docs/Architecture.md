@@ -3,6 +3,7 @@
 TOC
 - [CQRS - Command Query Responsibility Segregation](#cqrs)
 - [TDD - Test-Driven Development](#tdd)
+- [Books](#books)
 
 
 ## CQRS - Command Query Responsibility Segregation <a name="cqrs"></a>
@@ -27,4 +28,19 @@ three rules of tdd
 https://dzone.com/articles/fallbacks-are-overrated-architecting-for-resilienc
 https://www.javacodegeeks.com/2019/07/cloud-well-architected-framework.html
 https://www.javacodegeeks.com/2019/07/microservices-java-devs-deployment-orchestration.html
+```
+
+## Books
+
+```
+Book - DesignIt
+https://pragprog.com/book/mkdsa/design-it
+
+Patterns of Enterprise Application Architecture
+https://www.amazon.com/gp/product/0321127420
+
+Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions
+https://www.amazon.com/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683
+
+https://softwarearchitecturefordevelopers.com/
 ```
