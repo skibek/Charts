@@ -337,9 +337,7 @@ Apache BooKeeper - log
 
 
 
-# Testing - TDD <a name="testing"></a>
-
-TDD - Test-Driven Development (Red, 'Document', Green, Refactor)
+# Testing  <a name="testing"></a>
 
 Js - Karma
 
