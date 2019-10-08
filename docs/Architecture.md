@@ -1,11 +1,11 @@
-Architecture - Design
+# Architecture - Design
 
 TOC
 - [CQRS - Command Query Responsibility Segregation](#cqrs)
 - [TDD - Test-Driven Development](#tdd)
 
 
-CQRS - Command Query Responsibility Segregation <a name="cqrs"></a>
+## CQRS - Command Query Responsibility Segregation <a name="cqrs"></a>
 
 ```
 Two models 
@@ -18,7 +18,7 @@ Materialize view (DB) (materialize cache like) - for read/write - read - more da
 ```
 
 
-TDD - Test-Driven Development <a name="tdd"></a>
+## TDD - Test-Driven Development <a name="tdd"></a>
 
 (Red, 'Document', Green, Refactor)
 
