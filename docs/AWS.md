@@ -7,6 +7,7 @@ Amazon Web Services
     Amazon Glacier - archive
   AWS IAM - Identity and Access Management
   EBS - Elastic Block Storage - disc for EC2 instance
+  ELB (Elastic Load Balancer
 
 ```
 
