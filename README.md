@@ -2,13 +2,21 @@
 
 Charts with knowledge
 
+[- API](docs/API.md)
+
+[- AWS](docs/AWS.md)
+
 [- Angular](docs/Angular.md)
+
+[- Architecture](docs/Architecture.md)
 
 [- Docker](docs/Docker.md)
 
 [- Docs](docs/Docs.md)
 
-[- GitCmd](docs/GitCmd.md)
+[- Git](docs/Git.md)
+
+[- JDK](docs/JDK.md)
 
 [- JavaTips](docs/JavaTips.md)
 
@@ -20,7 +28,9 @@ Charts with knowledge
 
 [- Patterns](docs/Patterns.md)
 
-[- Progs](docs/Progs.md)
+[- PerformanceLibs](docs/PerformanceLibs.md)
+
+[- ProgsAndLibs](docs/ProgsAndLibs.md)
 
 [- SQLs](docs/SQLs.md)
 
