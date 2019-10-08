@@ -1,4 +1,11 @@
-# AWS services:
+# AWS
+
+TOC
+- [AWS services](#awsservices)
+- [Helpers](#helpers)
+- [Deploy info](#deploy_info)
+
+## AWS services <a name="awsservices"></a>
 ```
 Amazon Web Services
   Amazon S3 - Amazon Simple Storage Service  (Bucket = folder)
@@ -43,9 +50,9 @@ AWS Account credentials;
 https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf
 ```
 
-# Helpers:
+## Helpers <a name="helpers"></a>
 
-## Infrastructure as a service IAAS
+### Infrastructure as a service IAAS
 
 ```
 Terraform - by Hashicorp
@@ -59,4 +66,16 @@ URL:
 ```
 https://devenv.pl/terraform-wprowadzenie/
 
+```
+
+## Deploy info <a name="deploy_info"></a>
+
+```
+Wdrażanie w chmurze:
+
+CAMS (autor modelu John Willis), który mówi właśnie o tych czterech częściach: 
+C – culture (kultura), 
+A – automation (automatyzacja), 
+M – measurement (metryki), 
+S – sharing (współdzielenie)
 ```
