@@ -12,28 +12,32 @@ Amazon Web Services
     https://en.wikipedia.org/wiki/Amazon_S3
     https://www.hostersi.pl/amazon-s3-bez-tajemnic/
     Amazon Glacier - archive
-  AWS IAM - Identity and Access Management
+    
   EBS - Elastic Block Storage - disc for EC2 instance
-  ELB (Elastic Load Balancer
+  
+  ELB (Elastic Load Balancer)
 
+  AWS Elastic Beanstalk - PAAS - Platform As a service
+	  Webserver env
+	  Worker enc - long running actions
+    
+  SQS - Simple Queue Service
+  
+  Amazon CloudWatch - collect, monitor, act, analyse | events, alarms
+  
+  SNS
 
-https://www.hostersi.pl/na-czym-wlasciwie-polega-wysoka-dostepnosc-ha-w-chmurze/
-https://www.hostersi.pl/wysoka-dostepnosc-serwisu/
-
-RDS - have HA
-Amazon ElastiCache
-Sessions – redis i memcache
+  RDS - have HA - Amazon Relational Database Service
+  
+  Amazon ElastiCache
+  
+  Sessions – redis i memcache
 
 Security:
 AWS Identity and Acces Managment – najważniejsza funkcja, pozwalająca na zarządzanie użytkownikami i prawami dostępu do AWS.
 AWS Key Managment Service – do przechowywania kluczy do szyfrowania
 AWS CloudTrail – logowanie wszystkiego, co dzieję się z kontem w Amazonie
 AWS Web Application Firewall – pozwala tworzyć reguły do blokowania ataków na stronę / aplikację
-
-
-??? auto add instance - ELB
-
-AWS Irlandia lub Frankfurt, znajdujące się na Europejskim Obszarze Gospodarczym (EOG).
 
 AWS Account credentials;
 
@@ -51,6 +55,24 @@ https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf
 ```
 
 ## Helpers <a name="helpers"></a>
+
+It's a best practice to maintain backups of your instances and data. Consider creating an AMI or creating snapshots of your EBS volumes before you change your infrastructure.
+
+AWS Irlandia lub Frankfurt, znajdujące się na Europejskim Obszarze Gospodarczym (EOG).
+
+### URLs
+```
+https://www.hostersi.pl/na-czym-wlasciwie-polega-wysoka-dostepnosc-ha-w-chmurze/
+https://www.hostersi.pl/wysoka-dostepnosc-serwisu/
+```
+
+### Certificates
+```
+https://aws.amazon.com/blogs/apn/now-you-can-take-the-aws-certified-cloud-practitioner-exam-at-your-home-or-office-24-7/
+https://www.aws.training/Details/Curriculum?id=27076
+https://aws.amazon.com/training/path-cloudpractitioner/
+https://aws.amazon.com/training/path-architecting/
+```
 
 ### Infrastructure as a service IAAS
 
