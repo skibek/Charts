@@ -16,6 +16,19 @@ Two models
 Materialize view (DB) (materialize cache like) - for read/write - read - more data, write - less data
   Postgres JSON-B
 
+- elements:
+Command - UpdateItemQuantityCommand 
+Command Bus - queue
+Command Handler - validation of command , write, send events
+Domain objects (models) - aggragates
+Event
+Event Bus
+Event Handler - save data for future read
+Read Database Abstraction
+
+ES - Event Sourcing
+
+https://bulldogjob.pl/articles/122-cqrs-i-event-sourcing-czyli-latwa-droga-do-skalowalnosci-naszych-systemow_
 ```
 
 
