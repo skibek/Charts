@@ -4,6 +4,9 @@
 TOC
 - [Coding Patterns](#coding_patterns)
 - [Clean code](#clean_code)
+  - [IDEA keymaps](#idea_keymaps)
+  - [Descriptions and best thoughts](#best_thoughts)
+  - [Compendium](#compendium)
 - [Design Patterns](#design_patterns)
   - [GoF](#gof)
   - [others](#others)
@@ -38,7 +41,7 @@ https://howtodoinjava.com/best-practices/5-class-design-principles-solid-in-java
 https://www.baeldung.com/solid-principles
 ```
 
-KISS - Keep It Simple Stupid [BUZI (Bez Udziwnień Zapisu, Idioto]
+KISS - Keep It Simple Stupid [BUZI (Bez Udziwnień Zapisu, Idioto],  Keep It Short & Simple
 
 DRY - Dont Repeat Yourself
 
@@ -50,9 +53,7 @@ SCA - Separation Of Concerns
 
 # Clean code <a name="clean_code"></a>
 
-Trainer - VictorRentea.ro
-
-## IDEA keymaps
+## IDEA keymaps <a name="idea_keymaps"></a>
 
 Alt-Enter	Quick-fix
 
@@ -89,15 +90,13 @@ CTRL-ALT-H	Call Hierarchy
 CTRL-SHIFT-A	Search Anything
 ```
 
-## Descriptions and best thoughts
+## Descriptions and best thoughts <a name="best_thoughts"></a>
 
 True cost of software = its maintenance
 
 Use the IDE, Luke!
 
 Laziness/Fear/Rush = Legacy
-
-Keep It Short & Simple - KISS
 
 You are not done when the code starts working! It is then when you should clean up your code!!
 
@@ -150,12 +149,14 @@ One-liner lambdas (best filter, map, collect, comparing, anyMatch, forEach, find
 Learn Stream API - entire
 ```
 
-### compendium
+## Compendium <a name="compendium"></a>
 ```
 https://cleancoders.com/
 
 Clean Code: The Next Chapter by Victor Rentea
 https://www.youtube.com/watch?v=wY_CUkU1zfw
+
+Trainer - VictorRentea.ro
 ```
 
 # Design Patterns <a name="design_patterns"></a>
