@@ -3,6 +3,7 @@
 
 TOC
 - [Coding Patterns](#coding_patterns)
+- [Clean code](#clean_code)
 - [Design Patterns](#design_patterns)
   - [GoF](#gof)
   - [others](#others)
@@ -47,6 +48,46 @@ TDA - Tell Don't Ask
 
 SCA - Separation Of Concerns
 
+# Clean code <a name="clean_code"></a>
+
+Trainer - VictorRentea.ro
+
+## IDEA keymaps
+
+Alt-Enter	Quick-fix
+
+Refactoring:
+```
+SHIFT-F6	Rename
+CTRL-ALT-M	Extract Method
+CTRL-ALT-V	... Local Variable
+CTRL-ALT-F / -C	... Field / Constant
+CTRL-ALT-N	Inline
+CTRL-F6		Method Signature
+F6		Move: file, method
+```
+
+Editing
+```
+CTRL-Y 		Delete Line
+CTRL-D 		Duplicate Text
+CTRL-SHIFT-W	Grow Selection
+ALT-SHIFT-UP	Shift Lines Up
+CTRL-SHIFT-UP	Shift Block Up
+ALT-J		Multi-cursor
+CTRL-SPACE x2 	Static functions
+```
+
+Navigation
+```
+ALT-F7		Find Usages
+SHIFT-SHIFT	Find File
+CTRL-SHIFT-F	Find Text
+CTRL-H		Type Hierarchy
+F12		Outline
+CTRL-ALT-H	Call Hierarchy
+CTRL-SHIFT-A	Search Anything
+```
 
 # Design Patterns <a name="design_patterns"></a>
 
