@@ -89,6 +89,75 @@ CTRL-ALT-H	Call Hierarchy
 CTRL-SHIFT-A	Search Anything
 ```
 
+## Descriptions and best thoughts
+
+True cost of software = its maintenance
+
+Use the IDE, Luke!
+
+Laziness/Fear/Rush = Legacy
+
+Keep It Short & Simple - KISS
+
+You are not done when the code starts working! It is then when you should clean up your code!!
+
+```
+KeyPromoter X - IDEA plugin
+
+Refactoring - simplify excisting code without changing its external behavior
+Make it more readable
+Write down your next commit message
+Test before refactor
+
+Classes are nouns - Customer, OrderDetails
+Functions are verbs - getName, sendEmail, execute
+Boolean functions should answer yes/n0 - isGoldClient, hastsAreValid
+
+Avoid meaningless names (OrderInfo, OrderData, Order) - OK= OrderDetails, OrderSummary
+Seek 5 options for any name
+
+Delete the Interfaces
+Keep Code Close to Domain
+A function should do one thing, it should do it well, and it should do it ONLY - Uncle Bob
+Function Should be Small - 5 lines OR one page of IDE
+
+Extract Method
+Performance - Smaller methods run faster (get HOT faster - JIT Compiler Optimalizations
+Method - max 3 parameters. Try to introduce a Parameter Object/DTO/VO
+No boolean params
+No nullable parameters (or Optional)  - Check data only at the boundaries
+Avoid returning NULL - throw Exception, wrap in Optional
+
+CQS - Command-Query Separation
+Command - return void ( setActive(true):void   sendEmail(Email):void )
+Query - return results ( getPrice():int   computePrice(movie):int )
+Pure Functions - Idempotent (Same result for same inputs - no random, time, WS, DB, INSERTs, JMS...)
+
+The Hat Methaphor - Kent Beck
+Writing - Make it Work (Copy Pasta)
+Cleaning - Make it Readable (What can I delete)
+Unit Testing - Crack it (How can I brake it?)
+
+Data structres = Value Object, final, constructor with params and validation, only get
+OOP - Expose Behaviour, not data
+  car.engineStarted=true
+  car.setEngineStarted(true)
+  car.startEngine() - OK
+Minimiza the API
+
+Optional<>.map(f)
+One-liner lambdas (best filter, map, collect, comparing, anyMatch, forEach, findFirst
+Learn Stream API - entire
+```
+
+### compendium
+```
+https://cleancoders.com/
+
+Clean Code: The Next Chapter by Victor Rentea
+https://www.youtube.com/watch?v=wY_CUkU1zfw
+```
+
 # Design Patterns <a name="design_patterns"></a>
 
 ## GoF <a name="gof"></a>
