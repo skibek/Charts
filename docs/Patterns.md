@@ -156,7 +156,10 @@ https://cleancoders.com/
 Clean Code: The Next Chapter by Victor Rentea
 https://www.youtube.com/watch?v=wY_CUkU1zfw
 
-Trainer - VictorRentea.ro
+Trainer - Victor Rentea
+https://www.victorrentea.ro/
+Victor Rentea - Evolving a Clean, Pragmatic Architecture – A Software Crafter’s Guide
+https://www.youtube.com/watch?v=tMHO7_RLxgQ
 ```
 
 # Design Patterns <a name="design_patterns"></a>
