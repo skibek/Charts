@@ -8,6 +8,7 @@ service
 - [Spring Boot](#spring_boot)
 - [Rollout of logs](#rollout)
 - [Native APR for Tomcat](#native_apr)
+- [Performance for standalone Tomcat](#performance_standalone)
 
 ## Tomcat config <a name="tomcat_config"></a>
 
@@ -304,4 +305,65 @@ org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: I
 org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
 
 org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2k-fips  26 Jan 2017]
+```
+
+
+
+## Performance for standalone Tomcat <a name="performance_standalone"></a>
+
+### Compression - GZIP
+
+In file:
+
+server.xml
+```xml
+<Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```			   
+add:
+```xml
+compression="on"
+compressionMinSize="1024"
+compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript"
+```
+
+### Cache - Expired
+
+In file:
+
+$CATALINA_HOME/conf/web.xml
+
+add:
+```xml
+<filter>
+    <filter-name>ExpiresFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.ExpiresFilter</filter-class>
+    <init-param>
+        <param-name>ExpiresByType image</param-name>
+        <param-value>access plus 2 weeks</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ExpiresByType text/css</param-name>
+        <param-value>access plus 2 weeks</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ExpiresByType text/html</param-name>
+        <param-value>access plus 2 weeks</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ExpiresByType application/javascript</param-name>
+        <param-value>access plus 2 weeks</param-value>
+    </init-param>
+    <init-param>
+        <param-name>ExpiresByType text/javascript</param-name>
+        <param-value>access plus 2 weeks</param-value>
+    </init-param>
+</filter>
+ 
+<filter-mapping>
+    <filter-name>ExpiresFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+</filter-mapping>
 ```
