@@ -49,13 +49,15 @@ wtedy będą logi.
 
 
 
-## Jenkins
+## Jenkins, TeamCity
+
+## Terraform, Ansible, Docker
 
 ## Confluence
 
 ## JIRA, Bugzilla, ...
 
-## GitLab
+## GitLab, SourceTree
 
 ## Nexus
 
