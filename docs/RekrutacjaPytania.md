@@ -205,3 +205,9 @@ https://stackoverflow.com/questions/1737627/java-how-to-represent-graphs
 https://www.baeldung.com/java-graphs
 ```
 
+##Clustering
+```
+https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
+https://en.wikipedia.org/wiki/K-means_clustering
+```
+
