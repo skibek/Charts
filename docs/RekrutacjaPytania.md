@@ -138,10 +138,10 @@ Biblioteki do testów - Junit, Spock - Groovy
 - Symetric & Asymetric
 https://www.rapidsslonline.com/blog/fundamental-differences-between-symmetric-and-asymmetric-encryption/
 https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences
-
+```
 ![Symmetric](https://www.ssl2buy.com/wiki/wp-content/uploads/2015/12/Symmetric-Encryption.png)
 ![Asymmetric](https://2teyt17s6x52yehgd4cdel0r-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Asymmetric.png)
-```
+
 
 ## Maze
 ```
