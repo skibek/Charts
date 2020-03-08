@@ -135,6 +135,7 @@ HTTP code - 1xx - Information, 2xx - Success, 3xx Redirection, 4xx - client erro
 ```
 Test structure - BDD - given(init), when(operation to test), then (assertion)
 AssertJ, 
+Testcontainers
 Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 ```
