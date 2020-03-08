@@ -2,7 +2,6 @@
 
 ## General
 ```
-Metodyki zarządzania - Scrum, Agile
 Bugtrackery - Jira, Redmine
 CD/CI - Jenkins, TeamCity
 GitFlow - feature/release/hotfix/support branches
@@ -18,6 +17,21 @@ Proxy
 JMS jakie?
 
 - Apache Camel - lub inne EIP, MuleSoft | ...
+```
+
+## Methodologies
+```
+Metodyki zarządzania - Scrum, Kanbanm XP - Agile methodologies - iterative development, where requirements and solutions evolve through collaboration between self-organizing cross-functional teams | solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).[1] It advocates adaptive planning, evolutionary development, early delivery, and continual improvement,
+https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+https://en.wikipedia.org/wiki/Agile_software_development
+
+Agile software development process
+BDD - behavior-driven development
+https://en.wikipedia.org/wiki/Behavior-driven_development
+
+TDD
+domain-driven design
+object-oriented analysis and design
 ```
 
 ## JAVA
