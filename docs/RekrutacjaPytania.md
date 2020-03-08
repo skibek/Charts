@@ -145,6 +145,16 @@ Biblioteki do testów - Junit, Spock - Groovy
 ```
 ![Workflow](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdiscoversdkcdn.azureedge.net%2Fpostscontent%2Fspring%2Fbatch%2Fimage1.png&f=1&nofb=1)
 
+## Spring Integration
+```
+
+```
+
+## Docker, K8s
+```
+
+```
+
 # Algorithms
 ## General
 ```
@@ -166,5 +176,32 @@ https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differe
 ## Maze
 ```
 https://www.baeldung.com/java-solve-maze
+```
+
+## Graph
+```
+nodes (instead of vertices) and edges (instead of arcs)
+
+Library: 
+https://jgrapht.org/
+https://www.graphviz.org/
+
+public class Graph {
+    List<Node> nodes;
+}
+
+public class Node {
+    public String name;
+    public List<Edge> connections;
+}
+
+public class Edge {
+    public Node start;
+    public Node end;
+    public double weight;
+}
+
+https://stackoverflow.com/questions/1737627/java-how-to-represent-graphs
+https://www.baeldung.com/java-graphs
 ```
 
