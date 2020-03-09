@@ -103,15 +103,16 @@ https://howtodoinjava.com/spring-core/stereotype-annotations/
 @Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
 
 - Injection - różnice gdzie - Constuctor, AutoWired, setter
-You can mix both, Constructor-based and Setter-based DI but it is a good rule of thumb to use constructor arguments for mandatory dependencies and setters for optional dependencies.
+You can mix both, Constructor-based and Setter-based DI but it is a good rule to use constructor arguments for mandatory dependencies and setters for optional dependencies.
 
 - Servlet Redirect vs Forward
+Simply put, forwarded requests still carry this value, but redirected requests don't.
 https://www.baeldung.com/servlet-redirect-forward
 
 For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handlers which can work with the DispatcherServlet
 
 - Transaction
-propagation - default PROPAGATION_REQUIRED, 
+propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
 isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres...
 https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
 https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
@@ -208,6 +209,7 @@ https://www.baeldung.com/java-graphs
 
 ##Clustering
 ```
+Clustering is a Machine Learning technique that involves the grouping of data points
 https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
 https://en.wikipedia.org/wiki/K-means_clustering
 ```
