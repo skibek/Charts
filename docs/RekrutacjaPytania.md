@@ -9,14 +9,14 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
 https://en.wikipedia.org/wiki/SOLID
 
-Optymalizacja - JMC/JFR, YourKit
-
-- AOP
-Proxy
+Optymalizacja - JMC/JFR, YourKit - Testy np LoadUI/SoapUI, JMeter
+JMC - czy można na PROD (nie można - trzeba wykupić lecencję)
 
 JMS jakie?
 
 - Apache Camel - lub inne EIP, MuleSoft | ...
+Scala, Haskel - functional programming
+
 ```
 
 ## Methodologies
@@ -50,10 +50,6 @@ Lambda Expressions, New Date and Time API, Stream API
 -- try-catch-finally
 Try with Resources - for Closeable resources
 Try Catch - in essence, if you have a finally in a try/catch clause, a finally will be executed (after catching the exception before throwing the caught exception out)
-
-- Exceptions
-Throwable - Error | Exception
-https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
 	
 - concurrent 
 CopyOnWriteArrayList - thread-safe
@@ -66,11 +62,22 @@ Executor service - https://howtodoinjava.com/java/multi-threading/executor-servi
 - Duration vs Period - Period uses date-based values, while Duration uses time-based values
 ```
 
+## Exceptions
+```
+- Exceptions
+Throwable - Error | Exception
+RuntimeException - nie do złapania, zawsze przejdzie
+https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
+```
+
 ## SQL
 ```
 - kursor - Kursory są encją w której przechowywane są wiersze zwrócone przez zapytanie z bazy danych.
 Przetwarzając kursory wykonujemy cztery operacje: zadeklarować kursor, otworzyć go, pobrać wiersze, zamknąć kursor
 namiastka programowania
+
+INSERT INTO table2
+SELECT * FROM table1 WHERE condition; 
 ```
 
 ## JPA/Hibernate
@@ -92,7 +99,7 @@ InheritanceType.JOINED
 
 ## Spring
 ```
-- scope - singleton, prototype, request, session, global-session
+- Scope - singleton, prototype, request, session, global-session
 - WEB-INF dir - This means that WEB-INF resources are accessible to the resource loader of your Web-Application and not directly visible for the public. 
 
 - Stereotype annotations
@@ -109,6 +116,7 @@ You can mix both, Constructor-based and Setter-based DI but it is a good rule to
 Simply put, forwarded requests still carry this value, but redirected requests don't.
 https://www.baeldung.com/servlet-redirect-forward
 
+- Jak Spring dostaje request - define servlets, filters, listeners...
 For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handlers which can work with the DispatcherServlet
 
 - Transaction
@@ -122,14 +130,48 @@ https://www.baeldung.com/spring-transactional-propagation-isolation
 @ExtendWith(SpringExtension.class)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 
-- Jak Spring dostaje request - define servlets, filters, listeners...
+Proxy Bean
+Component Scan
+```
+
+## AOP
+```
+- Aspect Oriented Programming
+najlepszy przykład Transaction w Spring, oraz Remoting
+Bazuje na wzorcu projektowym - Proxy
+```
+
+## Design patterns in Spring
+```
+- Dependency injection or inversion of control
+- Factory - Spring BeanFactory Container, Spring ApplicationContext Container; 
+context.getBean("helloApplicationContext");
+- Proxy
+a class is used to represent the functionality of another class
+Proxy means ‘in place of’, representing’ or ‘in place of’ or ‘on behalf of’
+A real world example can be a cheque or credit card is a proxy for what is in our bank account. It can be used in place of cash, and provides a means of accessing that cash when required
+Controls and manage access to the object they are protecting
+- Singleton
+- Model View Controller
+- Template method
+JdbcTemplate, JmsTemplate, and JpaTemplate
+- Front Controller
+Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers
+...
+https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 ```
 
 ## REST
 ```
-- HEAD metoda - ???
-Transakcja - izolowanie transakcji
-HTTP code - 1xx - Information, 2xx - Success, 3xx Redirection, 4xx - client error, 5xx - Server error
+- HEAD metoda
+The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.
+- HTTP code 
+1xx - Information, 2xx - Success, 3xx Redirection, 4xx - client error, 5xx - Server error
+
+Jak wysłać GET/POST z:
+- Angular - HttpClient
+- Node.js - var http = require('http'); http.request(
+- Sencha - Ext.Ajax.request({
 ```
 
 ## Test
@@ -141,6 +183,25 @@ Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 ```
 
+## Streams & Lambda
+```
+- aggregate operations like:
+filter, map, limit, reduce, find, match, and so on.
+
+Arrays.stream(array).reduce((str1, str2) -> str1 + "-" + str2); // accumulator 
+list.stream().distinct().forEach( //remove duplicates
+
+List<Pet> pets = people.stream()
+	. filter((p) -> p.getAge() > 35)
+	. map(Person::getPet)
+	. collect(Collectors.toList()); 
+List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+numbers.stream().mapToInt((x) -> x).summaryStatistics();
+
+https://www.tutorialspoint.com/java8/java8_streams.htm
+```
+
 ## Spring Batch
 ```
 
@@ -149,12 +210,35 @@ Biblioteki do testów - Junit, Spock - Groovy
 
 ## Spring Integration
 ```
+???
+```
 
+## Apache Spark  (Apache Flink)
+```
+- Modules: Core, SQL, Streaming, MLib, GraphX
+- Query, Analyze, Transform
+- faster than MapReduce
+Cluster Managers - Apache Spark Standalone, Apache Mesos, Apache YARN, Kubernetes
+HDFS - Hadoop Distributed File System
+Yarn: Yet another Resource Negotiator is used for job scheduling and manage the cluster
+Map Reduce: This is a framework which helps Java programs to do the parallel computation on data using key value pair. The Map task takes input data and converts it into a data set which can be computed in Key value pair. The output of Map task is consumed by reduce task and then the out of reducer gives the desired result. 
+```
+
+## ELK
+```
+Elastic Search, Kibana, Logstash, Beats
+```
+
+## Hashicorp
+```
+Hashicorp stack (Terraform, Vault, Consul) 
 ```
 
 ## Docker, K8s
 ```
-
+- Jak ustawić port dla image:
+poprzez docker compose (uruchomienie - docker compose up) - w pliku YAML
+poprzez parametry i docker ( chyba -p 8080:8080)
 ```
 
 # Algorithms
@@ -207,7 +291,7 @@ https://stackoverflow.com/questions/1737627/java-how-to-represent-graphs
 https://www.baeldung.com/java-graphs
 ```
 
-##Clustering
+## Clustering
 ```
 Clustering is a Machine Learning technique that involves the grouping of data points
 https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
