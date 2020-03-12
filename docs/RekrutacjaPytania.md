@@ -111,6 +111,10 @@ PESSIMISTIC_READ, PESSIMISTIC_WRITE
 InheritanceType.TABLE_PER_CLASS
 InheritanceType.SINGLE_TABLE - DiscriminatorColumn - DiscriminatorValue
 InheritanceType.JOINED
+
+- Hibernate - stany -  Transient / Persistent / Detached 
+
+- Optional a nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
 ```
 
 ## Spring
@@ -137,7 +141,7 @@ For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handl
 
 - Transaction
 propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
-isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres...
+isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPEATABLE_READ, Isolation.SERIALIZABLE
 https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
 https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
 https://www.baeldung.com/spring-transactional-propagation-isolation
@@ -148,6 +152,12 @@ https://www.baeldung.com/spring-transactional-propagation-isolation
 
 Proxy Bean
 Component Scan
+
+- SpringBoot lifecycle - Life cycle callback methods
+InitializingBean and DisposableBean callback interfaces
+*Aware interfaces for specific behavior
+Custom init() and destroy() methods in bean configuration file
+@PostConstruct and @PreDestroy annotations
 ```
 
 ## AOP
