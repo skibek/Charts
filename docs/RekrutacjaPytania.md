@@ -43,6 +43,7 @@ Elementy Scruma (daily, planowanie, różnica ready a done) - Definition of Read
 ## JAVA
 ```
 - HashCode, Equals - Contracts !!!
+Hashing in its simplest form, is a way to assigning a unique code for any variable/object after applying any formula/algorithm on its properties.
 https://www.baeldung.com/java-equals-hashcode-contracts
 
 - Static binding and Dynamic binding in java
@@ -76,6 +77,9 @@ thread.join();
 - String immutable - nie zmienisz obiektu. Zmienia się referencja do obiektu.
 Czy w stringu można trzymać hasła? Nie bo są w pamięci i można zrobić dumpa, (Char[] - tablica char)
 String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
+
+- Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
+
 ```
 
 ## Exceptions
@@ -271,6 +275,20 @@ poprzez parametry i docker ( chyba -p 8080:8080)
 ## General
 ```
 - Autoryzacja vs Authentykacja - Authentication (WHO), Authorization (WHAT CAN DO - Permission)
+```
+
+## Big O - notation
+```
+Constant Time - O(1), 
+Logarithmic Time - O(log n) n call, 
+Linear Time - O(n) for, 
+N Log N Time - O(n log n) for in for finite, 
+Polynomial Time - O(n^p) - for in for = O(n^2), 
+Exponential Time - O(k^n) for Pow
+Factorial Time - O(n!)
+https://www.bigocheatsheet.com/
+https://www.baeldung.com/java-algorithm-complexity
+log 8 = 3 - 2^3 = 8
 ```
 
 ## SSL - HTTPS
