@@ -34,6 +34,12 @@ domain-driven design
 object-oriented analysis and design
 ```
 
+## Scrum
+```
+Elementy Scruma (daily, planowanie, różnica ready a done) - Definition of Ready is focused on user story level characteristics, the Definition of Done is focused on the sprint or release level
+```
+![Scrum]()https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs
+
 ## JAVA
 ```
 - HashCode, Equals - Contracts !!!
@@ -56,10 +62,20 @@ CopyOnWriteArrayList - thread-safe
 Thread - implements Runnable, run only method, Start - create Thread
 Callable - call() - for result, Future obj - to status
 Executor service - https://howtodoinjava.com/java/multi-threading/executor-service-example/
+- Wątki - thread i runnable (jak zatrzymujemy) w runnable:
+private volatile boolean running = true;
+public void terminate() {
+	running = false;
+}
+thread.join();
 
 - ZonedDataTime
 
 - Duration vs Period - Period uses date-based values, while Duration uses time-based values
+
+- String immutable - nie zmienisz obiektu. Zmienia się referencja do obiektu.
+Czy w stringu można trzymać hasła? Nie bo są w pamięci i można zrobić dumpa, (Char[] - tablica char)
+String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 ```
 
 ## Exceptions
