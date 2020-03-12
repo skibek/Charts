@@ -38,7 +38,7 @@ object-oriented analysis and design
 ```
 Elementy Scruma (daily, planowanie, różnica ready a done) - Definition of Ready is focused on user story level characteristics, the Definition of Done is focused on the sprint or release level
 ```
-![Scrum]()https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs
+![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
 
 ## JAVA
 ```
