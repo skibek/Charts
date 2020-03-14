@@ -80,6 +80,7 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 
 - Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
 
+- Log levels - trace / debug / info / warn / error (LogBack)
 ```
 
 ## Exceptions
@@ -146,6 +147,8 @@ For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handl
 - Transaction
 propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
 isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPEATABLE_READ, Isolation.SERIALIZABLE
+@Transactional(rollbackFor = Exception.class) - bo runtime exception zawsze przerwie, application/checked exception nie przerwie
+
 https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
 https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
 https://www.baeldung.com/spring-transactional-propagation-isolation
@@ -230,6 +233,13 @@ strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(
 numbers.stream().mapToInt((x) -> x).summaryStatistics();
 
 https://www.tutorialspoint.com/java8/java8_streams.htm
+```
+
+## GarbageCollector
+```
+OpenJDK GarbageCollectors: 
+Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
+System.gc();
 ```
 
 ## Spring Batch
