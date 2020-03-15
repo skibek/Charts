@@ -369,3 +369,6 @@ https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-
 https://en.wikipedia.org/wiki/K-means_clustering
 ```
 
+# Architecture
+
+![UML2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.stack.imgur.com%2F1dl9G.png&f=1&nofb=1)
