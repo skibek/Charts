@@ -3,7 +3,7 @@
 ## General
 ```
 Bugtrackery - Jira, Redmine
-CD/CI - Jenkins, TeamCity
+CD/CI - Jenkins, Ansible (do maszyn i nstalacja), Terraform, CloudFoundation, TeamCity
 GitFlow - feature/release/hotfix/support branches
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
@@ -11,8 +11,6 @@ https://en.wikipedia.org/wiki/SOLID
 
 Optymalizacja - JMC/JFR, YourKit - Testy np LoadUI/SoapUI, JMeter
 JMC - czy można na PROD (nie można - trzeba wykupić lecencję)
-
-JMS jakie?
 
 - Apache Camel - lub inne EIP, MuleSoft | ...
 Scala, Haskel - functional programming
@@ -47,6 +45,10 @@ Hashing in its simplest form, is a way to assigning a unique code for any variab
 https://www.baeldung.com/java-equals-hashcode-contracts
 
 - Static binding and Dynamic binding in java
+SB - When type of the object is determined at compiled time(by the compiler)
+DB - When type of the object is determined at run-time
+   Dog extends Animal
+   Animal a=new Dog();
 https://www.javatpoint.com/static-binding-and-dynamic-binding
 
 - Co nowego w Java 11 vs 8
@@ -57,18 +59,6 @@ Lambda Expressions, New Date and Time API, Stream API
 -- try-catch-finally
 Try with Resources - for Closeable resources
 Try Catch - in essence, if you have a finally in a try/catch clause, a finally will be executed (after catching the exception before throwing the caught exception out)
-	
-- concurrent 
-CopyOnWriteArrayList - thread-safe
-Thread - implements Runnable, run only method, Start - create Thread
-Callable - call() - for result, Future obj - to status
-Executor service - https://howtodoinjava.com/java/multi-threading/executor-service-example/
-- Wątki - thread i runnable (jak zatrzymujemy) w runnable:
-private volatile boolean running = true;
-public void terminate() {
-	running = false;
-}
-thread.join();
 
 - ZonedDataTime
 
@@ -81,6 +71,22 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
 
 - Log levels - trace / debug / info / warn / error (LogBack)
+```
+
+## Concurrent
+```
+- concurrent 
+CopyOnWriteArrayList - thread-safe
+Thread - implements Runnable, run only method, Start - create Thread
+Callable - call() - for result, Future obj - to status
+Executor service - https://howtodoinjava.com/java/multi-threading/executor-service-example/
+
+- Wątki - thread i runnable (jak zatrzymujemy) w runnable:
+private volatile boolean running = true;
+public void terminate() {
+	running = false;
+}
+thread.join();
 ```
 
 ## Exceptions
@@ -119,7 +125,7 @@ InheritanceType.JOINED
 
 - Hibernate - stany -  Transient / Persistent / Detached 
 
-- Optional a nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
+- Optional - nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
 ```
 
 ## Spring
@@ -194,6 +200,12 @@ Spring provides DispatcherServlet to ensure an incoming request gets dispatched 
 https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 ```
 
+## JMS - standard
+```
+- RabbitMQ - Producer, Exchange - binding/queue, Consumer 
+- Amzaon SQS - Simple Queue Service
+```
+
 ## REST
 ```
 - HEAD metoda
@@ -233,6 +245,7 @@ strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(
 numbers.stream().mapToInt((x) -> x).summaryStatistics();
 
 https://www.tutorialspoint.com/java8/java8_streams.htm
+- biblioteka Vavr (funkcyjne prog)
 ```
 
 ## GarbageCollector
@@ -279,9 +292,13 @@ Hashicorp stack (Terraform, Vault, Consul)
 - Jak ustawić port dla image:
 poprzez docker compose (uruchomienie - docker compose up) - w pliku YAML
 poprzez parametry i docker ( chyba -p 8080:8080)
+
+Amazon Elastic Container Service - ECS
 ```
 
+
 # Algorithms
+
 ## General
 ```
 - Autoryzacja vs Authentykacja - Authentication (WHO), Authorization (WHAT CAN DO - Permission)
