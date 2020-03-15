@@ -371,6 +371,19 @@ https://en.wikipedia.org/wiki/K-means_clustering
 
 # Architecture
 
+```
+Key Performance Indicator (KPI)
+Service Level Agreement (SLA)
+SLAs are documents that outline the wider service agreements between a service provider and its customers, 
+while KPIs are generally used to measure the performance of companies against their strategic goals.
+
+An SLA is forward-looking, while KPIs focus on past performance. 
+Your SLA will set benchmarks ahead of time for you to measure performance in the near future. 
+The KPIs you choose will measure the performance of your business against those benchmarks as time passes. 
+Your SLA could even specify which performance indicators will be used.
+
+```
+
 ![UML2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.stack.imgur.com%2F1dl9G.png&f=1&nofb=1)
 
 ![BPMN2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.signavio.com%2Fwp-content%2Fuploads%2F2012%2F10%2Fposter-preview-bpmn-en.png&f=1&nofb=1)
