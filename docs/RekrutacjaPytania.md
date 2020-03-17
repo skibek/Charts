@@ -73,7 +73,7 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Log levels - trace / debug / info / warn / error (LogBack)
 ```
 
-## Concurrent
+## Concurrency
 ```
 - concurrent 
 CopyOnWriteArrayList - thread-safe
@@ -87,7 +87,23 @@ public void terminate() {
 	running = false;
 }
 thread.join();
+volatile keyword - guarantees visibility of changes to variables across threads
+Essentially, volatile is used to indicate that a variable's value will be modified by different threads.
+Declaring a volatile Java variable means:
+    The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory";
+    Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself. 
+	
+
+- to prevent race condition - synchronized
+- Locks - ReentrantLock (as synchronized), ReadWriteLock, StampedLock
+- Semaphore 
+- atomic - java.concurrent.atomic operation is atomic when you can safely perform the operation in parallel on multiple threads without using the synchronized keyword or locks
+compare-and-swap (CAS), an atomic instruction directly supported by most modern CPUs. Those instructions usually are much faster than synchronizing via locks
+AtomicInteger - atomicInt::incrementAndGet, LongAdder, LongAccumulator
+ConcurrentHashMap
 ```
+https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
+https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/
 
 ## Exceptions
 ```
@@ -124,6 +140,10 @@ InheritanceType.SINGLE_TABLE - DiscriminatorColumn - DiscriminatorValue
 InheritanceType.JOINED
 
 - Hibernate - stany -  Transient / Persistent / Detached 
+
+- Prevent Hibernate LazyInitializationException 
+Fetch - left join fetch - select distinct c from Customer c left join fetch c.orders;
+@BatchSize(size = 100) Set<Bar> bars; - Hibernate.initialize(foo.getBars());
 
 - Optional - nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
 ```
@@ -178,6 +198,8 @@ Custom init() and destroy() methods in bean configuration file
 - Aspect Oriented Programming
 najlepszy przykład Transaction w Spring, oraz Remoting
 Bazuje na wzorcu projektowym - Proxy
+
+AOP - @Aspect, @Around("execution(* com.mycomp
 ```
 
 ## Design patterns in Spring
@@ -190,6 +212,8 @@ a class is used to represent the functionality of another class
 Proxy means ‘in place of’, representing’ or ‘in place of’ or ‘on behalf of’
 A real world example can be a cheque or credit card is a proxy for what is in our bank account. It can be used in place of cash, and provides a means of accessing that cash when required
 Controls and manage access to the object they are protecting
+Interface InvocationHandler and the helper class Proxy
+https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
 - Singleton
 - Model View Controller
 - Template method
