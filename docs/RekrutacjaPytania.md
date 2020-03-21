@@ -69,12 +69,15 @@ Elementy Scruma:
 
 ## JAVA
 ```
-- HashCode, Equals - Contracts !!!
+- HashCode, Equals - Contracts !!! - equal objects must have equal hash codes
 Hashing in its simplest form, is a way to assigning a unique code for any variable/object after applying any formula/algorithm on its properties.
 ```
 https://www.baeldung.com/java-equals-hashcode-contracts
 
 ```
+- Polymorphism is the provision of a single interface to entities of different types
+ Compile Time Polymorphism (static binding or method overloading)
+ Runtime Polymorphism (dynamic binding or method overriding)
 - Static binding and Dynamic binding in java
 SB - When type of the object is determined at compiled time(by the compiler)
 DB - When type of the object is determined at run-time
@@ -82,6 +85,57 @@ DB - When type of the object is determined at run-time
    Animal a=new Dog();
 ```
 https://www.javatpoint.com/static-binding-and-dynamic-binding
+
+```
+- Reflection - API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
+- Immutable class - is one whose state can not be changed once created
+- Abstraction - by interfaces and abstract classes
+- Encapsulation - access control - package access, protected, or private
+
+- Interface define contracts, which implementing classes need to honor.
+ Java 8 default methods in interfaces
+ you cannot extend multiple classes whereas you can implement multiple interfaces
+ 
+ 
+Java Collection hierchy:
+Collection (extends Iterable) - 
+ Set - SortedSet - (interfaces) - (unique, not ordered - withou indexes - get(i))
+  - EnumSet, 
+  - HashSet [uses HashMap below], 
+  - LinkedHashSet, 
+  - TreeSet   
+ List - (interface) - (not unique, ordered)
+  - Stack - LIFO
+  - Vector [synchronized], 
+  - ArrayList, 
+  - LinkedList 
+  - Queue - FIFO
+Map - SortedMap - (interfaces) 
+ - HashMap, 
+ - HashTable [old. synchronized]
+ - EnumMap, 
+ - IdentityHashMap and WeakHashMap [uses reference equality when comparing elements], 
+ - LinkedHashMap
+ - ConcurrentHashMap
+ - TreeMap [It maintains the ordering of keys, by default “natural ordering”]
+ (store key-value pairs)
+
+Iterator - has remove() method
+ReadOnly - Collections.unmodifiableList / Set / Map
+ThreadSafe - Collections.synchronizedList / Set / Map
+
+Fail-fast Iterators - fail as soon as they realized that structure of Collection has been changed since 
+ iteration has begun. Structural changes means adding, removing or updating any element from collection 
+ while one thread is Iterating over that collection.
+ throws ConcurrentModificationException
+Fail-safe iterators are just opposite to fail-fast. 
+ They never fail if you modify the underlying collection on which they are iterating, 
+ because they work on clone of Collection instead of original collection
+ eg: CopyOnWriteArrayList, ConcurrentHashMap 
+
+Collections and Arrays classes are special utility classes to support collection framework core classes
+```
+
 ```
 - Co nowego w Java 11 vs 8
 Modularity, Version String Schema, Multi-jar releases, Var keyword, GC G1
@@ -101,11 +155,7 @@ Try Catch - if you have a finally in a try/catch clause, a finally will be execu
 Czy w stringu można trzymać hasła? Nie bo są w pamięci i można zrobić dumpa, (Char[] - tablica char)
 String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 
-- Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
-
 - Log levels - trace / debug / info / warn / error (LogBack)
-
-- polymorphism is the provision of a single interface to entities of different types
 
 - serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
 ```
