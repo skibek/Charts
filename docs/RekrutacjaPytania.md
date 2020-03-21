@@ -259,27 +259,32 @@ Fetch - left join fetch - select distinct c from Customer c left join fetch c.or
 
 ## Spring
 ```
-- Scope - singleton, prototype, request, session, global-session
-- WEB-INF dir - This means that WEB-INF resources are accessible to the resource loader of your Web-Application and not directly visible for the public. 
+Spring modules 
+- Data Acess/Integration - JDBC, IRM, JMS, Transactions
+- Web - WebSocket, Servlet, Web, Portlet
+- Core - Beans, Context, SpEL
+- Test
+- others - AOP, Aspects, Messaging
 
-- Stereotype annotations
-@Component -  component-scanning mechanism 
-@Repository: When you annotate a class @Repository, spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) into Spring DataAccessException
-@Service - nothing
-@Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
-```
-https://howtodoinjava.com/spring-core/stereotype-annotations/
-```
-- Injection - różnice gdzie - Constuctor, AutoWired, setter
+Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
+Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
+
+Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
+
+Spring IoC container - BeanFactory - ApplicationContext 
+
+- Spring Bean Scope - 
+ singleton - default,  one instance per spring container
+ prototype - This bean scope just reverses the behavior of singleton scope and produces a new instance each and every time a bean is requested
+ request - new bean instance will be created for each web request made by client
+ session - instance of bean per user session
+ global-session - connected to Portlet
+
+- Injection - constuctor, setter
 You can mix both, Constructor-based and Setter-based DI but it is a good rule to use constructor arguments for mandatory dependencies and setters for optional dependencies.
-
-- Servlet Redirect vs Forward
-Simply put, forwarded requests still carry this value, but redirected requests don't.
-```
-https://www.baeldung.com/servlet-redirect-forward
-```
-- Jak Spring dostaje request - define servlets, filters, listeners...
-For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handlers which can work with the DispatcherServlet
+ Constructor - throws ObjectCurrentlyInCreationException in circular dependencies
+ @Required - on setter
+ @Autowired, @Qualifier("personA")
 
 - Transaction
 propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
@@ -289,28 +294,75 @@ isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPE
 https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
 https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
 https://www.baeldung.com/spring-transactional-propagation-isolation
+
 ```
-- Jak wyczyścić kontekst Springa przed uruchomieniem kolejnego testu
-@ExtendWith(SpringExtension.class)
-@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-
-Proxy Bean
-Component Scan
-
 - SpringBoot lifecycle - Life cycle callback methods
 InitializingBean and DisposableBean callback interfaces
 *Aware interfaces for specific behavior
 Custom init() and destroy() methods in bean configuration file
 @PostConstruct and @PreDestroy annotations
+
+Spring Design Patterns
+    Proxy – used heavily in AOP, and remoting.
+    Singleton – beans defined in spring config files are singletons by default.
+    Template method – used extensively to deal with boilerplate repeated code e.g. RestTemplate, JmsTemplate, JpaTemplate.
+    Front Controller – Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers.
+    View Helper – Spring has a number of custom JSP tags, and velocity macros, to assist in separating code from presentation in views.
+    Dependency injection – Center to the whole BeanFactory / ApplicationContext concepts.
+    Factory pattern – BeanFactory for creating instance of an object.
+    
+- WEB-INF dir - This means that WEB-INF resources are accessible to the resource loader of your Web-Application and not directly visible for the public. 
+
+- Servlet Redirect vs Forward
+Simply put, forwarded requests still carry this value, but redirected requests don't.
+```
+https://www.baeldung.com/servlet-redirect-forward
+```
+- Jak Spring dostaje request - define servlets, filters, listeners...
+dispatcher servlet on app url-pattern of servlet- in web.xml
+After receiving an HTTP request, DispatcherServlet consults the HandlerMapping (configuration files) to call the appropriate Controller. The Controller takes the request and calls the appropriate service methods and set model data and then returns view name to the DispatcherServlet.
+For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handlers which can work with the DispatcherServlet
+
+- Jak wyczyścić kontekst Springa przed uruchomieniem kolejnego testu
+@ExtendWith(SpringExtension.class)
+@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+
+Component Scan
+
+
+MVC
+- Stereotype annotations
+@Component -  component-scanning mechanism 
+@Repository: When you annotate a class @Repository, spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) into Spring DataAccessException
+@Service - nothing
+@Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
+```
+https://howtodoinjava.com/spring-core/stereotype-annotations/
+```
+@RestController = @Controller + @ResponseBody
+@RequestMapping(value = "/employees")
+MultipartResolver 
+Validator - or Hibernate Validator
+HandlerInterceptor  - like servlet filter - preHandle(), postHandle() and afterCompletion()
+HandlerExceptionResolver 
+Locale - SessionLocaleResolver, LocaleChangeInterceptor 
+ServletContextAware and ServletConfigAware
 ```
 
 ## AOP
 ```
 - Aspect Oriented Programming
-najlepszy przykład Transaction w Spring, oraz Remoting
-Bazuje na wzorcu projektowym - Proxy
+  najlepszy przykład Transaction w Spring, oraz Remoting
+  
+Bazuje na wzorcu projektowym - Proxy - proxy is an object that looks like another object, but adds special functionality behind the scene
+  
+By AspectJ or Spring XML config
 
+@Before, @AfterReturning, @AfterThrowing, @After, @Around
 AOP - @Aspect, @Around("execution(* com.mycomp
+
+join point always represents a method execution
+Pointcut is a predicate or expression that matches join points
 ```
 
 ## Design patterns in Spring
