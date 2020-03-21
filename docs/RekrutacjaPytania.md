@@ -87,7 +87,8 @@ DB - When type of the object is determined at run-time
 https://www.javatpoint.com/static-binding-and-dynamic-binding
 
 ```
-- Reflection - API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
+- Reflection - API which is used to examine or modify the behavior 
+ of methods, classes, interfaces at runtime.
 - Immutable class - is one whose state can not be changed once created
 - Abstraction - by interfaces and abstract classes
 - Encapsulation - access control - package access, protected, or private
@@ -162,11 +163,20 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 
 ## Concurrency
 ```
-- concurrent 
-CopyOnWriteArrayList - thread-safe
+thread-safe - is code that will work even if many Threads are executing it simultaneously 
+ best stateless
+thread pool is a collection of pre-initialized threads
+
+Structure - 
+ CopyOnWriteArrayList - 
+ ConcurrentHashMap
+ 
 Thread - implements Runnable, run only method, Start - create Thread
 Callable - call() - for result, Future obj - to status
+
 Executor service - 
+ ThreadPoolExecutor - Executors.newFixedThreadPool(10), newCachedThreadPool, newScheduledThreadPool, newSingleThreadExecutor, newWorkStealingPool
+ ForkJoinPool - new ForkJoinPool(numberOfProcessors);
 ```
 https://howtodoinjava.com/java/multi-threading/executor-service-example/
 
@@ -177,14 +187,14 @@ public void terminate() {
 	running = false;
 }
 thread.join();
-volatile keyword - guarantees visibility of changes to variables across threads
+
+- volatile keyword - guarantees visibility of changes to variables across threads
 Essentially, volatile is used to indicate that a variable's value will be modified by different threads.
 Declaring a volatile Java variable means:
     The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory";
     Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself. 
 	
-
-- to prevent race condition - synchronized
+- to prevent race condition - synchronized (it is pessimistic lock - only one)
 - Locks - ReentrantLock (as synchronized), ReadWriteLock, StampedLock
 - Semaphore 
 - atomic - java.concurrent.atomic operation is atomic when you can safely perform the operation in parallel 
@@ -192,10 +202,13 @@ Declaring a volatile Java variable means:
   compare-and-swap (CAS), an atomic instruction directly supported by most modern CPUs. 
   Those instructions usually are much faster than synchronizing via locks
 AtomicInteger - atomicInt::incrementAndGet, LongAdder, LongAccumulator
-ConcurrentHashMap
+
+- CountDownLatch - enables a java thread to wait until other set of threads completes
 ```
 https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
 https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/
+
+
 
 ## Exceptions
 ```
