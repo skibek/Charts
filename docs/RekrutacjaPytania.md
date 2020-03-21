@@ -382,7 +382,12 @@ Amazon Elastic Container Service - ECS
 - Jaba type:
 Heap - Sterta - Binary Tree
 Stack - Stos - Push/Pop LIFO
-HashMap - Entry {Entry next, V value, k key}
+HashMap - array of Entry {Entry next (like LinkedList), V value, k key}
+  ConcurrentHashMap - thread safe
+LinkedList vs ArrayList - O(n) depends on,  
+  - LinkedList - you can walk the list forwards or backwards, but finding a position in the list takes time proportional to the size of the list
+  uses more memory
+  - ArrayList - allow fast random read access, so you can grab any element in constant time. But adding or removing from anywhere but the end requires shifting all the latter elements over
 ```
 
 ## Big O - notation
