@@ -228,6 +228,32 @@ INSERT INTO table2
 SELECT * FROM table1 WHERE condition; 
 
 SQL - Brent Ozar
+
+SQL query to find nth highest salary
+ max function
+```
+```sql
+ SELECT *
+FROM Employee_Test Emp1
+WHERE ( n ) = (
+                SELECT COUNT( DISTINCT ( Emp2.Employee_Salary ) )
+                FROM Employee_Test Emp2
+                WHERE Emp2.Employee_Salary >= Emp1.Employee_Salary
+            }
+```
+```
+inner correlated query
+```
+```sql
+SELECT TOP 1 EMPLOYEE_SALARY
+FROM
+(
+    SELECT DISTINCT TOP N EMPLOYEE_SALARY
+    FROM EMPLOYEE_TEST
+    ORDER BY EMPLOYEE_SALARY DESC
+) A
+WHERE N > 1
+ORDER BY EMPLOYEE_SALARY
 ```
 
 ## JPA/Hibernate
