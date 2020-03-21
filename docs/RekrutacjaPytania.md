@@ -46,6 +46,16 @@ object-oriented analysis and design
 
 https://en.wikipedia.org/wiki/SOLID
 
+```
+Twelve Factor App - from Heroku
+ One codebase tracked in revision control, many deploys
+ Explicitly declare and isolate dependencies
+ Store config in the environment
+ Treat backing services as attached resources
+```
+https://12factor.net/
+https://tanzu.vmware.com/content/blog/beyond-the-twelve-factor-app
+
 ## Scrum
 ```
 Elementy Scruma:
@@ -94,6 +104,10 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
 
 - Log levels - trace / debug / info / warn / error (LogBack)
+
+- polymorphism is the provision of a single interface to entities of different types
+
+- serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
 ```
 
 ## Concurrency
@@ -149,6 +163,8 @@ namiastka programowania
 
 INSERT INTO table2
 SELECT * FROM table1 WHERE condition; 
+
+SQL - Brent Ozar
 ```
 
 ## JPA/Hibernate
@@ -363,6 +379,10 @@ Amazon Elastic Container Service - ECS
 ## General
 ```
 - Autoryzacja vs Authentykacja - Authentication (WHO), Authorization (WHAT CAN DO - Permission)
+- Jaba type:
+Heap - Sterta - Binary Tree
+Stack - Stos - Push/Pop LIFO
+HashMap - Entry {Entry next, V value, k key}
 ```
 
 ## Big O - notation
@@ -431,6 +451,24 @@ Clustering is a Machine Learning technique that involves the grouping of data po
 ```
 https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
 https://en.wikipedia.org/wiki/K-means_clustering
+
+## Startups
+```
+HackCrisis.com / govtech.gov.pl
+Lean startup - Build(Experiment), Measure(Metrics), Learn(Pivot or persevere) -> once more
+
+Zoom - team eeting
+https://www.mentimeter.com - questionnaire during online presentation
+Hackathons - https://www.guaana.com/
+```
+
+
+## Machine Learing
+```
+ML -/ CSV, Python / PowerBI Microsoft (GUI), ML - Keras, TensorFlow
+```
+https://www.kaggle.com/datasets
+
 
 # Architecture
 
