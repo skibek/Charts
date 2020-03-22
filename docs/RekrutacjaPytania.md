@@ -56,6 +56,13 @@ Twelve Factor App - from Heroku
 https://12factor.net/
 https://tanzu.vmware.com/content/blog/beyond-the-twelve-factor-app
 
+```
+CQRS - Command Query Responsibility Segregation
+ clearly separate both the service and the controller layers to deal with 
+ Reads – Queries and 
+ Writes – Commands coming into the system separately
+```
+
 ## Scrum
 ```
 Elementy Scruma:
@@ -135,6 +142,13 @@ Fail-safe iterators are just opposite to fail-fast.
  eg: CopyOnWriteArrayList, ConcurrentHashMap 
 
 Collections and Arrays classes are special utility classes to support collection framework core classes
+
+UUID (Universally Unique IDentifier), also known as GUID (Globally Unique IDentifier) 
+
+tuple can be seen as an ordered collection of objects of different types
+ Pair<String, Integer> pair = Pair.with("Sajal", 12);
+
+ZonedDateTime, OffsetDateTime 
 ```
 
 ```
@@ -175,8 +189,11 @@ Thread - implements Runnable, run only method, Start - create Thread
 Callable - call() - for result, Future obj - to status
 
 Executor service - 
- ThreadPoolExecutor - Executors.newFixedThreadPool(10), newCachedThreadPool, newScheduledThreadPool, newSingleThreadExecutor, newWorkStealingPool
+ ThreadPoolExecutor - Executors.newFixedThreadPool(10), newCachedThreadPool, 
+   newScheduledThreadPool, newSingleThreadExecutor, newWorkStealingPool
  ForkJoinPool - new ForkJoinPool(numberOfProcessors);
+ ExecutorService, shutdown, List<Runnable> shutdownNow(), 
+   awaitTermination, cancel (for Scheduled)
 ```
 https://howtodoinjava.com/java/multi-threading/executor-service-example/
 
@@ -218,6 +235,7 @@ RuntimeException - nie do złapania, zawsze przejdzie
 ```
 https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
 
+
 ## SQL
 ```
 - kursor - Kursory są encją w której przechowywane są wiersze zwrócone przez zapytanie z bazy danych.
@@ -256,6 +274,13 @@ WHERE N > 1
 ORDER BY EMPLOYEE_SALARY
 ```
 
+```
+Remove Duplicate Rows without Temporary Table
+```
+```sql
+ DELETE e1 FROM EMPLOYEE e1, EMPLOYEE e2 WHERE e1.name = e2.name AND e1.id > e2.id;
+```
+
 ## JPA/Hibernate
 ```
 - Optimistic Lock - @Version private Long version;
@@ -267,6 +292,8 @@ https://www.baeldung.com/jpa-pessimistic-locking
 PESSIMISTIC_READ, PESSIMISTIC_WRITE 
 
 - fetch - fetch=FetchType.Lazy | Eager, fetching my entity along with sub-entities using JOIN FETCH
+ FetchType.LAZY
+ FetchType.EAGER
 
 - Inheritance Strategies - 
 @MappedSuperclass
@@ -281,6 +308,14 @@ Fetch - left join fetch - select distinct c from Customer c left join fetch c.or
 @BatchSize(size = 100) Set<Bar> bars; - Hibernate.initialize(foo.getBars());
 
 - Optional - nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
+
+CascadeType.PERSIST : cascade type presist means that save() or persist() operations cascade to related entities.
+CascadeType.MERGE : cascade type merge means that related entities are merged when the owning entity is merged.
+CascadeType.REFRESH : cascade type refresh does the same thing for the refresh() operation.
+CascadeType.REMOVE : cascade type remove removes all related entities association with this setting when the owning entity is deleted.
+CascadeType.DETACH : cascade type detach detaches all related entities if a “manual detach” occurs.
+CascadeType.ALL : cascade type all is shorthand for all of the above cascade operations.
+	
 ```
 
 ## Spring
@@ -327,15 +362,6 @@ InitializingBean and DisposableBean callback interfaces
 *Aware interfaces for specific behavior
 Custom init() and destroy() methods in bean configuration file
 @PostConstruct and @PreDestroy annotations
-
-Spring Design Patterns
-    Proxy – used heavily in AOP, and remoting.
-    Singleton – beans defined in spring config files are singletons by default.
-    Template method – used extensively to deal with boilerplate repeated code e.g. RestTemplate, JmsTemplate, JpaTemplate.
-    Front Controller – Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers.
-    View Helper – Spring has a number of custom JSP tags, and velocity macros, to assist in separating code from presentation in views.
-    Dependency injection – Center to the whole BeanFactory / ApplicationContext concepts.
-    Factory pattern – BeanFactory for creating instance of an object.
     
 - WEB-INF dir - This means that WEB-INF resources are accessible to the resource loader of your Web-Application and not directly visible for the public. 
 
@@ -355,44 +381,20 @@ For example, HttpRequestHandler, WebRequestHandler, MessageHandler are all handl
 
 Component Scan
 
-
-MVC
-- Stereotype annotations
-@Component -  component-scanning mechanism 
-@Repository: When you annotate a class @Repository, spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) into Spring DataAccessException
-@Service - nothing
-@Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
-```
-https://howtodoinjava.com/spring-core/stereotype-annotations/
-```
-@RestController = @Controller + @ResponseBody
-@RequestMapping(value = "/employees")
-MultipartResolver 
-Validator - or Hibernate Validator
-HandlerInterceptor  - like servlet filter - preHandle(), postHandle() and afterCompletion()
-HandlerExceptionResolver 
-Locale - SessionLocaleResolver, LocaleChangeInterceptor 
-ServletContextAware and ServletConfigAware
-```
-
-## AOP
-```
-- Aspect Oriented Programming
-  najlepszy przykład Transaction w Spring, oraz Remoting
-  
-Bazuje na wzorcu projektowym - Proxy - proxy is an object that looks like another object, but adds special functionality behind the scene
-  
-By AspectJ or Spring XML config
-
-@Before, @AfterReturning, @AfterThrowing, @After, @Around
-AOP - @Aspect, @Around("execution(* com.mycomp
-
-join point always represents a method execution
-Pointcut is a predicate or expression that matches join points
+Mapper - mapstruct, modelmapper
 ```
 
 ## Design patterns in Spring
 ```
+Spring Design Patterns
+    Proxy – used heavily in AOP, and remoting.
+    Singleton – beans defined in spring config files are singletons by default.
+    Template method – used extensively to deal with boilerplate repeated code e.g. RestTemplate, JmsTemplate, JpaTemplate.
+    Front Controller – Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers.
+    View Helper – Spring has a number of custom JSP tags, and velocity macros, to assist in separating code from presentation in views.
+    Dependency injection – Center to the whole BeanFactory / ApplicationContext concepts.
+    Factory pattern – BeanFactory for creating instance of an object.
+
 - Dependency injection or inversion of control
 - Factory - Spring BeanFactory Container, Spring ApplicationContext Container; 
 context.getBean("helloApplicationContext");
@@ -415,23 +417,132 @@ Spring provides DispatcherServlet to ensure an incoming request gets dispatched 
 https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
 
-## JMS - standard
+
+## Spring MVC
 ```
-- RabbitMQ - Producer, Exchange - binding/queue, Consumer 
-- Amzaon SQS - Simple Queue Service
+- Stereotype annotations
+ @Component -  component-scanning mechanism 
+ @Repository: When you annotate a class @Repository, spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) into Spring DataAccessException
+ @Service - nothing
+ @Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
+```
+https://howtodoinjava.com/spring-core/stereotype-annotations/
+```
+@RestController = @Controller + @ResponseBody
+@RequestMapping(value = "/employees")
+@PostMapping(value = "/content", produces = MediaType.APPLICATION_JSON_VALUE)
+@ResponseStatus(HttpStatus.BAD_REQUEST, reason = "Some parameters are invalid")
+@RequestBody / @ResponseBody
+@ExceptionHandler, @ControllerAdvice - a global @ExceptionHandler
+
+RestTemplate - for testing, Java Servlet API - synch, blocking
+WebClient - async, non-blocking - Flux,  flux.subscribe()
+
+MultipartResolver 
+Validator - or Hibernate Validator
+HandlerInterceptor  - like servlet filter - preHandle(), postHandle() and afterCompletion()
+HandlerExceptionResolver 
+Locale - SessionLocaleResolver, LocaleChangeInterceptor 
+ServletContextAware and ServletConfigAware
 ```
 
 ## REST
 ```
 - HEAD metoda
-The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.
+ The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.
 - HTTP code 
-1xx - Information, 2xx - Success, 3xx Redirection, 4xx - client error, 5xx - Server error
+ 1xx - Information, 2xx - Success, 3xx Redirection, 4xx - client error, 5xx - Server error
 
 Jak wysłać GET/POST z:
 - Angular - HttpClient
 - Node.js - var http = require('http'); http.request(
 - Sencha - Ext.Ajax.request({
+```
+
+## Spring security
+```
+ Registration, Authentication [Remember me], Single Sign-On
+ LDAP, 
+ OAuth2 
+	[Authorization Server (AS) - issues tokens for authorization] 
+	[Resource Owner - grant access to its protected resources]
+	[Resource Server - requires an access token to allow]
+	[Client - apable of obtaining access tokens from authorization servers]
+	eg: Amazon Cognito,
+ OpenID Connect (OIDC) 
+ SecurityContextHolder.getContext()
+  .getAuthentication()
+  .getUserPrincipal
+ hasRole
+ http.authorizeRequests().antMatchers("/login*").permitAll();
+ http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+  Concurrent Session
+  Session Timeout
+ PasswordEncoderFactories.createDelegatingPasswordEncoder()
+ BCryptPasswordEncoder().encode(plainTextPassword)
+    bcrypt - BCryptPasswordEncoder (Also used for encoding)
+    ldap - LdapShaPasswordEncoder
+    MD4 - Md4PasswordEncoder
+    MD5 - new MessageDigestPasswordEncoder("MD5")
+    noop - NoOpPasswordEncoder
+    pbkdf2 - Pbkdf2PasswordEncoder
+    scrypt - SCryptPasswordEncoder
+    SHA-1 - new MessageDigestPasswordEncoder("SHA-1")
+    SHA-256 - new MessageDigestPasswordEncoder("SHA-256")
+    sha256 - StandardPasswordEncoder
+    argon2 - Argon2PasswordEncoder
+ JSON Web Signature (JWS) 
+ JSON Web Key (JWK)
+```
+
+## Spring Cloud
+```
+ Zuul by Netflix - Reverse Proxy, Router and Filter, @EnableOAuth2Sso, @EnableResourceServer
+ Ribbon - Client Side Load Balancer
+ Eureka - Service Discovery
+ Hystrix - Circuit Breaker, Fallback info
+ turbine - provides a way to aggregate info from Hystrix
+ Archaius - external configuration
+```
+
+## AOP
+```
+- Aspect Oriented Programming
+  najlepszy przykład Transaction w Spring, oraz Remoting
+  
+Bazuje na wzorcu projektowym - Proxy - proxy is an object that looks like another object, but adds special functionality behind the scene
+  
+By AspectJ or Spring XML config
+
+@Before, @AfterReturning, @AfterThrowing, @After, @Around
+AOP - @Aspect, @Around("execution(* com.mycomp
+
+join point always represents a method execution
+Pointcut is a predicate or expression that matches join points
+```
+
+## Spring WebFlux 
+```
+has been added Spring 5.0. It is fully non-blocking, supports reactive streams back pressure
+Reactive programming is a programming paradigm that promotes an asynchronous, non-blocking, 
+ event-driven approach to data processing. 
+ Reactive programming involves modeling data and events as observable data streams and 
+ implementing data processing routines to react to the changes in those streams.
+
+ Publisher - subscribe()
+ Subscriber - onNext, onSubscribe ...
+ Subscription - request(), cancel()
+ Processor
+
+@EnableWebFlux
+ReactiveMongoRepository
+text/event-stream
+```
+
+## JMS - standard
+```
+- RabbitMQ - Producer, Exchange - binding/queue, Consumer 
+- Amzaon SQS - Simple Queue Service
 ```
 
 ## Test
@@ -458,6 +569,9 @@ List<Pet> pets = people.stream()
 List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
 numbers.stream().mapToInt((x) -> x).summaryStatistics();
+
+Java Spliterator interface is an internal iterator that breaks the stream into the smaller parts. 
+These smaller parts can be processed in parallel
 ```
 https://www.tutorialspoint.com/java8/java8_streams.htm
 ```
