@@ -253,7 +253,9 @@ mv *2019*.log ./2019
 tar -czvf 2019.tar.gz ./2019
 rm -rf 2019
 
+```
 -- script in bash
+```
 touch compressByDate.sh
 chmod 755 compressByDate.sh
 
@@ -264,14 +266,14 @@ echo "Im going to compress log files with '$1' in name. Type 'YES' to start"
 read startFlag
 if [ "$startFlag" == "YES" ]; 
 then
-	echo "Im going to compress log files with '$1' in name"
-	mkdir $1
-	mv *$1*.log ./$1
-	tar -czvf $1.tar.gz ./$1
-	rm -rf $1
+  echo "Im going to compress log files with '$1' in name"
+  mkdir $1
+  mv *$1*.log ./$1
+  tar -czvf $1.tar.gz ./$1
+  rm -rf $1
   echo "Done."
 else
-	echo "Exiting"
+  echo "Exiting"
 fi
 
 ./compressByDate.sh 2020-01
