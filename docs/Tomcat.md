@@ -255,7 +255,7 @@ rm -rf 2019
 
 ```
 -- script in bash
-```
+```shell
 touch compressByDate.sh
 chmod 755 compressByDate.sh
 
