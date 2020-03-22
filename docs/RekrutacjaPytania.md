@@ -648,11 +648,11 @@ LinkedList vs ArrayList - O(n) depends on,
 ## Big O - notation
 ```
 Constant Time - O(1), 
-Logarithmic Time - O(log n) n call, 
-Linear Time - O(n) for, 
-N Log N Time - O(n log n) for in for finite, 
-Polynomial Time - O(n^p) - for in for = O(n^2), 
-Exponential Time - O(k^n) for Pow
+Logarithmic Time - O(log n) for, we know how much calls will be, but fewer - i = i * 2
+Linear Time - O(n) for, we know how much calls will be - i++
+N Log N Time - O(n log n) for in for finite, i++ and i = i * 2
+Polynomial Time - O(n^p) - for in for = O(n^2), O(n^3) - 3 times for
+Exponential Time - O(k^n) for Pow - for - i <= Math.pow(2, n); i++
 Factorial Time - O(n!)
 https://www.bigocheatsheet.com/
 https://www.baeldung.com/java-algorithm-complexity
