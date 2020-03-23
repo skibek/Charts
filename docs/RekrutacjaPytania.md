@@ -283,6 +283,8 @@ Remove Duplicate Rows without Temporary Table
 
 ## JPA/Hibernate
 ```
+JDBC perf - pool, batch, commit not so often, select columns
+
 - Optimistic Lock - @Version private Long version;
 ```
 https://www.baeldung.com/jpa-optimistic-locking
@@ -643,7 +645,14 @@ LinkedList vs ArrayList - O(n) depends on,
   - LinkedList - you can walk the list forwards or backwards, but finding a position in the list takes time proportional to the size of the list
   uses more memory
   - ArrayList - allow fast random read access, so you can grab any element in constant time. But adding or removing from anywhere but the end requires shifting all the latter elements over
+  
+Puzzles
+ Stream reduce - to Factorial - silnia
+ Stack - Push, Pop
+ Set - to find duplicate
+ without new - new obj = Class.newInstance() / classLoader.loadClass / obj.clone / serialization_deser
 ```
+https://howtodoinjava.com/puzzles/
 
 ## Big O - notation
 ```
@@ -773,6 +782,81 @@ Your SLA will set benchmarks ahead of time for you to measure performance in the
 The KPIs you choose will measure the performance of your business against those benchmarks as time passes. 
 Your SLA could even specify which performance indicators will be used.
 
+CASE (Computer-Aided Software Engineering, Computer-Aided Systems Engineering
+
+canonical data model (CDM) 
+ is a type of data model that presents data entities and relationships in the simplest possible form.
+ It is generally used in system/database integration processes where data is exchanged between different systems, 
+ regardless of the technology used.
+
+Siatka Zachmana (ang. Zachman Framework) 
+ szablon i sposób postępowania, który pozwala w sposób formalny i ściśle ustrukturalizowany definiować 
+ architekturę systemów korporacyjnych. 
+ Używa siatki bazując na sześciu podstawowych pytaniach (Co, Jak, Gdzie, Kto, Kiedy, Dlaczego) 
+ zadanych pięciu grupom użytkowników (Planujący, Właściciel, Projektant, Twórca, Podwykonawca) 
+ aby przedstawić holistyczny obraz przedsiębiorstwa, które jest modelowane. 
+
+```
+
+## UML - Unified Modeling Language
+```
+Structural UML diagrams
+    Class diagram
+    Component diagram
+    Composite structure diagram
+    Deployment diagram
+    Object diagram
+    Package diagram
+    Profile diagram
+
+Behavioral UML diagrams
+    Activity diagram
+    Communication diagram
+    Interaction overview diagram
+    Sequence diagram
+    State diagram
+    Timing diagram
+    Use case diagram
+
+APPS: Enterprise Architect, Visio, IBM Rational Rose, ArgoUML, Dia, StarUML 
+```
+## C4
+```
+system context
+container
+components
+code
+```
+
+## BPMN - Business Process Model and Notation
+```
+graphical representation for specifying business processes in a business process model
+ event - start, intermediate, end
+ activity - task, sub-process, transaction, call
+ gateway - exclusive, event based, parallel, inclusive, complex
+ connections - sequence flow, message flow, association
+ 
+ swim lanes - poll, lanes
+ data objects
+ groups
+ annotation
+```
+
+## ArchiMate
+```
+bazuje na dwóch paradygmatach
+ warstwowości (wprowadza on warstwę: biznesową, danych i aplikacji oraz techniczną);
+ usługowości (identyfikowane są usługi biznesowe, aplikacyjne i infrastrukturalne).
+```
+https://wolski.pro/archimate-3-0/
+
+## TOGAF (ang. The Open Group Architecture Framework)
+```
+szkielet dla architektury korporacyjnej, który zapewnia kompleksowe podejście do projektowania, planowania, implementacji oraz zarządzania informacyjną architekturą organizacji
+    biznes,
+    aplikacje,
+    dane,
+    technologia
 ```
 
 ![UML2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.stack.imgur.com%2F1dl9G.png&f=1&nofb=1)
