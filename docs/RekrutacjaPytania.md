@@ -42,8 +42,14 @@ https://en.wikipedia.org/wiki/Behavior-driven_development
 TDD
 domain-driven design
 object-oriented analysis and design
-```
 
+SOLID
+ Single Responsibility Principle
+ Open Closed Principle - “Software components should be open for extension, but closed for modification”
+ Liskov’s Substitution Principle
+ Interface Segregation Principle - “Clients should not be forced to implement unnecessary methods which they will not use”
+ Dependency Inversion Principle - “Depend on abstractions, not on concretions”
+```
 https://en.wikipedia.org/wiki/SOLID
 
 ```
@@ -505,6 +511,19 @@ Jak wysłać GET/POST z:
  Hystrix - Circuit Breaker, Fallback info
  turbine - provides a way to aggregate info from Hystrix
  Archaius - external configuration
+```
+## microservices 
+```
+architecture patterns next to SOA - Services Oriented Architecture
+communicate with each other using widely adopted lightweight protocols, 
+such as HTTP and REST, or messaging protocols, such as JMS or AMQP
+
+Principles of Microservices
+ Single responsibility principle - object should have one and only one responsibility
+ Built around business capabilities
+ You build it, you own it!
+ Infrastructure Automation - A service shall be independently deployable
+ Design for Failure - how service failures will affect the user experience
 ```
 
 ## AOP
