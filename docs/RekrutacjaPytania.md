@@ -34,15 +34,30 @@ https://en.wikipedia.org/wiki/Agile_software_development
 
 ```
 Agile software development process
-BDD - behavior-driven development
-```
-https://en.wikipedia.org/wiki/Behavior-driven_development
-
-```
-TDD
-domain-driven design
 object-oriented analysis and design
 
+TDD - Test Driven Development
+ coding, testing (in the form of writing unit tests) and design (in the form of refactoring)
+ 
+ATDD - Acceptance Test Driven Development
+
+BDD - Behaviour Driven Development
+  user story and 5 why's
+  
+DDD - Domain-Driven Design
+ Context
+ Model
+ Ubiquitous Language
+ Bounded Context - boundary of typically a subsystem, or the work of a specific team
+ 
+ Elements:
+ Entity
+ Value Object-OrientedDomain event
+ Aggregate
+ Service
+ Repositories
+ Factories
+ 
 SOLID
  Single Responsibility Principle
  Open Closed Principle - “Software components should be open for extension, but closed for modification”
@@ -421,6 +436,8 @@ JdbcTemplate, JmsTemplate, and JpaTemplate
 - Front Controller
 Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers
 ...
+Gang of Four are the four authors of the book, "Design Patterns: Elements of Reusable Object-Oriented Software
+
 ```
 https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
