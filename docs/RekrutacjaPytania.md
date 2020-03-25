@@ -8,6 +8,8 @@ TOC
   - [JVM](#jvm)
   - [Concurrency](#Concurrency)
   - [Exceptions](#Exceptions)
+  - [Streams](#Streams)
+  - [GarbageCollector](#GarbageCollector)
 - [SQL](#SQL)
 - [JPA/Hibernate](#JPA/Hibernate)
 - [Spring](#Spring)
@@ -21,8 +23,7 @@ TOC
   - [Spring WebFlux](#SpringWebFlux)
 - [JMS](#JMS)
 - [Test](#Test)
-- [Streams](#Streams)
-- [GarbageCollector](#GarbageCollector)
+
 - [Spring Batch](#Spring_Batch)
 - [Apache Spark](#Apache_Spark)
 - [Algorithms](#Algorithms)
@@ -313,6 +314,37 @@ Throwable - Error | Exception
 RuntimeException - nie do złapania, zawsze przejdzie
 ```
 https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
+
+### Streams & Lambda <a name="Streams"></a> 
+```
+- aggregate operations like:
+filter, map, limit, reduce, find, match, and so on.
+
+Arrays.stream(array).reduce((str1, str2) -> str1 + "-" + str2); // accumulator 
+list.stream().distinct().forEach( //remove duplicates
+
+List<Pet> pets = people.stream()
+	. filter((p) -> p.getAge() > 35)
+	. map(Person::getPet)
+	. collect(Collectors.toList()); 
+List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+numbers.stream().mapToInt((x) -> x).summaryStatistics();
+
+Java Spliterator interface is an internal iterator that breaks the stream into the smaller parts. 
+These smaller parts can be processed in parallel
+```
+https://www.tutorialspoint.com/java8/java8_streams.htm
+```
+- biblioteka Vavr (funkcyjne prog)
+```
+
+### GarbageCollector <a name="GarbageCollector"></a> 
+```
+OpenJDK GarbageCollectors: 
+Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
+System.gc();
+```
 
 
 ## SQL <a name="SQL"></a> 
@@ -650,37 +682,6 @@ Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 ```
 
-## Streams & Lambda <a name="Streams"></a> 
-```
-- aggregate operations like:
-filter, map, limit, reduce, find, match, and so on.
-
-Arrays.stream(array).reduce((str1, str2) -> str1 + "-" + str2); // accumulator 
-list.stream().distinct().forEach( //remove duplicates
-
-List<Pet> pets = people.stream()
-	. filter((p) -> p.getAge() > 35)
-	. map(Person::getPet)
-	. collect(Collectors.toList()); 
-List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
-strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
-numbers.stream().mapToInt((x) -> x).summaryStatistics();
-
-Java Spliterator interface is an internal iterator that breaks the stream into the smaller parts. 
-These smaller parts can be processed in parallel
-```
-https://www.tutorialspoint.com/java8/java8_streams.htm
-```
-- biblioteka Vavr (funkcyjne prog)
-```
-
-## GarbageCollector <a name="GarbageCollector"></a> 
-```
-OpenJDK GarbageCollectors: 
-Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
-System.gc();
-```
-
 ## Spring Batch <a name="Spring_Batch"></a> 
 ```
 
@@ -727,7 +728,7 @@ Amazon Elastic Container Service - ECS
 
 # Algorithms <a name="Algorithms"></a> 
 
-## General
+## General - alg
 ```
 - Autoryzacja vs Authentykacja - Authentication (WHO), Authorization (WHAT CAN DO - Permission)
 - Jaba type:
