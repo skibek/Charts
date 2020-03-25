@@ -27,7 +27,19 @@ TOC
 - [Spring Batch](#Spring_Batch)
 - [Apache Spark](#Apache_Spark)
 - [Algorithms](#Algorithms)
-
+  - [General alg](#General_alg)
+  - [Big O](#bigO)
+  - [SSL](#ssl)
+  - [Machine Learing](#Machine_Learing)
+  - [Big O](#bigO)
+- [Architecture](#Architecture)
+  - [UML](#uml)
+  - [C4](#c4)
+  - [BPMN](#bpmn)
+  - [Archimate](#archimate)
+  - [togaf](#togaf)
+  
+  
 ## General <a name="General"></a> 
 ```
 - Bugtrackery - Jira, Redmine
@@ -728,7 +740,7 @@ Amazon Elastic Container Service - ECS
 
 # Algorithms <a name="Algorithms"></a> 
 
-## General - alg
+## General - alg <a name="General_alg"></a> 
 ```
 - Autoryzacja vs Authentykacja - Authentication (WHO), Authorization (WHAT CAN DO - Permission)
 - Jaba type:
@@ -749,7 +761,7 @@ Puzzles
 ```
 https://howtodoinjava.com/puzzles/
 
-## Big O - notation
+## Big O - notation  <a name="bigO"></a> 
 ```
 Constant Time - O(1), 
 Logarithmic Time - O(log n) for, we know how much calls will be, but fewer - i = i * 2
@@ -763,7 +775,7 @@ https://www.baeldung.com/java-algorithm-complexity
 log 8 = 3 - 2^3 = 8
 ```
 
-## SSL - HTTPS
+## SSL - HTTPS <a name="ssl"></a> 
 ```
 - Jak działa SSL (asynchronicznie / i sysnchronicznie później [bo wydajność])
 
@@ -826,14 +838,14 @@ https://www.mentimeter.com - questionnaire during online presentation
 Hackathons - https://www.guaana.com/
 ```
 
-## Machine Learing
+## Machine Learing <a name="Machine_Learing"></a> 
 ```
 ML -/ CSV, Python / PowerBI Microsoft (GUI), ML - Keras, TensorFlow
 ```
 https://www.kaggle.com/datasets
 
 
-# Architecture
+# Architecture <a name="Architecture"></a> 
 
 ```
 Key Performance Indicator (KPI)
@@ -862,7 +874,7 @@ Siatka Zachmana (ang. Zachman Framework)
 
 ```
 
-## UML - Unified Modeling Language
+## UML - Unified Modeling Language <a name="uml"></a> 
 ```
 Structural UML diagrams
     Class diagram
@@ -884,7 +896,7 @@ Behavioral UML diagrams
 
 APPS: Enterprise Architect, Visio, IBM Rational Rose, ArgoUML, Dia, StarUML 
 ```
-## C4
+## C4 <a name="c4"></a> 
 ```
 system context
 container
@@ -892,7 +904,7 @@ components
 code
 ```
 
-## BPMN - Business Process Model and Notation
+## BPMN - Business Process Model and Notation <a name="bpmn"></a> 
 ```
 graphical representation for specifying business processes in a business process model
  event - start, intermediate, end
@@ -906,7 +918,7 @@ graphical representation for specifying business processes in a business process
  annotation
 ```
 
-## ArchiMate
+## ArchiMate <a name="archimate"></a> 
 ```
 bazuje na dwóch paradygmatach
  warstwowości (wprowadza on warstwę: biznesową, danych i aplikacji oraz techniczną);
@@ -914,7 +926,7 @@ bazuje na dwóch paradygmatach
 ```
 https://wolski.pro/archimate-3-0/
 
-## TOGAF (ang. The Open Group Architecture Framework)
+## TOGAF (ang. The Open Group Architecture Framework) <a name="togaf"></a> 
 ```
 szkielet dla architektury korporacyjnej, który zapewnia kompleksowe podejście do projektowania, planowania, implementacji oraz zarządzania informacyjną architekturą organizacji
     biznes,
