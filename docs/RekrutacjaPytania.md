@@ -5,19 +5,20 @@ TOC
 - [Methodologies](#Methodologies)
   - [Scrum](#Scrum)
 - [JAVA](#JAVA)
+  - [JVM](#jvm)
   - [Concurrency](#Concurrency)
   - [Exceptions](#Exceptions)
 - [SQL](#SQL)
 - [JPA/Hibernate](#JPA/Hibernate)
 - [Spring](#Spring)
-- [Design patterns in Spring](#Design_patterns_in_Spring)
-- [Spring MVC](#Spring_MVC)
-- [REST](#REST)
-- [Spring security](#Spring_security)
-- [Spring Cloud](#Spring_Cloud)
-- [microservices](#microservices)
-- [AOP](#AOP)
-- [Spring WebFlux](#SpringWebFlux)
+  - [Design patterns in Spring](#Design_patterns_in_Spring)
+  - [Spring MVC](#Spring_MVC)
+  - [REST](#REST)
+  - [Spring security](#Spring_security)
+  - [Spring Cloud](#Spring_Cloud)
+  - [microservices](#microservices)
+  - [AOP](#AOP)
+  - [Spring WebFlux](#SpringWebFlux)
 - [JMS](#JMS)
 - [Test](#Test)
 - [Streams](#Streams)
@@ -220,6 +221,37 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Log levels - trace / debug / info / warn / error (LogBack)
 
 - serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
+```
+
+### Java Virtual machine (JVM) <a name="jvm"></a>
+```
+is the virtual machine that runs the Java bytecodes. 
+
+ You get this bytecode by compiling the .java files into .class files. .class files contain the bytecodes understood by the JVM.
+JVM delivers the optimal performance for Java applications using many advanced techniques, incorporating a state-of-the-art memory model, garbage collector, and adaptive optimizer.
+JVM comes in two different flavors – client and server. 
+ Although the Server and the Client VMs are similar, the Server VM has been specially tuned to maximize peak operating speed.
+
+Class loader - Loading, Linking, Initialization
+ Types: Bootstrap, extension and application class loaders
+JVM Memory - 
+ Method Area - stores class structures like metadata, the constant runtime pool, and the code for methods.
+ Heap - stores all objects that are created during application execution
+ Stack - store local variables, and intermediate results. 
+  All such variables are local to the thread by which they are created. 
+  Each thread has its own JVM stack, created simultaneously as the thread is created. 
+  So all such local variable are called thread-local variables
+ PC Register - store the physical memory address of the statements which is currently executing
+ Native Method Stack - Many low level code is written in languages like C and C++. 
+  Native method stacks hold the instruction of native code
+JVM Execution Engine - The execution engine reads the byte code and executes one by one. 
+ It uses two inbuilt interpreter and JIT compiler to convert the bytecode to machine code and execute it.
+  Interpreter - converts each byte-code instruction to corresponding native instruction
+  JIT Compiler - (just-in-time) improve performance, not one statement at a time as interpreter
+   Inlining, Local optimizations, Control flow optimizations, Global optimizations, Native code generation
+Java Runtime Environment (JRE) is a software package which bundles the libraries (jars) and the Java Virtual Machine
+    JRE = JVM + libraries to run Java application.
+    JDK = JRE + tools to develop Java Application.
 ```
 
 ### Concurrency <a name="Concurrency"></a>
@@ -791,37 +823,6 @@ Lean startup - Build(Experiment), Measure(Metrics), Learn(Pivot or persevere) ->
 Zoom - team eeting
 https://www.mentimeter.com - questionnaire during online presentation
 Hackathons - https://www.guaana.com/
-```
-
-## Java Virtual machine (JVM) 
-```
-is the virtual machine that runs the Java bytecodes. 
-
- You get this bytecode by compiling the .java files into .class files. .class files contain the bytecodes understood by the JVM.
-JVM delivers the optimal performance for Java applications using many advanced techniques, incorporating a state-of-the-art memory model, garbage collector, and adaptive optimizer.
-JVM comes in two different flavors – client and server. 
- Although the Server and the Client VMs are similar, the Server VM has been specially tuned to maximize peak operating speed.
-
-Class loader - Loading, Linking, Initialization
- Types: Bootstrap, extension and application class loaders
-JVM Memory - 
- Method Area - stores class structures like metadata, the constant runtime pool, and the code for methods.
- Heap - stores all objects that are created during application execution
- Stack - store local variables, and intermediate results. 
-  All such variables are local to the thread by which they are created. 
-  Each thread has its own JVM stack, created simultaneously as the thread is created. 
-  So all such local variable are called thread-local variables
- PC Register - store the physical memory address of the statements which is currently executing
- Native Method Stack - Many low level code is written in languages like C and C++. 
-  Native method stacks hold the instruction of native code
-JVM Execution Engine - The execution engine reads the byte code and executes one by one. 
- It uses two inbuilt interpreter and JIT compiler to convert the bytecode to machine code and execute it.
-  Interpreter - converts each byte-code instruction to corresponding native instruction
-  JIT Compiler - (just-in-time) improve performance, not one statement at a time as interpreter
-   Inlining, Local optimizations, Control flow optimizations, Global optimizations, Native code generation
-Java Runtime Environment (JRE) is a software package which bundles the libraries (jars) and the Java Virtual Machine
-    JRE = JVM + libraries to run Java application.
-    JDK = JRE + tools to develop Java Application.
 ```
 
 ## Machine Learing
