@@ -1,6 +1,32 @@
 # Pytania
 
-## General
+TOC
+- [General](#General)
+- [Methodologies](#Methodologies)
+  - [Scrum](#Scrum)
+- [JAVA](#JAVA)
+  - [Concurrency](#Concurrency)
+  - [Exceptions](#Exceptions)
+- [SQL](#SQL)
+- [JPA/Hibernate](#JPA/Hibernate)
+- [Spring](#Spring)
+- [Design patterns in Spring](#Design_patterns_in_Spring)
+- [Spring MVC](#Spring_MVC)
+- [REST](#REST)
+- [Spring security](#Spring_security)
+- [Spring Cloud](#Spring_Cloud)
+- [microservices](#microservices)
+- [AOP](#AOP)
+- [Spring WebFlux](#SpringWebFlux)
+- [JMS](#JMS)
+- [Test](#Test)
+- [Streams](#Streams)
+- [GarbageCollector](#GarbageCollector)
+- [Spring Batch](#Spring_Batch)
+- [Apache Spark](#Apache_Spark)
+- [Algorithms](#Algorithms)
+
+## General <a name="General"></a> 
 ```
 - Bugtrackery - Jira, Redmine
 - CD/CI - Jenkins, Ansible (do maszyn i nstalacja), Terraform, CloudFoundation, TeamCity
@@ -18,7 +44,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
 ```
 
-## Methodologies
+## Methodologies <a name="Methodologies"></a> 
 ```
 Metodyki zarządzania - 
  Scrum
@@ -84,7 +110,7 @@ CQRS - Command Query Responsibility Segregation
  Writes – Commands coming into the system separately
 ```
 
-## Scrum
+### Scrum <a name="Scrum"></a> 
 ```
 Elementy Scruma:
   daily, 
@@ -95,7 +121,7 @@ Elementy Scruma:
 ```
 ![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
 
-## JAVA
+## JAVA <a name="JAVA"></a> 
 ```
 - HashCode, Equals - Contracts !!! - equal objects must have equal hash codes
 Hashing in its simplest form, is a way to assigning a unique code for any variable/object after applying any formula/algorithm on its properties.
@@ -196,7 +222,7 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
 ```
 
-## Concurrency
+### Concurrency <a name="Concurrency"></a>
 ```
 thread-safe - is code that will work even if many Threads are executing it simultaneously 
  best stateless
@@ -248,7 +274,7 @@ https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurre
 
 
 
-## Exceptions
+### Exceptions <a name="Exceptions"></a> 
 ```
 - Exceptions
 Throwable - Error | Exception
@@ -257,7 +283,7 @@ RuntimeException - nie do złapania, zawsze przejdzie
 https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
 
 
-## SQL
+## SQL <a name="SQL"></a> 
 ```
 - kursor - Kursory są encją w której przechowywane są wiersze zwrócone przez zapytanie z bazy danych.
 Przetwarzając kursory wykonujemy cztery operacje: zadeklarować kursor, otworzyć go, pobrać wiersze, zamknąć kursor
@@ -302,7 +328,7 @@ Remove Duplicate Rows without Temporary Table
  DELETE e1 FROM EMPLOYEE e1, EMPLOYEE e2 WHERE e1.name = e2.name AND e1.id > e2.id;
 ```
 
-## JPA/Hibernate
+## JPA/Hibernate <a name="JPA/Hibernate"></a>
 ```
 JDBC perf - pool, batch, commit not so often, select columns
 
@@ -341,7 +367,7 @@ CascadeType.ALL : cascade type all is shorthand for all of the above cascade ope
 	
 ```
 
-## Spring
+## Spring <a name="Spring"></a> 
 ```
 Spring modules 
 - Data Acess/Integration - JDBC, IRM, JMS, Transactions
@@ -407,7 +433,7 @@ Component Scan
 Mapper - mapstruct, modelmapper
 ```
 
-## Design patterns in Spring
+### Design patterns in Spring <a name="Design_patterns_in_Spring"></a> 
 ```
 Spring Design Patterns
     Proxy – used heavily in AOP, and remoting.
@@ -443,7 +469,7 @@ https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
 https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
 
 
-## Spring MVC
+### Spring MVC <a name="Spring_MVC"></a> 
 ```
 - Stereotype annotations
  @Component -  component-scanning mechanism 
@@ -471,7 +497,7 @@ Locale - SessionLocaleResolver, LocaleChangeInterceptor
 ServletContextAware and ServletConfigAware
 ```
 
-## REST
+### REST <a name="REST"></a>
 ```
 - HEAD metoda
  The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.
@@ -484,7 +510,7 @@ Jak wysłać GET/POST z:
 - Sencha - Ext.Ajax.request({
 ```
 
-## Spring security
+### Spring security <a name="Spring_security"></a> 
 ```
  Registration, Authentication [Remember me], Single Sign-On
  LDAP, 
@@ -520,7 +546,7 @@ Jak wysłać GET/POST z:
  JSON Web Key (JWK)
 ```
 
-## Spring Cloud
+### Spring Cloud <a name="Spring_Cloud"></a> 
 ```
  Zuul by Netflix - Reverse Proxy, Router and Filter, @EnableOAuth2Sso, @EnableResourceServer
  Ribbon - Client Side Load Balancer
@@ -529,7 +555,7 @@ Jak wysłać GET/POST z:
  turbine - provides a way to aggregate info from Hystrix
  Archaius - external configuration
 ```
-## microservices 
+### microservices <a name="microservices"></a> 
 ```
 architecture patterns next to SOA - Services Oriented Architecture
 communicate with each other using widely adopted lightweight protocols, 
@@ -543,7 +569,7 @@ Principles of Microservices
  Design for Failure - how service failures will affect the user experience
 ```
 
-## AOP
+### AOP <a name="AOP"></a> 
 ```
 - Aspect Oriented Programming
   najlepszy przykład Transaction w Spring, oraz Remoting
@@ -559,7 +585,7 @@ join point always represents a method execution
 Pointcut is a predicate or expression that matches join points
 ```
 
-## Spring WebFlux 
+### Spring WebFlux <a name="SpringWebFlux"></a> 
 ```
 has been added Spring 5.0. It is fully non-blocking, supports reactive streams back pressure
 Reactive programming is a programming paradigm that promotes an asynchronous, non-blocking, 
@@ -577,13 +603,13 @@ ReactiveMongoRepository
 text/event-stream
 ```
 
-## JMS - standard
+## JMS - standard <a name="JMS"></a>
 ```
 - RabbitMQ - Producer, Exchange - binding/queue, Consumer 
 - Amzaon SQS - Simple Queue Service
 ```
 
-## Test
+## Test <a name="Test"></a> 
 ```
 Test structure - BDD - given(init), when(operation to test), then (assertion)
 AssertJ, 
@@ -592,7 +618,7 @@ Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 ```
 
-## Streams & Lambda
+## Streams & Lambda <a name="Streams"></a> 
 ```
 - aggregate operations like:
 filter, map, limit, reduce, find, match, and so on.
@@ -616,14 +642,14 @@ https://www.tutorialspoint.com/java8/java8_streams.htm
 - biblioteka Vavr (funkcyjne prog)
 ```
 
-## GarbageCollector
+## GarbageCollector <a name="GarbageCollector"></a> 
 ```
 OpenJDK GarbageCollectors: 
 Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
 System.gc();
 ```
 
-## Spring Batch
+## Spring Batch <a name="Spring_Batch"></a> 
 ```
 
 ```
@@ -634,7 +660,7 @@ System.gc();
 ???
 ```
 
-## Apache Spark  (Apache Flink)
+## Apache Spark  (Apache Flink) <a name="Apache_Spark"></a> 
 ```
 - Modules: Core, SQL, Streaming, MLib, GraphX
 - Query, Analyze, Transform
@@ -667,7 +693,7 @@ Amazon Elastic Container Service - ECS
 ```
 
 
-# Algorithms
+# Algorithms <a name="Algorithms"></a> 
 
 ## General
 ```
