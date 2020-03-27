@@ -45,17 +45,11 @@ TOC
 - Bugtrackery - Jira, Redmine
 - CD/CI - Jenkins, Ansible (do maszyn i nstalacja), Terraform, CloudFoundation, TeamCity
 - GitFlow - feature/release/hotfix/support branches
-```
-https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
-
-
-```
 - Optymalizacja - JMC/JFR, YourKit - Testy np LoadUI/SoapUI, JMeter
 - JMC - czy można na PROD (nie można - trzeba wykupić lecencję)
 
 - Apache Camel - lub inne EIP, MuleSoft | ...
 - Scala, Haskel - functional programming
-
 ```
 
 ## Methodologies <a name="Methodologies"></a> 
@@ -65,14 +59,9 @@ Metodyki zarządzania -
  Kanbanm 
  XP
  Agile methodologies - iterative development, 
- 	where requirements and solutions evolve through collaboration between self-organizing cross-functional teams | 
-	solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).
-	It advocates adaptive planning, evolutionary development, early delivery, and continual improvement
-```
-https://www.cprime.com/resources/what-is-agile-what-is-scrum/
-https://en.wikipedia.org/wiki/Agile_software_development
-
-```
+  where requirements and solutions evolve through collaboration between self-organizing cross-functional teams | 
+  solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).
+  It advocates adaptive planning, evolutionary development, early delivery, and continual improvement
 Agile software development process
 object-oriented analysis and design
 
@@ -104,20 +93,13 @@ SOLID
  Liskov’s Substitution Principle
  Interface Segregation Principle - “Clients should not be forced to implement unnecessary methods which they will not use”
  Dependency Inversion Principle - “Depend on abstractions, not on concretions”
-```
-https://en.wikipedia.org/wiki/SOLID
 
-```
 Twelve Factor App - from Heroku
  One codebase tracked in revision control, many deploys
  Explicitly declare and isolate dependencies
  Store config in the environment
  Treat backing services as attached resources
-```
-https://12factor.net/
-https://tanzu.vmware.com/content/blog/beyond-the-twelve-factor-app
 
-```
 CQRS - Command Query Responsibility Segregation
  clearly separate both the service and the controller layers to deal with 
  Reads – Queries and 
@@ -133,16 +115,12 @@ Elementy Scruma:
   	Definition of Ready is focused on user story level characteristics,
 	Definition of Done is focused on the sprint or release level
 ```
-![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
 
 ## JAVA <a name="JAVA"></a> 
 ```
 - HashCode, Equals - Contracts !!! - equal objects must have equal hash codes
 Hashing in its simplest form, is a way to assigning a unique code for any variable/object after applying any formula/algorithm on its properties.
-```
-https://www.baeldung.com/java-equals-hashcode-contracts
 
-```
 - Polymorphism is the provision of a single interface to entities of different types
  Compile Time Polymorphism (static binding or method overloading)
  Runtime Polymorphism (dynamic binding or method overriding)
@@ -151,10 +129,7 @@ SB - When type of the object is determined at compiled time(by the compiler)
 DB - When type of the object is determined at run-time
    Dog extends Animal
    Animal a=new Dog();
-```
-https://www.javatpoint.com/static-binding-and-dynamic-binding
 
-```
 - Reflection - API which is used to examine or modify the behavior 
  of methods, classes, interfaces at runtime.
 - Immutable class - is one whose state can not be changed once created
@@ -286,10 +261,7 @@ Executor service -
  ForkJoinPool - new ForkJoinPool(numberOfProcessors);
  ExecutorService, shutdown, List<Runnable> shutdownNow(), 
    awaitTermination, cancel (for Scheduled)
-```
-https://howtodoinjava.com/java/multi-threading/executor-service-example/
 
-```
 - Wątki - thread i runnable (jak zatrzymujemy) w runnable:
 private volatile boolean running = true;
 public void terminate() {
@@ -318,10 +290,6 @@ Sekcja krytyczna - w programowaniu współbieżnym fragment kodu programu, któr
  rozwiązuje Semafor lub Mutex
  
 ```
-https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
-https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/
-
-
 
 ### Exceptions <a name="Exceptions"></a> 
 ```
@@ -329,7 +297,6 @@ https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurre
 Throwable - Error | Exception
 RuntimeException - nie do złapania, zawsze przejdzie
 ```
-https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
 
 ### Streams & Lambda <a name="Streams"></a> 
 ```
@@ -349,9 +316,7 @@ numbers.stream().mapToInt((x) -> x).summaryStatistics();
 
 Java Spliterator interface is an internal iterator that breaks the stream into the smaller parts. 
 These smaller parts can be processed in parallel
-```
-https://www.tutorialspoint.com/java8/java8_streams.htm
-```
+
 - biblioteka Vavr (funkcyjne prog)
 ```
 
@@ -361,7 +326,6 @@ OpenJDK GarbageCollectors:
 Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
 System.gc();
 ```
-
 
 ## SQL <a name="SQL"></a> 
 ```
@@ -455,11 +419,6 @@ ETL based data warehousing -  extract, transform, load
 JDBC perf - pool, batch, commit not so often, select columns
 
 - Optimistic Lock - @Version private Long version;
-```
-https://www.baeldung.com/jpa-optimistic-locking
-https://stackoverflow.com/questions/21120043/optimistic-locking-by-concrete-java-example
-https://www.baeldung.com/jpa-pessimistic-locking
-```
 PESSIMISTIC_READ, PESSIMISTIC_WRITE 
 
 - fetch - fetch=FetchType.Lazy | Eager, fetching my entity along with sub-entities using JOIN FETCH
@@ -475,7 +434,6 @@ InheritanceType.JOINED
 N + 1 zapytań, OneToMany, Eager, Query with SQL
 JPA - @Embedded
 
-
 - Hibernate - stany -  Transient / Persistent / Detached 
 
 - Prevent Hibernate LazyInitializationException 
@@ -489,8 +447,7 @@ CascadeType.MERGE : cascade type merge means that related entities are merged wh
 CascadeType.REFRESH : cascade type refresh does the same thing for the refresh() operation.
 CascadeType.REMOVE : cascade type remove removes all related entities association with this setting when the owning entity is deleted.
 CascadeType.DETACH : cascade type detach detaches all related entities if a “manual detach” occurs.
-CascadeType.ALL : cascade type all is shorthand for all of the above cascade operations.
-	
+CascadeType.ALL : cascade type all is shorthand for all of the above cascade operations.	
 ```
 
 ## Spring <a name="Spring"></a> 
@@ -529,12 +486,7 @@ You can mix both, Constructor-based and Setter-based DI but it is a good rule to
 propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
 isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPEATABLE_READ, Isolation.SERIALIZABLE
 @Transactional(rollbackFor = Exception.class) - bo runtime exception zawsze przerwie, application/checked exception nie przerwie
-```
-https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
-https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
-https://www.baeldung.com/spring-transactional-propagation-isolation
 
-```
 - SpringBoot lifecycle - Life cycle callback methods
 InitializingBean and DisposableBean callback interfaces
 *Aware interfaces for specific behavior
@@ -545,9 +497,7 @@ Custom init() and destroy() methods in bean configuration file
 
 - Servlet Redirect vs Forward
 Simply put, forwarded requests still carry this value, but redirected requests don't.
-```
-https://www.baeldung.com/servlet-redirect-forward
-```
+
 - Jak Spring dostaje request - define servlets, filters, listeners...
 dispatcher servlet on app url-pattern of servlet- in web.xml
 After receiving an HTTP request, DispatcherServlet consults the HandlerMapping (configuration files) to call the appropriate Controller. The Controller takes the request and calls the appropriate service methods and set model data and then returns view name to the DispatcherServlet.
@@ -592,11 +542,7 @@ JdbcTemplate, JmsTemplate, and JpaTemplate
 Spring provides DispatcherServlet to ensure an incoming request gets dispatched to your controllers
 ...
 Gang of Four are the four authors of the book, "Design Patterns: Elements of Reusable Object-Oriented Software
-
 ```
-https://www.tutorialspoint.com/design_pattern/proxy_pattern.htm
-https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
-
 
 ### Spring MVC <a name="Spring_MVC"></a> 
 ```
@@ -605,9 +551,7 @@ https://winterbe.com/posts/2009/08/13/seperation-of-concerns-proxy-pattern/
  @Repository: When you annotate a class @Repository, spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) into Spring DataAccessException
  @Service - nothing
  @Controller - marks a class as a Spring Web MVC controller for eg: @RequestMapping
-```
-https://howtodoinjava.com/spring-core/stereotype-annotations/
-```
+
 @RestController = @Controller + @ResponseBody
 @RequestMapping(value = "/employees")
 @PostMapping(value = "/content", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -755,17 +699,6 @@ Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 ```
 
-## Spring Batch <a name="Spring_Batch"></a> 
-```
-
-```
-![Workflow](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdiscoversdkcdn.azureedge.net%2Fpostscontent%2Fspring%2Fbatch%2Fimage1.png&f=1&nofb=1)
-
-## Spring Integration
-```
-???
-```
-
 ## Apache Spark  (Apache Flink) <a name="Apache_Spark"></a> 
 ```
 - Modules: Core, SQL, Streaming, MLib, GraphX
@@ -820,7 +753,6 @@ Puzzles
  Set - to find duplicate
  without new - new obj = Class.newInstance() / classLoader.loadClass / obj.clone / serialization_deser
 ```
-https://howtodoinjava.com/puzzles/
 
 ## Big O - notation  <a name="bigO"></a> 
 ```
@@ -842,18 +774,6 @@ log 8 = 3 - 2^3 = 8
 
 - Symetric & Asymetric
 ```
-https://www.rapidsslonline.com/blog/fundamental-differences-between-symmetric-and-asymmetric-encryption/
-https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences
-
-![Symmetric](https://www.ssl2buy.com/wiki/wp-content/uploads/2015/12/Symmetric-Encryption.png)
-![Asymmetric](https://2teyt17s6x52yehgd4cdel0r-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Asymmetric.png)
-
-
-## Maze
-```
-
-```
-https://www.baeldung.com/java-solve-maze
 
 ## Graph
 ```
@@ -873,21 +793,12 @@ public class Edge {
     public Node end;
     public double weight;
 }
-
-Library: 
 ```
-https://jgrapht.org/
-https://www.graphviz.org/
-
-https://stackoverflow.com/questions/1737627/java-how-to-represent-graphs
-https://www.baeldung.com/java-graphs
 
 ## Clustering
 ```
 Clustering is a Machine Learning technique that involves the grouping of data points
 ```
-https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68
-https://en.wikipedia.org/wiki/K-means_clustering
 
 ## Startups
 ```
@@ -903,8 +814,6 @@ Hackathons - https://www.guaana.com/
 ```
 ML -/ CSV, Python / PowerBI Microsoft (GUI), ML - Keras, TensorFlow
 ```
-https://www.kaggle.com/datasets
-
 
 # Architecture <a name="Architecture"></a> 
 
@@ -995,15 +904,3 @@ szkielet dla architektury korporacyjnej, który zapewnia kompleksowe podejście 
     dane,
     technologia
 ```
-
-![UML2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.stack.imgur.com%2F1dl9G.png&f=1&nofb=1)
-
-![BPMN2](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.signavio.com%2Fwp-content%2Fuploads%2F2012%2F10%2Fposter-preview-bpmn-en.png&f=1&nofb=1)
-
-![SDLC](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.amplewebsol.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fsdlc.png&f=1&nofb=1)
-
-![SDLC models](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.janbasktraining.com%2Fblog%2Fuploads%2Fimages%2F2019%2F02%2FSDLC-Models.jpg&f=1&nofb=1)
-
-![SDLC phases](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.learntek.org%2Fblog%2Fwp-content%2Fuploads%2F2019%2F05%2Fsdlc-phases.png&f=1&nofb=1)
-
-![V model](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F--tHa1GONsaM%2FUWkni_oSX-I%2FAAAAAAAAAw4%2FB7twinmzHvI%2Fs1600%2FV-Model-sdlc2.jpg&f=1&nofb=1)
