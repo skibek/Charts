@@ -894,7 +894,6 @@ bazuje na dwóch paradygmatach
  warstwowości (wprowadza on warstwę: biznesową, danych i aplikacji oraz techniczną);
  usługowości (identyfikowane są usługi biznesowe, aplikacyjne i infrastrukturalne).
 ```
-https://wolski.pro/archimate-3-0/
 
 ## TOGAF (ang. The Open Group Architecture Framework) <a name="togaf"></a> 
 ```
