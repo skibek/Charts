@@ -753,7 +753,42 @@ AssertJ,
 Testcontainers
 Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
+
+Test-driven development (TDD)
+
+    Red – phase where tests are implemented according to requirements, but they still fail
+    Green – phase where module or feature is implemented and tests pass
+    Refactor – phase where a working code is made more readable and well structured
+
+Behaviour-driven development (BDD)
+BDD emerged from and extends TDD. Instead of writing unit tests from specification why not make the specification a test itself. The main idea is that business analysts, project managers, users or anyone without technical, but with sufficient business, knowledge can define tests.
+
+Gherkin - documentation sufficient for testing
+Business Readable, Domain Specific Language created especially to describe behavior without defining how to implement it. Gherkin serves two purposes: it is your project’s documentation and automated tests.
+ 
+    Feature
+    Scenario
+    Given, When, Then, And, But (Steps)
+    Background - like BeforeAll
+	
+    Scenario Outline
+    Examples - many question/answers
+
+Cucumber - understands Gherkin and runs the automated tests
+each step from documentation should have underlying test code that manipulates the application and should have test conditions
+
+JUnit - @RunWith(Cucumber.class) 
+Selenium
+
+Rest-assured - Java DSL for easy testing of REST services
+given().
+    params("firstName", "John", "lastName", "Doe").
+when().
+    post("/greetMe").
+then().
+    body(hasXPath("/greeting/firstName[text()='John']")).
 ```
+https://automationrhapsody.com/introduction-to-cucumber-and-bdd-with-examples/
 
 ## Spring Batch <a name="Spring_Batch"></a> 
 ```
