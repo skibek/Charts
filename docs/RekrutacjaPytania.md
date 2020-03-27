@@ -313,6 +313,10 @@ Declaring a volatile Java variable means:
 AtomicInteger - atomicInt::incrementAndGet, LongAdder, LongAccumulator
 
 - CountDownLatch - enables a java thread to wait until other set of threads completes
+
+Sekcja krytyczna - w programowaniu współbieżnym fragment kodu programu, który w danej chwili powinien być wykonywany przez nie więcej niż jeden wątek. Brak wzajemnego wykluczania się wykonywania sekcji krytycznych może spowodować błędy wykonania, np. dwukrotne zapisanie danej albo niepoprawna modyfikacja
+ rozwiązuje Semafor lub Mutex
+ 
 ```
 https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
 https://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/
@@ -404,6 +408,48 @@ Remove Duplicate Rows without Temporary Table
  DELETE e1 FROM EMPLOYEE e1, EMPLOYEE e2 WHERE e1.name = e2.name AND e1.id > e2.id;
 ```
 
+```
+KEY - is a single or combination of multiple fields in a table
+ Keys are also used to create a relationship among different database tables or views
+ Primary key is a set of one or more fields/columns of a table that uniquely identify a record in a database table. 
+ It can not accept null, duplicate values
+ Foreign Key is a field in a database table that is Primary key in another table  
+ database takes the columns specified in a CREATE INDEX command and sorts the values 
+ into a special data structure known as a B-tree. 
+ B-tree structure supports fast searches with a minimum amount of disk reads, allowing the database engine to 
+ quickly find the starting and stopping points for the query we are using
+ 
+Database transaction - by definition, must be ACID
+atomic (it must either complete in its entirety or have no effect whatsoever), 
+consistent (it must conform to existing constraints in the database), 
+isolated (it must not affect other transactions) 
+durable (it must get written to persistent storage).
+
+1. Begin the transaction.
+2. Execute a set of data manipulations and/or queries.
+3. If no error occurs, then commit the transaction.
+4. If an error occurs, then roll back the transaction.
+
+SET TRANSACTION ISOLATION LEVEL
+    { READ UNCOMMITTED
+    | READ COMMITTED
+    | REPEATABLE READ
+    | SNAPSHOT
+    | SERIALIZABLE
+    
+jdbc:mysql://localhost:3306/library
+
+Spring JDBC to minimize boiler plate (see JdbcTemplate and BeanPropertyRowMapper
+stored procedures
+SQL driver
+Java DataBase Connectivity
+ODBC (ang. Open DataBase Connectivity
+jOOQ
+
+ETL - Insert into by select - Denormalizacja
+ETL based data warehousing -  extract, transform, load
+```
+
 ## JPA/Hibernate <a name="JPA/Hibernate"></a>
 ```
 JDBC perf - pool, batch, commit not so often, select columns
@@ -421,10 +467,14 @@ PESSIMISTIC_READ, PESSIMISTIC_WRITE
  FetchType.EAGER
 
 - Inheritance Strategies - 
-@MappedSuperclass
+@MappedSuperclass - nie jest fizycznie tabelą
 InheritanceType.TABLE_PER_CLASS
 InheritanceType.SINGLE_TABLE - DiscriminatorColumn - DiscriminatorValue
 InheritanceType.JOINED
+
+N + 1 zapytań, OneToMany, Eager, Query with SQL
+JPA - @Embedded
+
 
 - Hibernate - stany -  Transient / Persistent / Detached 
 
@@ -452,6 +502,8 @@ Spring modules
 - Test
 - others - AOP, Aspects, Messaging
 
+Jak działają Adnotacje np: @HasRole - wzorzec Proxy - dodaje kod poprzez AOP, Aspect
+
 Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
 Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
 
@@ -465,6 +517,7 @@ Spring IoC container - BeanFactory - ApplicationContext
  request - new bean instance will be created for each web request made by client
  session - instance of bean per user session
  global-session - connected to Portlet
+@Scope - Prototype - daje możliwość bycia Stanowycm - StateFull, nie jak singleton - Stateless
 
 - Injection - constuctor, setter
 You can mix both, Constructor-based and Setter-based DI but it is a good rule to use constructor arguments for mandatory dependencies and setters for optional dependencies.
@@ -575,6 +628,8 @@ ServletContextAware and ServletConfigAware
 
 ### REST <a name="REST"></a>
 ```
+- PUT, DELETE - idempotentne - zawsze wykonują to samo
+- PATCH - zmienia tylko część
 - HEAD metoda
  The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.
 - HTTP code 
@@ -588,6 +643,10 @@ Jak wysłać GET/POST z:
 
 ### Spring security <a name="Spring_security"></a> 
 ```
+JWT - ma podspis cyfrowy co może pokazać że jest autentyczny
+
+SecurityContext - jak działa: na ThreadLocal - Zmienna Globalna dla danego wątku przez filtr uzupełniana
+
  Registration, Authentication [Remember me], Single Sign-On
  LDAP, 
  OAuth2 
@@ -630,6 +689,8 @@ Jak wysłać GET/POST z:
  Hystrix - Circuit Breaker, Fallback info
  turbine - provides a way to aggregate info from Hystrix
  Archaius - external configuration
+ 
+ Microservices - API Gateway, Hystrix, Zuul(Gateway/Reverse proxy) i Matchowanie po URL
 ```
 ### microservices <a name="microservices"></a> 
 ```
