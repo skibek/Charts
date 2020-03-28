@@ -2,7 +2,21 @@
 
 TOC
 - [General](#General)
-- [Beans](#beans)
+- [Persistence](#Persistence)
+- [mdb](#mdb)
+- [Callback](#Callback)
+- [TimerService](#TimerService)
+- [di](#di)
+- [Interceptors](#Interceptors)
+- [Transaction](#Transaction)
+- [tos](#tos)
+- [JNDI](#JNDI)
+- [Exceptions](#Exceptions)
+- [jaxrs](#jaxrs)
+- [jaxb](#jaxb)
+- [cdi](#cdi)
+- [BeanValidator](#BeanValidator)
+
 
 ## General <a name="General"></a> 
 ```
@@ -61,7 +75,7 @@ InitialContex
 LibrarySessionBeanRemote libraryBean = (LibrarySessionBeanRemote)ctx.lookup("LibrarySessionBean/remote");
 ```
 
-## Persistence API
+## Persistence API <a name="Persistence"></a> 
 ```
 - Entity − A persistent object representing the data-store record. It is good to be serializable.
 - EntityManager − Persistence interface to do data operations like add/delete/update/find on persistent object(entity). 
@@ -83,9 +97,41 @@ Persistence Unit (persistence.xml)
 private EntityManager entityManager; 
 
 return entityManager.createQuery("From Books").getResultList();
+
+Entity Relationships
+-One-to-One − Objects have one-to-one relationship. For example, a passenger can travel using a single ticket at a time.
+-One-to-Many − Objects have one-to-many relationship. For example, a father can have multiple kids.
+-Many-to-One − Objects have many-to-one relationship. For example, multiple kids having a single mother.
+-Many-to-Many − Objects have many-to-many relationship. For example, a book can have multiple authors and an author can write multiple books.
+
+@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+      , fetch = FetchType.EAGER)
+   @JoinTable(table = @Table(name = "book_author"),
+      joinColumns = {@JoinColumn(name = "book_id")},
+      inverseJoinColumns = {@JoinColumn(name = "author_id")})
+	  
+Class.forName(driver).newInstance();
+con = DriverManager.getConnection(url , userName, password);
+
+PreparedStatement st = con.prepareStatement("insert into book(name) values(?)");
+st.setString(1,book.getName());
+int result = st.executeUpdate();  
+		 
+EJB Query Language is quite handy to write custom queries without worrying about underlying database details. It is quite similar to HQL, hibernate query language and is often referred by the name EJBQL
+
+//create an ejbql expression
+String ejbQL = "From Book b where b.name like ?1";
+//create query
+Query query = entityManager.createQuery(ejbQL);
+//substitute parameter.
+query.setParameter(1, "%test%");   
+//execute the query
+return query.getResultList();
+
+ResultSet rs = st.executeQuery("select * from book"); 
 ```
 
-## Message-Driven Bean
+## Message-Driven Bean <a name="mdb"></a> 
 ```
 Message driven bean is a stateless bean and is used to do task asynchronously.
  jbossmq-destinations-service.xml
@@ -117,7 +163,7 @@ Queue queue = (Queue) ctx.lookup("/queue/BookQueue");
 @EJB - Used to specify or inject a dependency as EJB instance into another EJB.
 ```
 
-## Callback:
+## Callback <a name="Callback"></a> 
 ```
 @PostConstruct 	Invoked when a bean is created for the first time.
 @PreDestroy 	Invoked when a bean is removed from the bean pool or is destroyed.
@@ -133,7 +179,7 @@ Queue queue = (Queue) ctx.lookup("/queue/BookQueue");
 @PostLoad 	Invoked when a record is fetched from database and loaded into the entity.
 ```
 
-## TimerService
+## TimerService <a name="TimerService"></a> 
 ```
 @Resource
 private SessionContext context;
@@ -142,14 +188,14 @@ public void timeOutHandler(Timer timer) {
 context.getTimerService().createTimer(duration, "Hello World!");
 ```
 
-## dependency injection
+## dependency injection <a name="di"></a> 
 ```
 @EJB − used to inject other EJB reference.
 @Resource − used to inject datasource or singleton services like sessionContext, timerService etc
 @Inject
 ```
 
-## Interceptors
+## Interceptors <a name="Interceptors"></a> 
 ```
 @AroundInvoke
 public Object methodInterceptor(InvocationContext ctx) throws Exception {
@@ -164,7 +210,7 @@ Levels:
 @Lob @Basic(fetch= FetchType.EAGER) - Blob, Clob, byte[]
 ```
 
-## Transaction
+## Transaction <a name="Transaction"></a> 
 ```
 transaction is a single unit of work items, which follows the ACID properties. ACID stands for Atomic, Consistent, Isolated, and Durable.
 - Atomic − If any of the work item fails, the whole unit will be considered failed. Success meant, all items execute successfully.
@@ -206,7 +252,7 @@ try{
 }
 ```
 
-## Terms of Security
+## Terms of Security <a name="tos"></a> 
 ```
 -Authentication − This is the process ensuring that user accessing the system or application is verified to be authentic.
 -Authorization − This is the process ensuring that authentic user has right level of authority to access system resources.
@@ -235,48 +281,16 @@ public void delete(Book book) {
    </security-role-mapping>
 ```
 
-## JNDI
+## JNDI <a name="JNDI"></a> 
 ```
 JNDI stands for Java Naming and Directory Interface
 -Binding − This refers to assigning a name to an EJB object, which can be used later.
 -Lookup − This refers to looking up and getting an object of EJB.
 
 @LocalBinding(jndiBinding="tutorialsPoint/librarySession")
-
-Entity Relationships
--One-to-One − Objects have one-to-one relationship. For example, a passenger can travel using a single ticket at a time.
--One-to-Many − Objects have one-to-many relationship. For example, a father can have multiple kids.
--Many-to-One − Objects have many-to-one relationship. For example, multiple kids having a single mother.
--Many-to-Many − Objects have many-to-many relationship. For example, a book can have multiple authors and an author can write multiple books.
-
-@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}
-      , fetch = FetchType.EAGER)
-   @JoinTable(table = @Table(name = "book_author"),
-      joinColumns = {@JoinColumn(name = "book_id")},
-      inverseJoinColumns = {@JoinColumn(name = "author_id")})
-	  
-Class.forName(driver).newInstance();
-con = DriverManager.getConnection(url , userName, password);
-
-PreparedStatement st = con.prepareStatement("insert into book(name) values(?)");
-st.setString(1,book.getName());
-int result = st.executeUpdate();  
-		 
-EJB Query Language is quite handy to write custom queries without worrying about underlying database details. It is quite similar to HQL, hibernate query language and is often referred by the name EJBQL
-
-//create an ejbql expression
-String ejbQL = "From Book b where b.name like ?1";
-//create query
-Query query = entityManager.createQuery(ejbQL);
-//substitute parameter.
-query.setParameter(1, "%test%");   
-//execute the query
-return query.getResultList();
-
-ResultSet rs = st.executeQuery("select * from book"); 
 ```
 
-## Exceptions
+## Exceptions <a name="Exceptions"></a> 
 ```
 -Application Exception − If business rule is violated or exception occurs while executing the business logic.
 -System Exception − Any exception, which is not caused by business logic or business code. RuntimeException, RemoteException are SystemException. For example, error during EJB lookup. RuntimeException, RemoteException are SystemException.
@@ -293,7 +307,7 @@ public void initializeContext() throws NamingException {
 } 
 ```
 
-## Java API for RESTful Web Services (JAX-RS)
+## Java API for RESTful Web Services (JAX-RS) <a name="jaxrs"></a> 
 ```
 implementations: Jersey , Apache CXF, Resteasy
 @ApplicationPath - definiuje główną ścieżkę aplikacji / api
@@ -310,23 +324,24 @@ JAX-RS posiada bezpośrednią integrację ze specyfikacją JAXB. Jeśli więc oz
 @Produces(MediaType.APPLICATION_JSON)
 ```
 
-## JAXB - Java Architecture for XML Binding
+## JAXB - Java Architecture for XML Binding <a name="jaxb"></a> 
 ```
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlTransient
 ```
 
-## CDI (Context and Dependency Injection) 
+## CDI (Context and Dependency Injection)  <a name="cdi"></a> 
 ```
 jest standardem wstrzykiwania zależności w Javie EE.
 @Dependent
 @Inject
 ```
 
-## BeanValidator - Hibernate Validator.
+## BeanValidator - Hibernate Validator <a name="BeanValidator"></a> 
 ```
-Bean Validation daje możliwość prostego weryfikowania poprawności pól obiektów w oparciu o zdefiniowane ograniczenia, które stosujemy w postaci adnotacji dodanych nad polami klasami lub metodami dostępowymi (getterami).
+Bean Validation daje możliwość prostego weryfikowania poprawności pól obiektów w oparciu o zdefiniowane ograniczenia, 
+które stosujemy w postaci adnotacji dodanych nad polami klasami lub metodami dostępowymi (getterami).
 @NotNull,
 @IsEmpty
 @Email
