@@ -5,6 +5,7 @@ TOC
 - [Methodologies](#Methodologies)
   - [Scrum](#Scrum)
 - [JAVA](#JAVA)
+  - [Java 11,10,9...](#java11)
   - [JVM](#jvm)
   - [Concurrency](#Concurrency)
   - [Exceptions](#Exceptions)
@@ -135,6 +136,8 @@ Elementy Scruma:
 ```
 ![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
 
+
+
 ## JAVA <a name="JAVA"></a> 
 ```
 - HashCode, Equals - Contracts !!! - equal objects must have equal hash codes
@@ -210,13 +213,6 @@ tuple can be seen as an ordered collection of objects of different types
  Pair<String, Integer> pair = Pair.with("Sajal", 12);
 
 ZonedDateTime, OffsetDateTime 
-```
-
-```
-- Co nowego w Java 11 vs 8
-Modularity, Version String Schema, Multi-jar releases, Var keyword, GC G1
-Java 8 vs 7
-Lambda Expressions, New Date and Time API, Stream API
 
 -- try-catch-finally
 Try with Resources - for Closeable resources
@@ -234,6 +230,55 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Log levels - trace / debug / info / warn / error (LogBack)
 
 - serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
+
+-EQUALS example
+@Override
+public boolean equals(Object that){
+  if(this == that) return true;//if both of them points the same address in memory
+  if(!(that instanceof People)) return false; // if "that" is not a People or a childclass
+  People thatPeople = (People)that; // than we can cast it to People safely
+  return this.name.equals(thatPeople.name) && this.age == thatPeople.age;// if they have the same name and same age, then the 2 objects are equal unless they're pointing to different memory adresses
+}
+@Override
+public int hashCode() {
+  int hash = 3;
+  hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
+  hash = 53 * hash + this.age;
+  return hash;
+}
+```
+
+### Co nowego w Java 11,10,9,8 <a name="java11"></a>
+``` 
+Java 8 
+Before Java 8, interfaces could have only public abstract methods
+interfaces can have static and default - Default Methods
+Lambda Expressions, Functional Interface
+Date/Time API
+forEach
+Optional
+Stream API, Stream Filter
+https://www.javatpoint.com/java-8-features
+
+from Java 9, 
+Project Jigsaw
+JShell
+private methods in interfaces
+Optional Class - ifPresentOrElse, stream, orElseThrow,  Optional.of(str)
+List<String> listOpt = list != null ? list : new ArrayList<>();
+List<String> listOpt = getList().orElseGet(() -> new ArrayList<>());
+
+Immutable Collection Factory
+Collections.unmodifiableSet - Set.of, Map.of, List.copyOf(), toUnmodifiableList
+Enhancements in @Deprecated - since, forRemoval 
+
+Java 10 - Keyword “var” (Local-Variable Type Inference)
+
+Java 11
+Launch Single-File Source-Code Programs
+new String methods : str1.isBlank() str.lines() ...
+Files.writeString
+Modularity, Version String Schema, Multi-jar releases, Var keyword, GC G1
 ```
 
 ### Java Virtual machine (JVM) <a name="jvm"></a>
@@ -331,7 +376,70 @@ RuntimeException - nie do złapania, zawsze przejdzie
 ```
 https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy
 
-### Streams & Lambda <a name="Streams"></a> 
+
+### Lambda <a name="lambda"></a>
+```
+Lambdas in Java 8 - functional interface
+Java 8 Collections API has been rewritten and new Stream API is introduced that uses a lot of functional interfaces. 
+Java 8 has defined a lot of functional interfaces in java.util.function package. 
+Some of the useful java 8 functional interfaces are Consumer, Supplier, Function and Predicate
+
+Any interface with a SAM(Single Abstract Method) is a functional interface
+public interface Function<T, R> { … }
+
+Lambda Expressions syntax is (argument) -> (body)
+
+Function<Integer, String> intToString = Object::toString;
+Function<String, String> quote = s -> "'" + s + "'";
+Function<Integer, String> quoteIntToString = quote.compose(intToString);
+assertEquals("'5'", quoteIntToString.apply(5));
+
+@FunctionalInterface
+public interface ShortToByteFunction {
+    byte applyAsByte(short s);
+}
+
+For primitives - thera are always - IntPredicate, DoublePredicate and LongPredicate
+
+BiFunction
+salaries.replaceAll((name, oldValue) -> name.equals("Freddy") ? oldValue : oldValue + 10000);
+  
+- Supplier -
+functional interface is yet another Function specialization that does not take any arguments
+public double squareLazy(Supplier<Double> lazyValue) {
+    return Math.pow(lazyValue.get(), 2);
+}
+Supplier<Double> lazyValue = () -> {
+    Uninterruptibles.sleepUninterruptibly(1000, TimeUnit.MILLISECONDS);
+    return 9d;
+};
+Double valueSquared = squareLazy(lazyValue);
+
+- Consumers -
+As opposed to the Supplier, the Consumer accepts a generified argument and returns nothing. It is a function that is representing side effects.
+
+- Predicates -
+mathematical logic, a predicate is a function that receives a value and returns a boolean value
+Predicate functional interface is a specialization of a Function that receives a generified value and returns a boolean. A typical use case of the Predicate lambda is to filter a collection of values
+List<String> namesWithA = names.stream()
+  .filter(name -> name.startsWith("A"))
+  .collect(Collectors.toList());
+
+- Operator interfaces -
+are special cases of a function that receive and return the same value type. 
+The UnaryOperator interface receives a single argument. One of its use cases in the Collections API is to replace all values in a list with some computed values of the same type
+names.replaceAll(name -> name.toUpperCase());
+names.replaceAll(String::toUpperCase);
+
+BinaryOperator is a reduction operation
+List<Integer> values = Arrays.asList(3, 5, 8, 9, 12);
+int sum = values.stream().reduce(0, (i1, i2) -> i1 + i2);
+reduce method receives an initial accumulator value and a BinaryOperator function
+
+https://www.journaldev.com/2763/java-8-functional-interfaces
+```
+
+### Streams <a name="Streams"></a> 
 ```
 - aggregate operations like:
 filter, map, limit, reduce, find, match, and so on.
@@ -358,6 +466,7 @@ https://www.tutorialspoint.com/java8/java8_streams.htm
 ### GarbageCollector <a name="GarbageCollector"></a> 
 ```
 OpenJDK GarbageCollectors: 
+G1 provides better overall experience than a throughput-oriented collectors such as the Parallel GC
 Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
 System.gc();
 ```
@@ -472,17 +581,38 @@ InheritanceType.TABLE_PER_CLASS
 InheritanceType.SINGLE_TABLE - DiscriminatorColumn - DiscriminatorValue
 InheritanceType.JOINED
 
+- Optional - nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
+
 N + 1 zapytań, OneToMany, Eager, Query with SQL
+
 JPA - @Embedded
+```
 
+### Hibernate
+```
+Configuration Object:
+- Database Connection − This is handled through one or more configuration files supported by Hibernate. 
+ These files are hibernate.properties and hibernate.cfg.xml.
+- Class Mapping Setup − This component creates the connection between the Java classes and database tables.
+- SessionFactory is a thread safe object and used by all the threads of an application
+- Session Object - A Session is used to get a physical connection with a database. 
+ The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database. 
+ Persistent objects are saved and retrieved through a Session object.
+- Transaction Object - represents a unit of work with the database and most of the RDBMS supports transaction functionality. 
+ Transactions in Hibernate are handled by an underlying transaction manager and transaction (from JDBC or JTA).
+- Query Object - use SQL or Hibernate Query Language (HQL) string to retrieve data from the database and create objects. 
+ A Query instance is used to bind query parameters, limit the number of results returned by the query, and finally to execute the query.
+- Criteria objects are used to create and execute object oriented criteria queries to retrieve objects.
 
-- Hibernate - stany -  Transient / Persistent / Detached 
+Stany -  Transient / Persistent / Detached 
+- transient − A new instance of a persistent class, which is not associated with a Session and has no representation in the database and no identifier value is considered transient by Hibernate.
+- persistent − You can make a transient instance persistent by associating it with a Session. A persistent instance has a representation in the database, an identifier value and is associated with a Session.
+- detached − Once we close the Hibernate Session, the persistent instance will become a detached instance.
+
 
 - Prevent Hibernate LazyInitializationException 
 Fetch - left join fetch - select distinct c from Customer c left join fetch c.orders;
 @BatchSize(size = 100) Set<Bar> bars; - Hibernate.initialize(foo.getBars());
-
-- Optional - nie zwracać NULLa i za każdym razem sprawdzać czy nie NULL (przy zapytaniu z bazy dzięki Optionalom nie trzeba o tym pamiętać)
 
 CascadeType.PERSIST : cascade type presist means that save() or persist() operations cascade to related entities.
 CascadeType.MERGE : cascade type merge means that related entities are merged when the owning entity is merged.
@@ -490,7 +620,24 @@ CascadeType.REFRESH : cascade type refresh does the same thing for the refresh()
 CascadeType.REMOVE : cascade type remove removes all related entities association with this setting when the owning entity is deleted.
 CascadeType.DETACH : cascade type detach detaches all related entities if a “manual detach” occurs.
 CascadeType.ALL : cascade type all is shorthand for all of the above cascade operations.
-	
+
+Cache:
+- first-level cache is the Session cache and is a mandatory cache through which all requests must pass. 
+ The Session object keeps an object under its own power before committing it to the database.
+- Second level cache is an optional cache and first-level cache will always be consulted before any attempt is made to locate an object in the second-level cache. 
+ The second level cache can be configured on a per-class and per-collection basis and mainly responsible for caching objects across sessions.
+
+Interceptors:
+findDirty() - this method is be called when the flush() method is called on a Session object.
+instantiate() - This method is called when a persisted class is instantiated.
+isUnsaved() - this method is called when an object is passed to the saveOrUpdate() method
+Delete() - This method is called before an object is deleted.
+onFlushDirty() - This method is called when Hibernate detects that an object is dirty (i.e. have been changed) during a flush i.e. update operation.
+onLoad() - This method is called before an object is initialized.
+onSave() - This method is called before an object is saved.
+postFlush() - This method is called after a flush has occurred and an object has been updated in memory.
+preFlush() - This method is called before a flush.
+
 ```
 
 ## Spring <a name="Spring"></a> 
@@ -503,20 +650,23 @@ Spring modules
 - others - AOP, Aspects, Messaging
 
 Jak działają Adnotacje np: @HasRole - wzorzec Proxy - dodaje kod poprzez AOP, Aspect
+Spring - Annotaton does'nt work on private methods - creates code in proxy by initialization of bean - on private the bean is not
 
 Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
 Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
+Inversion of Control, or IoC for short, is a process in which an object defines its dependencies without creating them
 
 Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
 
 Spring IoC container - BeanFactory - ApplicationContext 
 
 - Spring Bean Scope - 
- singleton - default,  one instance per spring container
- prototype - This bean scope just reverses the behavior of singleton scope and produces a new instance each and every time a bean is requested
- request - new bean instance will be created for each web request made by client
- session - instance of bean per user session
- global-session - connected to Portlet
+- singleton - default,  one instance per spring container
+- prototype - This bean scope just reverses the behavior of singleton scope and produces a new instance each and every time a bean is requested
+- request - new bean instance will be created for each web request made by client
+- session - instance of bean per user session
+- global-session / application - connected to Portlet
+- websocket
 @Scope - Prototype - daje możliwość bycia Stanowycm - StateFull, nie jak singleton - Stateless
 
 - Injection - constuctor, setter
@@ -529,6 +679,25 @@ You can mix both, Constructor-based and Setter-based DI but it is a good rule to
 propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
 isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPEATABLE_READ, Isolation.SERIALIZABLE
 @Transactional(rollbackFor = Exception.class) - bo runtime exception zawsze przerwie, application/checked exception nie przerwie
+
+@Transactional - configuration as well:
+- the Propagation Type of the transaction
+- the Isolation Level of the transaction
+- a Timeout for the operation wrapped by the transaction
+- a readOnly flag – a hint for the persistence provider that the transaction should be read only
+- the Rollback rules for the transaction
+by default, rollback happens for runtime, unchecked exceptions only. 
+The checked exception does not trigger a rollback of the transaction. 
+We can, of course, configure this behavior with the rollbackFor and noRollbackFor annotation parameters.
+
+Spring creates proxies for all the classes annotated with @Transactional 
+Any self-invocation calls will not start any transaction
+only public methods should be annotated with @Transactional
+
+org.springframework.transaction”, which should be configured with a logging level of TRACE. 
+
+“By default, @Transactional will set the propagation to REQUIRED, the readOnly flag to false, and the rollback only for unchecked exceptions.”
+
 ```
 https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
 https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
@@ -748,6 +917,16 @@ text/event-stream
 
 ## Test <a name="Test"></a> 
 ```
+Test Pyramid:
+- Unit Tests: Unit tests are the tests that target small units of code, preferably in isolation
+- Integration Tests: tests that target the behavior of an application while integrating with external dependencies
+- UI Tests: UI or API - target the behavior of these interfaces, which often are highly interactive in nature
+Manual vs. Automated Tests
+
+This presents a visual representation of the number of tests that we should write at different levels of granularity.
+(Less, Slow) UI -> Integraqtion -> Unit (Most, Fast)
+
+
 Test structure - BDD - given(init), when(operation to test), then (assertion)
 AssertJ, 
 Testcontainers
