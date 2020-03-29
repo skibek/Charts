@@ -2,6 +2,7 @@
 
 TOC
 - [Spring](#Spring)
+  - [IoC](#ioc)
 - [Modules](#Modules)
 - [Transaction](#Transaction)
 - [Design patterns in Spring](#Design_patterns_in_Spring)
@@ -14,21 +15,12 @@ TOC
 - [Hystrix](#Hystrix)
 
 
-
 ## Spring <a name="Spring"></a> 
 ```
 Jak działają Adnotacje np: @HasRole - wzorzec Proxy - dodaje kod poprzez AOP, Aspect
 Spring - Annotaton does'nt work on private methods - creates code in proxy by initialization of bean - on private the bean is not
 
-Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
-Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
-Inversion of Control, or IoC for short, is a process in which an object defines its dependencies without creating them
-
-Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
-
-Spring IoC container - BeanFactory - ApplicationContext 
-
-- Spring Bean Scope - 
+Spring Bean Scope - 
 - singleton - default,  one instance per spring container
 - prototype - This bean scope just reverses the behavior of singleton scope and produces a new instance each and every time a bean is requested
 - request - new bean instance will be created for each web request made by client
@@ -73,6 +65,31 @@ Component Scan
 Mapper - mapstruct, modelmapper
 ```
 
+### IoC DI <a name="ioc"></a> 
+```
+Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
+Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
+Inversion of Control, or IoC for short, is a process in which an object defines its dependencies without creating them
+
+Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
+
+Spring IoC container - BeanFactory - ApplicationContext 
+
+Type of applicationContext:
+-FileSystemXmlApplicationContext − This container loads the definitions of the beans from an XML file. Here you need to provide the full path of the XML bean configuration file to the constructor.
+-ClassPathXmlApplicationContext − This container loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look like bean configuration XML file in CLASSPATH.
+-WebXmlApplicationContext − This container loads the XML file with definitions of all beans from within a web application.
+
+How to implement IoC
+In object-oriented programming, there are several basic techniques to implement inversion of control. These are:
+    using a factory pattern
+    using a service locator pattern
+    using a dependency injection of any given below type:
+        a constructor injection
+        a setter injection
+        an interface injection
+```
+
 ## Modules <a name="Modules"></a> 
 ```
 Spring modules 
@@ -98,7 +115,6 @@ Spring modules
 ```
 
 ### Modules - others
-
 ```
 Spring Boot
 Spring Boot CLI - SDKMAN (Software Development Kit Manager)
@@ -116,7 +132,6 @@ Spring REST Docs (Swagger RAML, Markdown, AsciiDoc, Wikis, Testing)
 Spring WebFlow - flow of view on top of Spring MVC
 Spring Integration - support for EIP Enterprise Integration Patterns
 ```
-
 
 ## Transaction <a name="Transaction"></a>
 ```
