@@ -10,7 +10,13 @@ TOC
   - [Exceptions](#Exceptions)
   - [Streams](#Streams)
   - [GarbageCollector](#GarbageCollector)
+  
 - [SQL](#SQL)
+  - [Scripts](#Scripts)
+  - [Keys](#keys)
+  - [Transaction](#Transaction)
+  - [B-tree](#btree)
+  
 - [JPA/Hibernate](#JPA/Hibernate)
 - [microservices](#microservices)
 - [AOP](#AOP)
@@ -478,6 +484,21 @@ System.gc();
 Przetwarzając kursory wykonujemy cztery operacje: zadeklarować kursor, otworzyć go, pobrać wiersze, zamknąć kursor
 namiastka programowania
 
+jdbc:mysql://localhost:3306/library
+
+Spring JDBC to minimize boiler plate (see JdbcTemplate and BeanPropertyRowMapper
+stored procedures
+SQL driver
+Java DataBase Connectivity
+ODBC (ang. Open DataBase Connectivity
+jOOQ
+
+ETL - Insert into by select - Denormalizacja
+ETL based data warehousing -  extract, transform, load
+```
+
+### Scripts <a name="Scripts"></a> 
+```
 INSERT INTO table2
 SELECT * FROM table1 WHERE condition; 
 
@@ -517,6 +538,7 @@ Remove Duplicate Rows without Temporary Table
  DELETE e1 FROM EMPLOYEE e1, EMPLOYEE e2 WHERE e1.name = e2.name AND e1.id > e2.id;
 ```
 
+### Keys <a name="keys"></a>
 ```
 KEY - is a single or combination of multiple fields in a table
  Keys are also used to create a relationship among different database tables or views
@@ -527,7 +549,10 @@ KEY - is a single or combination of multiple fields in a table
  into a special data structure known as a B-tree. 
  B-tree structure supports fast searches with a minimum amount of disk reads, allowing the database engine to 
  quickly find the starting and stopping points for the query we are using
- 
+```
+
+### Transaction <a name="Transaction"></a>
+```
 Database transaction - by definition, must be ACID
 atomic (it must either complete in its entirety or have no effect whatsoever), 
 consistent (it must conform to existing constraints in the database), 
@@ -545,19 +570,27 @@ SET TRANSACTION ISOLATION LEVEL
     | REPEATABLE READ
     | SNAPSHOT
     | SERIALIZABLE
-    
-jdbc:mysql://localhost:3306/library
-
-Spring JDBC to minimize boiler plate (see JdbcTemplate and BeanPropertyRowMapper
-stored procedures
-SQL driver
-Java DataBase Connectivity
-ODBC (ang. Open DataBase Connectivity
-jOOQ
-
-ETL - Insert into by select - Denormalizacja
-ETL based data warehousing -  extract, transform, load
 ```
+
+### B+Tree <a name="btree"></a>
+```
+SQL Server stores its indexes in B+Tree format. 
+- column comparisons in expressions that use the =, >, >=, <, <=, or BETWEEN operators
+- used for LIKE comparisons if the argument to LIKE is a constant string that does not start with a wildcard character
+There are a few exceptions:
+- temporary hash indexes, created during a hash join operation - for equality comparisons that use the = or <=> operators
+- column store indexes, which are not really indexes at all. 
+However, all key-based clustered and non-clustered persisted SQL Server indexes are organized and stored as B+Trees
+- in Oracle - bitmap index - for columns having low distinct values
+
+the lowest level nodes, also called leaf nodes, hold the actual data. 
+All other nodes including the root node only hold the key values and pointers to the next nodes
+```
+https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver15
+https://dev.mysql.com/doc/refman/8.0/en/index-btree-hash.html
+https://dzone.com/articles/database-btree-indexing-in-sqlite
+https://www.sqlshack.com/top-10-questions-answers-sql-server-indexes/
+
 
 ## JPA/Hibernate <a name="JPA/Hibernate"></a>
 ```
