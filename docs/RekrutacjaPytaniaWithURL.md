@@ -13,17 +13,20 @@ TOC
   - [GarbageCollector](#GarbageCollector)
 - [SQL](#SQL)
 - [JPA/Hibernate](#JPA/Hibernate)
-  - [microservices](#microservices)
-  - [AOP](#AOP)
+- [microservices](#microservices)
+- [AOP](#AOP)
 - [JMS](#JMS)
 - [Test](#Test)
+
 - [Apache Spark](#Apache_Spark)
+
 - [Algorithms](#Algorithms)
   - [General alg](#General_alg)
   - [Big O](#bigO)
   - [SSL](#ssl)
   - [Machine Learing](#Machine_Learing)
   - [Big O](#bigO)
+  
 - [Architecture](#Architecture)
   - [UML](#uml)
   - [C4](#c4)
