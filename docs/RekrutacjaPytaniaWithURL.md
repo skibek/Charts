@@ -178,7 +178,7 @@ Collection (extends Iterable) -
   - Queue - FIFO
 Map - SortedMap - (interfaces) 
  - HashMap, 
- - HashTable [old. synchronized]
+ - HashTable [old. synchronized] - not permits NULL as a key
  - EnumMap, 
  - IdentityHashMap and WeakHashMap [uses reference equality when comparing elements], 
  - LinkedHashMap
@@ -224,8 +224,11 @@ String pool - pula stringów magazynowana w Java Heap Memory, bo są immutable
 - Log levels - trace / debug / info / warn / error (LogBack)
 
 - serialVersionUID - prevent serialization/deserial with java.io.InvalidClassException if this is changed
+```
 
--EQUALS example
+### kawałki kodu <a name="code"></a>
+```java
+//EQUALS example
 @Override
 public boolean equals(Object that){
   if(this == that) return true;//if both of them points the same address in memory
@@ -239,6 +242,84 @@ public int hashCode() {
   hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
   hash = 53 * hash + this.age;
   return hash;
+}
+```
+
+```java
+//Builder
+public class User {
+    //All final attributes
+    private final String firstName; // required
+    private final String lastName; // required
+    private final int age; // optional
+    private final String phone; // optional
+    private final String address; // optional
+ 
+    private User(UserBuilder builder) {
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.age = builder.age;
+        this.phone = builder.phone;
+        this.address = builder.address;
+    }
+ 
+    //All getter, and NO setter to provde immutability
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public String getAddress() {
+        return address;
+    }
+ 
+    @Override
+    public String toString() {
+        return "User: "+this.firstName+", "+this.lastName+", "+this.age+", "+this.phone+", "+this.address;
+    }
+ 
+    public static class UserBuilder 
+    {
+        private final String firstName;
+        private final String lastName;
+        private int age;
+        private String phone;
+        private String address;
+ 
+        public UserBuilder(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        public UserBuilder age(int age) {
+            this.age = age;
+            return this;
+        }
+        public UserBuilder phone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+        public UserBuilder address(String address) {
+            this.address = address;
+            return this;
+        }
+        //Return the finally consrcuted User object
+        public User build() {
+            User user =  new User(this);
+            validateUserObject(user);
+            return user;
+        }
+        private void validateUserObject(User user) {
+            //Do some basic validations to check 
+            //if user object does not break any assumption of system
+        }
+    }
 }
 ```
 
@@ -668,7 +749,32 @@ Pointcut is a predicate or expression that matches join points
 ## JMS - standard <a name="JMS"></a>
 ```
 - RabbitMQ - Producer, Exchange - binding/queue, Consumer 
+- ActiveMQ
 - Amzaon SQS - Simple Queue Service
+
+JMS 
+messaging systems primarily use an asynchronous message passing pattern with no tight relationship 
+between requests and responses
+
+two main styles of asynchronous messaging: 
+- message queue messaging (also known as point-to-point messaging) 
+- publish subscribe messaging
+durable and non-durable messages
+
+Quality Of Service:
+-AT_MOST_ONCE
+-AT LEAST ONCE
+-EXACTLY ONCE
+Bridge:
+-DUPLICATES_OK
+-ONCE_AND_ONLY_ONCE
+
+Apache ActiveMQ : different protocol implementations:
+- AMQP
+- OpenWire
+- MQTT
+- STOMP
+- HornetQ (for use with HornetQ clients).
 ```
 
 ## Test <a name="Test"></a> 
