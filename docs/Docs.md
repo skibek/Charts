@@ -2,7 +2,7 @@
 
 TOC
 - [Docs](#docs)
-  - [Spring](#spring)
+  - [API](#API)
   - [Java helpers](#java_helpers)
   - [Groovy](#groovy)
   - [Estimates](#estimates)
@@ -24,101 +24,7 @@ TOC
 # Docs <a name="docs"></a>
 
 
-## Spring <a name="spring"></a>
-
-https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
-
-### Modules - core
-
-@Core - Resources, Validation, Data Binding, Type conversion, Spring Expression Language (SpEL), Aspect Oriented Programming AOP (standard AspectJ), Null safety, Data Buffer
-
-@Testing - Unit testing, Integration testing (JUnit4, JUnit Juniper - JUnit5)
-
-@Data Access - Transaction Management, DAO, Data Access with JDBC, ORM Object Relational Mapping, Marshalling XML
-
-@Web Servlet - Web MVC - DispatcherServlet (provides a shared algorithm for request processing), Filters, Asynchronous Requests, CORS (Cross-Origin Resource Sharing), Web security, Caching, View techs (Themeleaf, FreeMarker, JSP, Tiles, Jackson, XSLT ...), REST clients (RestTemplate, WebClient), Testing, WebScoket, Others(JSF, Apache Struts, Tapestry)
-
-@WebReactive (fully non-blocking, supports Reactive Streams[JDK9 standard] back pressure) - WebFlux, Reactive, Functional, WebClient, WebSockets
-
-@Integration - Remoting (Remote Method Invocation (RMI), HTTP invoker, Hessian(Caucho), JAX-WS, JMS (Java Message Service), AMQP), JMX (Java Management Extensions), JCA (Java EE Connector Architecture) CCI (Common Client Interface) , Email (JavaMail), Scheduling (eg. Quartz), Cache (JCache (JSR-107))
-
-@Languages - Kotlin, Apache Groovy, Dynamic Language Support
-
-
-### Bean Scopes
-
-- singleton (default) - not compilant with JSR-330 Dependency Injection standard for Java
-- prototype (as new) - default with JSR-330
-- WebApp
-  - request
-  - session
-  - application
-  - websocket
-
-### Transaction - works on top of AOP
-
-https://dzone.com/articles/how-does-spring-transactional
-
-```java
-
-# Standard
-UserTransaction utx = entityManager.getTransaction(); 
-try { 
-    utx.begin(); 
-    businessLogic();
-    utx.commit(); 
-} catch(Exception ex) { 
-    utx.rollback(); 
-    throw ex; 
-} 
-
-#Spring annotation
-@Transactional
-public void businessLogic() {
-... use entity manager inside a transaction ...
-}
-```
-
-To @Transactional to work - @EnableTransactionManagement
-
-transaction propagation are handled automatically (called method can join transaction)
-
-The transactional annotation itself defines the scope of a single database transaction. The database transaction happens inside the scope of apersistence context.
-
-The persistence context is in JPA the EntityManager, implemented internally using an Hibernate Session (when using Hibernate as the persistence provider).
-
-The persistence context is just a synchronizer object that tracks the state of a limited set of Java objects and makes sure that changes on those objects are eventually persisted back into the database.
-
-### Modules - others
-
-```
-Spring Boot
-Spring Boot CLI - SDKMAN (Software Development Kit Manager)
-Spring Data - Repository (CRUDRepository, PagingAndSortingRepository)
-Spring Actuator - metrics, healt
-Spring WebFlux - Rest API with streaming data
-WebSockets, React, RxJS
-Spring Batch
-Spring Shell - command CLI
-Spring Statemachine
-Spring Boot Admin
-Spring Cloud Dataflow - orchestrate
-Spring HATEOAS (Hypermedia As The Engine Of Application State) - REST API + return related actions (Links) you can perform on the resource
-Spring REST Docs (Swagger RAML, Markdown, AsciiDoc, Wikis, Testing)
-Spring WebFlow - flow of view on top of Spring MVC
-Spring Integration - support for EIP Enterprise Integration Patterns
-```
-
-### Security
-
-```
-OpenID Connect (Authentication)- OICD (layer on OAuth2 with ID token - JWT)
-OAuth 2.0 (Authorization)
-OKTA - Auth online
-CORS - Cross-Origin Resource Sharing
-```
-
-### API
+## API
 
 ```
 Swagger
@@ -129,7 +35,7 @@ ORM - JPA, Hibernate, MyBatis ...
 ## Java helpers <a name="java_helpers"></a>
 
 ```
-Lombock - anti boiler plate implementation
+Lombok - anti boiler plate implementation
 jOOQ (LINQ, JPA) - SQL in Java
 Fluxtion - embeddable streaming event processing engine
 Reactive programming - asynchronous I/O and non-blocking processes, asynchronous processing
@@ -268,19 +174,6 @@ https://www.cncf.io/
 
 https://opentracing.io/
 
-## Hystrix
-```
-@EnableCircuitBreaker
-@HystrixCommand
-(consume exception)
-hystrix.stream - info
-Hystrix Dashboard
-@CircuitBreaker (exception)
-
-@EnableRetry
-@Retryable
-@Recover - Exception
-```
 
 ## Monitoring <a name="monitoring"></a>
 
