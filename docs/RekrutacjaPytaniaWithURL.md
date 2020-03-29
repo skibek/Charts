@@ -816,20 +816,6 @@ ATDD - Acceptance Test Driven Development
 
 BDD - Behaviour Driven Development
   user story and 5 why's
-  
-DDD - Domain-Driven Design
- Context
- Model
- Ubiquitous Language
- Bounded Context - boundary of typically a subsystem, or the work of a specific team
- 
- Elements:
- Entity
- Value Object-OrientedDomain event
- Aggregate
- Service
- Repositories
- Factories
  
 SOLID
  Single Responsibility Principle
@@ -855,7 +841,45 @@ CQRS - Command Query Responsibility Segregation
  clearly separate both the service and the controller layers to deal with 
  Reads – Queries and 
  Writes – Commands coming into the system separately
+ 
+CQRS and Event Sourcing
 ```
+
+### DDD <a name="ddd"></a> 
+```
+DDD - Domain-Driven Design
+
+Bounded Context - boundary of typically a subsystem, or the work of a specific team
+
+Root Agregation -
+aggregate is a group of business objects which always need to be consistent. 
+Therefore, we save and update aggregates as a whole inside a transaction
+we should consider using aggregates when there are multiple objects changed as part of the same transaction
+All business operations should go through the root
+The root is what takes cares of all our business invariants
+
+Concepts of the model include:
+-Context - The setting in which a word or statement appears that determines its meaning;
+-Domain - A sphere of knowledge (ontology), influence, or activity. The subject area to which the user applies a program is the domain of the software;
+-Model - A system of abstractions that describes selected aspects of a domain and can be used to solve problems related to that domain;
+-Ubiquitous Language - A language structured around the domain model and used by all team members to connect all the activities of the team with the software.
+
+Strategic Design is a set of principles for maintaining model integrity, distilling the Domain Model, and working with multiple models
+-Bounded context
+-Continuous integration
+-Context map
+
+Building blocks
+- Entity - identity
+- Value object - immutable
+- Aggregate - A collection of objects that are bound together by a root entity, otherwise known as an aggregate root
+- Domain Event - A domain object that defines an event (something that happens)
+- Service - When an operation does not conceptually belong to any objec
+- Repository
+- Factory
+```
+
+
 
 ### Scrum <a name="Scrum"></a> 
 ```
