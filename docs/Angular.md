@@ -13,11 +13,21 @@ Service, Component, Module
 Service - classes that send data and functionality across components - (ng g/generate s/service shared/car/car)
   import { class } from '/.file/other';
   injectable
+  
 Component - reusable section of UI - (ng g/generate c/components car-list) - @angular/core
+Components control views (html). They also communicate with other components and services to bring functionality to your app.
+is a reusable visual building block for the user interface that is rendered as HTML with event handlers to react on user actions and model data changes
   selector - Name
   template / templateUrl - HTML
   styleUrls - CSS
+  
 Module
+Modules consist of one or more components. They do not control any html.
+can be used to - split an app into parts that can be lazy loaded - reused in different applications 
+to create a naming scope for selectors.
+distinct feature implementation, that can consist of zero or more services, components, directives, and pipes
+and import modules that are used to implement that feature
+
 ```
 
 ```
