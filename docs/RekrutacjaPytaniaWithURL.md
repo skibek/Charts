@@ -2,9 +2,8 @@
 
 TOC
 - [General](#General)
-- [Methodologies](#Methodologies)
-  - [Scrum](#Scrum)
 - [JAVA](#JAVA)
+  - [Kawałki kodu](#code)
   - [Java 11,10,9...](#java11)
   - [JVM](#jvm)
   - [Concurrency](#Concurrency)
@@ -19,6 +18,10 @@ TOC
 - [Test](#Test)
 
 - [Apache Spark](#Apache_Spark)
+
+- [Methodologies](#Methodologies)
+  - [DDD](#ddd)
+  - [Scrum](#Scrum)
 
 - [Algorithms](#Algorithms)
   - [General alg](#General_alg)
@@ -52,84 +55,6 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 - Scala, Haskel - functional programming
 
 ```
-
-## Methodologies <a name="Methodologies"></a> 
-```
-Metodyki zarządzania - 
- Scrum
- Kanbanm 
- XP
- Agile methodologies - iterative development, 
- 	where requirements and solutions evolve through collaboration between self-organizing cross-functional teams | 
-	solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).
-	It advocates adaptive planning, evolutionary development, early delivery, and continual improvement
-```
-https://www.cprime.com/resources/what-is-agile-what-is-scrum/
-https://en.wikipedia.org/wiki/Agile_software_development
-
-```
-Agile software development process
-object-oriented analysis and design
-
-TDD - Test Driven Development
- coding, testing (in the form of writing unit tests) and design (in the form of refactoring)
- 
-ATDD - Acceptance Test Driven Development
-
-BDD - Behaviour Driven Development
-  user story and 5 why's
-  
-DDD - Domain-Driven Design
- Context
- Model
- Ubiquitous Language
- Bounded Context - boundary of typically a subsystem, or the work of a specific team
- 
- Elements:
- Entity
- Value Object-OrientedDomain event
- Aggregate
- Service
- Repositories
- Factories
- 
-SOLID
- Single Responsibility Principle
- Open Closed Principle - “Software components should be open for extension, but closed for modification”
- Liskov’s Substitution Principle
- Interface Segregation Principle - “Clients should not be forced to implement unnecessary methods which they will not use”
- Dependency Inversion Principle - “Depend on abstractions, not on concretions”
-```
-https://en.wikipedia.org/wiki/SOLID
-
-```
-Twelve Factor App - from Heroku
- One codebase tracked in revision control, many deploys
- Explicitly declare and isolate dependencies
- Store config in the environment
- Treat backing services as attached resources
-```
-https://12factor.net/
-https://tanzu.vmware.com/content/blog/beyond-the-twelve-factor-app
-
-```
-CQRS - Command Query Responsibility Segregation
- clearly separate both the service and the controller layers to deal with 
- Reads – Queries and 
- Writes – Commands coming into the system separately
-```
-
-### Scrum <a name="Scrum"></a> 
-```
-Elementy Scruma:
-  daily, 
-  planowanie, 
-  różnica ready a done - 
-  	Definition of Ready is focused on user story level characteristics,
-	Definition of Done is focused on the sprint or release level
-```
-![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
-
 
 
 ## JAVA <a name="JAVA"></a> 
@@ -863,6 +788,86 @@ poprzez parametry i docker ( chyba -p 8080:8080)
 
 Amazon Elastic Container Service - ECS
 ```
+
+
+
+## Methodologies <a name="Methodologies"></a> 
+```
+Metodyki zarządzania - 
+ Scrum
+ Kanbanm 
+ XP
+ Agile methodologies - iterative development, 
+ 	where requirements and solutions evolve through collaboration between self-organizing cross-functional teams | 
+	solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).
+	It advocates adaptive planning, evolutionary development, early delivery, and continual improvement
+```
+https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+https://en.wikipedia.org/wiki/Agile_software_development
+
+```
+Agile software development process
+object-oriented analysis and design
+
+TDD - Test Driven Development
+ coding, testing (in the form of writing unit tests) and design (in the form of refactoring)
+ 
+ATDD - Acceptance Test Driven Development
+
+BDD - Behaviour Driven Development
+  user story and 5 why's
+  
+DDD - Domain-Driven Design
+ Context
+ Model
+ Ubiquitous Language
+ Bounded Context - boundary of typically a subsystem, or the work of a specific team
+ 
+ Elements:
+ Entity
+ Value Object-OrientedDomain event
+ Aggregate
+ Service
+ Repositories
+ Factories
+ 
+SOLID
+ Single Responsibility Principle
+ Open Closed Principle - “Software components should be open for extension, but closed for modification”
+ Liskov’s Substitution Principle
+ Interface Segregation Principle - “Clients should not be forced to implement unnecessary methods which they will not use”
+ Dependency Inversion Principle - “Depend on abstractions, not on concretions”
+```
+https://en.wikipedia.org/wiki/SOLID
+
+```
+Twelve Factor App - from Heroku
+ One codebase tracked in revision control, many deploys
+ Explicitly declare and isolate dependencies
+ Store config in the environment
+ Treat backing services as attached resources
+```
+https://12factor.net/
+https://tanzu.vmware.com/content/blog/beyond-the-twelve-factor-app
+
+```
+CQRS - Command Query Responsibility Segregation
+ clearly separate both the service and the controller layers to deal with 
+ Reads – Queries and 
+ Writes – Commands coming into the system separately
+```
+
+### Scrum <a name="Scrum"></a> 
+```
+Elementy Scruma:
+  daily, 
+  planowanie, 
+  różnica ready a done - 
+  	Definition of Ready is focused on user story level characteristics,
+	Definition of Done is focused on the sprint or release level
+```
+![Scrum](https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs)
+
 
 
 # Algorithms <a name="Algorithms"></a> 
