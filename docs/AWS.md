@@ -2,6 +2,7 @@
 
 TOC
 - [AWS services](#awsservices)
+- [Aotherservices](#other_services)
 - [Helpers](#helpers)
 - [Deploy info](#deploy_info)
 
@@ -52,6 +53,28 @@ AWS Account credentials;
 – Tools to configure server instances and make them operate efficiently.
 
 https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf
+```
+
+## other services <a name="other_services"></a>
+
+```
+Amazon Rekognition Service - https://aws.amazon.com/rekognition/
+AWS Kinesis - analyze wideo and Data Streams in real time
+AWS Rekognition Video
+AWS SageMaker - Machine Learning
+AWS EC2 - Virtual server
+AWS Lambda
+AWS S3 - Simple Storage Service
+AWS Aurora - relation DB
+AWS Redshift - data warehouse
+AWS Elasticsearch
+AWS DynamoDB - nosql DB
+Amazon SQS - Simple Queue Service
+Amazon SNS - Simple Notification Service - topic pub/sub
+Amazon MQ - message broker
+Amazon EventBridge - event bus
+Amazon Chime - chat, video, audio like skype
+Amazon Corretto - OpenJDK
 ```
 
 ## Helpers <a name="helpers"></a>
