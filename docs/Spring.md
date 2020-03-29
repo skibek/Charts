@@ -1,8 +1,9 @@
 # Pytania
 
 TOC
-- [General](#General)
 - [Spring](#Spring)
+- [Modules](#Modules)
+- [Transaction](#Transaction)
 - [Design patterns in Spring](#Design_patterns_in_Spring)
 - [Spring MVC](#Spring_MVC)
 - [REST](#REST)
@@ -10,18 +11,12 @@ TOC
 - [Spring Cloud](#Spring_Cloud)
 - [Spring WebFlux](#SpringWebFlux)
 - [Spring Batch](#Spring_Batch)
+- [Hystrix](#Hystrix)
 
 
 
 ## Spring <a name="Spring"></a> 
 ```
-Spring modules 
-- Data Acess/Integration - JDBC, IRM, JMS, Transactions
-- Web - WebSocket, Servlet, Web, Portlet
-- Core - Beans, Context, SpEL
-- Test
-- others - AOP, Aspects, Messaging
-
 Jak działają Adnotacje np: @HasRole - wzorzec Proxy - dodaje kod poprzez AOP, Aspect
 Spring - Annotaton does'nt work on private methods - creates code in proxy by initialization of bean - on private the bean is not
 
@@ -41,42 +36,16 @@ Spring IoC container - BeanFactory - ApplicationContext
 - global-session / application - connected to Portlet
 - websocket
 @Scope - Prototype - daje możliwość bycia Stanowycm - StateFull, nie jak singleton - Stateless
+INFO:
+- singleton (default) - not compilant with JSR-330 Dependency Injection standard for Java
+- prototype (as new) - default with JSR-330
 
 - Injection - constuctor, setter
 You can mix both, Constructor-based and Setter-based DI but it is a good rule to use constructor arguments for mandatory dependencies and setters for optional dependencies.
  Constructor - throws ObjectCurrentlyInCreationException in circular dependencies
  @Required - on setter
  @Autowired, @Qualifier("personA")
-
-- Transaction
-propagation - default PROPAGATION_REQUIRED, PROPAGATION_REQUIRES_NEW, PROPAGATION_MANDATORY, PROPAGATION_SUPPORTS, PROPAGATION_NESTED ..
-isolation - default (DEFAULT) READ_COMMITTED in mssql,postgres... Isolation.REPEATABLE_READ, Isolation.SERIALIZABLE
-@Transactional(rollbackFor = Exception.class) - bo runtime exception zawsze przerwie, application/checked exception nie przerwie
-
-@Transactional - configuration as well:
-- the Propagation Type of the transaction
-- the Isolation Level of the transaction
-- a Timeout for the operation wrapped by the transaction
-- a readOnly flag – a hint for the persistence provider that the transaction should be read only
-- the Rollback rules for the transaction
-by default, rollback happens for runtime, unchecked exceptions only. 
-The checked exception does not trigger a rollback of the transaction. 
-We can, of course, configure this behavior with the rollbackFor and noRollbackFor annotation parameters.
-
-Spring creates proxies for all the classes annotated with @Transactional 
-Any self-invocation calls will not start any transaction
-only public methods should be annotated with @Transactional
-
-org.springframework.transaction”, which should be configured with a logging level of TRACE. 
-
-“By default, @Transactional will set the propagation to REQUIRED, the readOnly flag to false, and the rollback only for unchecked exceptions.”
-
-```
-https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
-https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
-https://www.baeldung.com/spring-transactional-propagation-isolation
-
-```
+ 
 - SpringBoot lifecycle - Life cycle callback methods
 InitializingBean and DisposableBean callback interfaces
 *Aware interfaces for specific behavior
@@ -103,6 +72,115 @@ Component Scan
 
 Mapper - mapstruct, modelmapper
 ```
+
+## Modules <a name="Modules"></a> 
+```
+Spring modules 
+- Data Acess/Integration - JDBC, IRM, JMS, Transactions
+- Web - WebSocket, Servlet, Web, Portlet
+- Core - Beans, Context, SpEL
+- Test
+- others - AOP, Aspects, Messaging
+
+@Core - Resources, Validation, Data Binding, Type conversion, Spring Expression Language (SpEL), Aspect Oriented Programming AOP (standard AspectJ), Null safety, Data Buffer
+
+@Testing - Unit testing, Integration testing (JUnit4, JUnit Juniper - JUnit5)
+
+@Data Access - Transaction Management, DAO, Data Access with JDBC, ORM Object Relational Mapping, Marshalling XML
+
+@Web Servlet - Web MVC - DispatcherServlet (provides a shared algorithm for request processing), Filters, Asynchronous Requests, CORS (Cross-Origin Resource Sharing), Web security, Caching, View techs (Themeleaf, FreeMarker, JSP, Tiles, Jackson, XSLT ...), REST clients (RestTemplate, WebClient), Testing, WebScoket, Others(JSF, Apache Struts, Tapestry)
+
+@WebReactive (fully non-blocking, supports Reactive Streams[JDK9 standard] back pressure) - WebFlux, Reactive, Functional, WebClient, WebSockets
+
+@Integration - Remoting (Remote Method Invocation (RMI), HTTP invoker, Hessian(Caucho), JAX-WS, JMS (Java Message Service), AMQP), JMX (Java Management Extensions), JCA (Java EE Connector Architecture) CCI (Common Client Interface) , Email (JavaMail), Scheduling (eg. Quartz), Cache (JCache (JSR-107))
+
+@Languages - Kotlin, Apache Groovy, Dynamic Language Support
+```
+
+### Modules - others
+
+```
+Spring Boot
+Spring Boot CLI - SDKMAN (Software Development Kit Manager)
+Spring Data - Repository (CRUDRepository, PagingAndSortingRepository)
+Spring Actuator - metrics, healt
+Spring WebFlux - Rest API with streaming data
+WebSockets, React, RxJS
+Spring Batch
+Spring Shell - command CLI
+Spring Statemachine
+Spring Boot Admin
+Spring Cloud Dataflow - orchestrate
+Spring HATEOAS (Hypermedia As The Engine Of Application State) - REST API + return related actions (Links) you can perform on the resource
+Spring REST Docs (Swagger RAML, Markdown, AsciiDoc, Wikis, Testing)
+Spring WebFlow - flow of view on top of Spring MVC
+Spring Integration - support for EIP Enterprise Integration Patterns
+```
+
+
+## Transaction <a name="Transaction"></a>
+```
+- propagation - 
+PROPAGATION_REQUIRED - default, 
+PROPAGATION_REQUIRES_NEW, 
+PROPAGATION_MANDATORY, 
+PROPAGATION_SUPPORTS, 
+PROPAGATION_NESTED
+
+- isolation
+default (DEFAULT) READ_COMMITTED in mssql,postgres... 
+Isolation.REPEATABLE_READ, 
+Isolation.SERIALIZABLE
+
+@Transactional(rollbackFor = Exception.class) 
+- bo runtime exception zawsze przerwie, application/checked exception nie przerwie
+
+@Transactional - configuration as well:
+- the Propagation Type of the transaction
+- the Isolation Level of the transaction
+- a Timeout for the operation wrapped by the transaction
+- a readOnly flag – a hint for the persistence provider that the transaction should be read only
+- the Rollback rules for the transaction
+by default, rollback happens for runtime, unchecked exceptions only. 
+The checked exception does not trigger a rollback of the transaction. 
+We can, of course, configure this behavior with the rollbackFor and noRollbackFor annotation parameters.
+
+Spring creates proxies for all the classes annotated with @Transactional 
+Any self-invocation calls will not start any transaction
+only public methods should be annotated with @Transactional
+
+org.springframework.transaction”, which should be configured with a logging level of TRACE. 
+
+“By default, @Transactional will set the propagation to REQUIRED, the readOnly flag to false, and the rollback only for unchecked exceptions.”
+
+
+UserTransaction utx = entityManager.getTransaction(); 
+try { 
+    utx.begin(); 
+    businessLogic();
+    utx.commit(); 
+} catch(Exception ex) { 
+    utx.rollback(); 
+    throw ex; 
+} 
+Spring annotation
+@Transactional
+public void businessLogic() {
+... use entity manager inside a transaction ...
+}
+
+To @Transactional to work - @EnableTransactionManagement
+transaction propagation are handled automatically (called method can join transaction)
+
+The transactional annotation itself defines the scope of a single database transaction. 
+The database transaction happens inside the scope of a persistence context.
+The persistence context is in JPA the EntityManager, implemented internally using an 
+Hibernate Session (when using Hibernate as the persistence provider).
+```
+https://netjs.blogspot.com/2018/08/spring-transaction-attributes-propagation-isolation-settings.html
+https://stackoverflow.com/questions/8490852/spring-transactional-isolation-propagation
+https://www.baeldung.com/spring-transactional-propagation-isolation
+
 
 ### Design patterns in Spring <a name="Design_patterns_in_Spring"></a> 
 ```
@@ -187,6 +265,11 @@ Jak wysłać GET/POST z:
 ```
 JWT - ma podspis cyfrowy co może pokazać że jest autentyczny
 
+OpenID Connect (Authentication)- OICD (layer on OAuth2 with ID token - JWT)
+OAuth 2.0 (Authorization)
+OKTA - Auth online
+CORS - Cross-Origin Resource Sharing
+
 SecurityContext - jak działa: na ThreadLocal - Zmienna Globalna dla danego wątku przez filtr uzupełniana
 
  Registration, Authentication [Remember me], Single Sign-On
@@ -262,4 +345,18 @@ text/event-stream
 ## Spring Integration
 ```
 ???
+```
+
+## Hystrix <a name="Hystrix"></a> 
+```
+@EnableCircuitBreaker
+@HystrixCommand
+(consume exception)
+hystrix.stream - info
+Hystrix Dashboard
+@CircuitBreaker (exception)
+
+@EnableRetry
+@Retryable
+@Recover - Exception
 ```
