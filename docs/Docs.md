@@ -15,7 +15,6 @@ TOC
 - [Testing TDD](#testing)
   - Testing SMTP email
   - API Testing
-- [AWS](#aws)
 - [Tech news](#tech_news)
   - [Mobile apps](#mobile_apps)
   - [Others - TODO](#others_todo)
