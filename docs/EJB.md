@@ -31,7 +31,10 @@ Java Specification Requests (JSRs)
 ## Beans <a name="beans"></a> 
 ```
 Beans:
-- Session (Single session)
+- Session (Single session) - encapsulates business logic. It can be invoked by local, remote or web service client
+ @Stateless - It doesn't maintain state of a client between multiple method calls
+ @Statefull - It maintains state of a client across multiple requests
+ @Singleton - One instance per application, it is shared between clients and supports concurrent access
 - Entity (Persistent data storage)
 - Message Driven (JMS)
 
@@ -40,16 +43,14 @@ Beans:
 @Id, @GeneratedValue - strategy = GenerationType.AUTO, IDENTITY
 @Column(name="id")
 
-@Stateless
 EJB Container normally creates a pool of few stateless bean’s objects and use these objects to process client’s request.
+```
 
+```
 @PersistenceContext
 private EntityManager em;
 	
 em.persist(customer);
-
-@Statefull
-@Singleton
 
 @WebServlet(name = "AccountController", urlPatterns = {"/AccountController"})
 public class AccountController extends HttpServlet {
@@ -129,11 +130,18 @@ query.setParameter(1, "%test%");
 return query.getResultList();
 
 ResultSet rs = st.executeQuery("select * from book"); 
+
+@Embeddable - POJO added to Entity
+@Lob @Basic(fetch= FetchType.EAGER) - Blob, Clob, byte[]
 ```
 
 ## Message-Driven Bean <a name="mdb"></a> 
 ```
 Message driven bean is a stateless bean and is used to do task asynchronously.
+
+Point-to-Point Messaging Domain - Queue 
+Publisher/Subscriber Messaging Domain - Topic
+
  jbossmq-destinations-service.xml
  
 <mbean code="org.jboss.mq.server.jmx.Queue"  
@@ -158,19 +166,20 @@ Queue queue = (Queue) ctx.lookup("/queue/BookQueue");
  QueueConnection connection =  factory.createQueueConnection();
  QueueSession session = connection.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
  QueueSender sender = session.createSender(queue);
-		 
-		 
-@EJB - Used to specify or inject a dependency as EJB instance into another EJB.
 ```
+![mess](https://www.javatpoint.com/ejbpages/images/jms-programming-model.png)
 
 ## Callback <a name="Callback"></a> 
 ```
+Stateless
 @PostConstruct 	Invoked when a bean is created for the first time.
 @PreDestroy 	Invoked when a bean is removed from the bean pool or is destroyed.
+
++ Statefull
 @PostActivate 	Invoked when a bean is loaded to be used.
 @PrePassivate 	Invoked when a bean is put back to bean pool.
 
-@Entity bean
+Entity bean
 @PrePersist 	Invoked when an entity is created in database.
 @PostPersist 	Invoked after an entity is created in database.
 @PreRemove 	Invoked when an entity is deleted from the database.
@@ -190,7 +199,7 @@ context.getTimerService().createTimer(duration, "Hello World!");
 
 ## dependency injection <a name="di"></a> 
 ```
-@EJB − used to inject other EJB reference.
+@EJB − used to inject other EJB reference. Used to specify or inject a dependency as EJB instance into another EJB.
 @Resource − used to inject datasource or singleton services like sessionContext, timerService etc
 @Inject
 ```
@@ -202,12 +211,9 @@ public Object methodInterceptor(InvocationContext ctx) throws Exception {
 
 @Interceptors ({BusinessInterceptor.class})
 Levels:
-- Default − Default interceptor is invoked for every bean within deployment.Default interceptor can be applied only via xml (ejb-jar.xml).
+- Default − Default interceptor is invoked for every bean within deployment. Default interceptor can be applied only via xml (ejb-jar.xml).
 - Class − Class level interceptor is invoked for every method of the bean. Class level interceptor can be applied both by annotation of via xml(ejb-jar.xml).
 - Method− Method level interceptor is invoked for a particular method of the bean. Method level interceptor can be applied both by annotation of via xml(ejb-jar.xml).
-
-@Embeddable - POJO added to Entity
-@Lob @Basic(fetch= FetchType.EAGER) - Blob, Clob, byte[]
 ```
 
 ## Transaction <a name="Transaction"></a> 
