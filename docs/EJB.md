@@ -3,7 +3,7 @@
 TOC
 - [General](#General)
 - [Persistence](#Persistence)
-- [mdb](#mdb)
+- [Message driven bean](#mdb)
 - [Callback](#Callback)
 - [TimerService](#TimerService)
 - [di](#di)
@@ -138,6 +138,7 @@ ResultSet rs = st.executeQuery("select * from book");
 ## Message-Driven Bean <a name="mdb"></a> 
 ```
 Message driven bean is a stateless bean and is used to do task asynchronously.
+bean that contains business logic. But, it is invoked by passing the message. So, it is like JMS Receiver
 
 Point-to-Point Messaging Domain - Queue 
 Publisher/Subscriber Messaging Domain - Topic
@@ -168,6 +169,7 @@ Queue queue = (Queue) ctx.lookup("/queue/BookQueue");
  QueueSender sender = session.createSender(queue);
 ```
 ![mess](https://www.javatpoint.com/ejbpages/images/jms-programming-model.png)
+
 
 ## Callback <a name="Callback"></a> 
 ```
