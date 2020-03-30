@@ -619,6 +619,15 @@ InheritanceType.JOINED
 N + 1 zapytań, OneToMany, Eager, Query with SQL
 
 JPA - @Embedded
+
+Locking
+We can acquire exclusive locks using ‘SELECT … FOR UPDATE‘ statements
+entityManager.find(Student.class, studentId, LockModeType.PESSIMISTIC_READ);
+query.setLockMode(LockModeType.PESSIMISTIC_WRITE);
+LockMode:
+-PESSIMISTIC_READ – allows us to obtain a shared lock and prevent the data from being updated or deleted
+-PESSIMISTIC_WRITE – allows us to obtain an exclusive lock and prevent the data from being read, updated or deleted
+-PESSIMISTIC_FORCE_INCREMENT – works like PESSIMISTIC_WRITE and it additionally increments a version attribute of a versioned entity
 ```
 
 ### Hibernate
