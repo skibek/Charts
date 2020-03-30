@@ -851,10 +851,10 @@ BDD - Behaviour Driven Development
   user story and 5 why's
  
 SOLID
- Single Responsibility Principle
+ Single Responsibility Principle - A class should only have a single responsibility
  Open Closed Principle - “Software components should be open for extension, but closed for modification”
- Liskov’s Substitution Principle
- Interface Segregation Principle - “Clients should not be forced to implement unnecessary methods which they will not use”
+ Liskov’s Substitution Principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+ Interface Segregation Principle - Many client-specific interfaces are better than one general-purpose interface, “Clients should not be forced to implement unnecessary methods which they will not use”
  Dependency Inversion Principle - “Depend on abstractions, not on concretions”
 ```
 https://en.wikipedia.org/wiki/SOLID
