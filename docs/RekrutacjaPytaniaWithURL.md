@@ -680,7 +680,16 @@ onSave() - This method is called before an object is saved.
 postFlush() - This method is called after a flush has occurred and an object has been updated in memory.
 preFlush() - This method is called before a flush.
 
+
+N+1 Queries Problem
+@OneToMany(fetch=FetchType.LAZY, mappedBy="author")
+@Fetch(FetchMode.SUBSELECT)
+private List<Book> books;
+or
+@Query("select distinct a from Author a join fetch a.books")
+List<Author> findAll();
 ```
+https://medium.com/@mansoor_ali/hibernate-n-1-queries-problem-8a926b69f618
 
 
 ### microservices <a name="microservices"></a> 
