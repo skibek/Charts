@@ -968,8 +968,21 @@ Puzzles
  Stack - Push, Pop
  Set - to find duplicate
  without new - new obj = Class.newInstance() / classLoader.loadClass / obj.clone / serialization_deser
+ 
+You should know:
+DFS - Depth First Search - Graph/Tree traversal - Stack FILO
+BFS - Breadth First Search - difference in Order yo DFS - Queue FIFO
+Matching Parenthesis problem [Bracket] - use of Stack
+Using Hash Tables - 2D matrix, keep track of visited, caching or memorization - as data structure
+Variables/Pointers manipulation - eg. search of palindrome
+Reverse linked list (duplicates , removing duplicates)
+Sorting fundamentals (quicksort, mergesort, bubblesort techniques, runtime of a sort, time space complexity) - O(n log n)
+Recursion - non practical, but
+Custom data structures (object oriented programming)
+Binary search - fundamental. Get half and check if is higer or lower O(log n)
 ```
 https://howtodoinjava.com/puzzles/
+https://www.youtube.com/watch?v=zHczhZn-z30
 
 ## Big O - notation  <a name="bigO"></a> 
 ```
