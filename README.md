@@ -48,4 +48,4 @@ Charts with knowledge
 
 [- conferencePL](docs/conferencePL.md)
 
-[- ...](docs/RekrutacjaPytaniaWithURL.md.md)
+[- ...](docs/RekrutacjaPytaniaWithURL.md)
