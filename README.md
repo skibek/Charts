@@ -44,7 +44,8 @@ Charts with knowledge
 
 [- Tomcat](docs/Tomcat.md)
 
+---
 
-[- Tomcat](docs/conferencePL.md)
+[- conferencePL](docs/conferencePL.md)
 
 [- ...](docs/RekrutacjaPytaniaWithURL.md.md)
