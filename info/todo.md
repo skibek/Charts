@@ -22,6 +22,7 @@ https://buddy.works
 https://blog.allegro.tech/
 https://github.com/dariuszzbyrad/hexagonal-architecture-by-example
 https://blog.allegro.tech/2020/05/hexagonal-architecture-by-example.html
+https://www.baeldung.com/java-archunit-intro
 
 dokładnie PMD/spotbugs/errorprone część z tych rzeczy dają za darmo
 ```
