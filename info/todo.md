@@ -51,4 +51,8 @@ https://bgjar.com/
 https://cssreference.io/
 
 https://public-apis.io/
+
+https://free-for.dev/#/?id=email
+
+https://dev.to/intrepid_ishan/git-commit-message-convention-that-you-can-follow-1709
 ```
