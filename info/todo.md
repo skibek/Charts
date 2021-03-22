@@ -25,4 +25,30 @@ https://blog.allegro.tech/2020/05/hexagonal-architecture-by-example.html
 https://www.baeldung.com/java-archunit-intro
 
 dokładnie PMD/spotbugs/errorprone część z tych rzeczy dają za darmo
+
+https://clockify.me/tracker
+
+CSS
+https://learnui.design/tools/data-color-picker.html#palette
+https://cssgrid-generator.netlify.app/
+https://bennettfeely.com/clippy/
+
+Regex
+https://regex101.com/  https://www.regexpal.com/
+https://www.fontpair.co/
+https://animista.net/play
+https://httpstatuses.com/
+https://learn-anything.xyz/
+https://jsonlint.com/#
+
+https://untools.co/ - Tools for resolving problems
+https://1loc.dev/ - Favorite JavaScript Utilities
+https://loading.io/
+https://fontawesome.com/
+https://devdocs.io/
+
+https://bgjar.com/
+https://cssreference.io/
+
+https://public-apis.io/
 ```
