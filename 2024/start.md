@@ -27,15 +27,15 @@ Forma opisowa, user stories, use cases
 Aspekty jakości - 
 
 standard ISO 25010
-Charakterystyka	Podcharakterystyki
-Funkcjonalność	Poprawność, Właściwości, Współpraca z innymi systemami, Bezpieczeństwo funkcjonalne
-Niezborność	Zgodność, Interoperacyjność, Przenośność, Dostępność
-Użyteczność	Przystępność, Efektywność, Satysfakcja użytkownika
-Zawartość	Dokładność, Właściwości, Zakres
-Zużycie zasobów	Wykorzystanie pamięci, Wykorzystanie procesora, Wykorzystanie dysku, Wykorzystanie sieci
-Utrzymanie	Możliwość testowania, Czytelność kodu, Łatwość modyfikacji, Stabilność
-Przenośność	Zgodność z normami, Łatwość instalacji, Łatwość konfiguracji
-Współpraca	Zgodność z innymi systemami, Współpraca z innymi użytkownikami, Łatwość integracji
+Charakterystyka	- Podcharakterystyki
+Funkcjonalność	- Poprawność, Właściwości, Współpraca z innymi systemami, Bezpieczeństwo funkcjonalne
+Niezborność	- Zgodność, Interoperacyjność, Przenośność, Dostępność
+Użyteczność	- Przystępność, Efektywność, Satysfakcja użytkownika
+Zawartość	- Dokładność, Właściwości, Zakres
+Zużycie zasobów	- Wykorzystanie pamięci, Wykorzystanie procesora, Wykorzystanie dysku, Wykorzystanie sieci
+Utrzymanie	- Możliwość testowania, Czytelność kodu, Łatwość modyfikacji, Stabilność
+Przenośność -	Zgodność z normami, Łatwość instalacji, Łatwość konfiguracji
+Współpraca	- Zgodność z innymi systemami, Współpraca z innymi użytkownikami, Łatwość integracji
 
 wymagań pozafunkcjonalnych - SMART
 S (Specific/Simple) - skonkretyzowane
