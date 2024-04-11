@@ -18,7 +18,7 @@ Rewelacyjne podejście: https://wildasoftware.pl/post/jak-opisywac-architekture-
 MDM - Master Data Management
 
 # Specyfikacja wymagań
-
+https://wildasoftware.pl/post/specyfikacja-wymagan-oprogramowania-jak-ja-stworzyc-prosto-skutecznie
 podejście HANSA (Historia, Aktorzy i Obiekty, Narysuj!, Specyfikacja funkcji, Aspekty jakości)
 
 Specyfikacja funkcji -
