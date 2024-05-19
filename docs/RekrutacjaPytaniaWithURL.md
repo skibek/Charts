@@ -472,8 +472,13 @@ https://www.tutorialspoint.com/java8/java8_streams.htm
 ### GarbageCollector <a name="GarbageCollector"></a> 
 ```
 OpenJDK GarbageCollectors: 
-G1 provides better overall experience than a throughput-oriented collectors such as the Parallel GC
-Z(JDK11), G1(JDK9,10), Parallel(JDK<=8), CMS-ConcMarkSweep, Serial, Shenandoah
+G1 provides a better overall experience than a throughput-oriented collectors such as the Parallel GC
+ZGC(JDK11) - provides max pause times under a millisecond, but at the cost of some throughput. It is intended for applications, which require low latency. TB of ram
+G1(JDK9,10) - Dzieli strefy pamięci na regiony i skupia się na oczyszczaniu tych obszarów, które generują najwięcej śmieci (tzw. "Garbage-First")
+Parallel(JDK<=8) - Jest podobny do Serial Garbage Collector, ale działa równolegle na wielu wątkach
+CMS-Concurrent MarkSweep,
+Serial - Działa sekwencyjnie, co oznacza, że wstrzymuje wykonywanie aplikacji podczas procesu czyszczenia pamięci
+Shenandoah - from Open JDK - like ZGC
 System.gc();
 ```
 
