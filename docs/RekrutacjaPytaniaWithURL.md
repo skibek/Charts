@@ -299,12 +299,20 @@ JVM comes in two different flavors – client and server.
 Class loader - Loading, Linking, Initialization
  Types: Bootstrap, extension and application class loaders
 JVM Memory - 
- Method Area - stores class structures like metadata, the constant runtime pool, and the code for methods.
+ Metaspace - Method Area - stores class structures like metadata, the constant runtime pool, and the code for methods.
  Heap - stores all objects that are created during application execution
+  Heap jest największym obszarem pamięci w JVM i służy do przechowywania obiektów i tablic dynamicznych.
+  Dzieli się na dwie części: Young Generation (młoda generacja) i Old Generation (stara generacja).
+  Young Generation zawiera obszary Eden Space oraz dwie obszary Survivor Space (S0 i S1), gdzie są tworzone nowe obiekty.
+  Old Generation zawiera obiekty, które przetrwały wiele cykli GC.
  Stack - store local variables, and intermediate results. 
   All such variables are local to the thread by which they are created. 
   Each thread has its own JVM stack, created simultaneously as the thread is created. 
   So all such local variable are called thread-local variables
+  Każdy wątek ma swój własny stos, na którym przechowywane są lokalne zmienne i informacje o wywołaniach metod.
+  Rozmiar stosu jest zwykle stały i z góry określony dla każdego wątku.
+ Code Cache - Code Cache przechowuje skompilowane kod bajtowy metod.
+  Jest to obszar pamięci, w którym JVM przechowuje kod wynikowy po kompilacji JIT (Just-In-Time).
  PC Register - store the physical memory address of the statements which is currently executing
  Native Method Stack - Many low level code is written in languages like C and C++. 
   Native method stacks hold the instruction of native code
@@ -476,9 +484,10 @@ G1 provides a better overall experience than a throughput-oriented collectors su
 ZGC(JDK11) - provides max pause times under a millisecond, but at the cost of some throughput. It is intended for applications, which require low latency. TB of ram
 G1(JDK9,10) - Dzieli strefy pamięci na regiony i skupia się na oczyszczaniu tych obszarów, które generują najwięcej śmieci (tzw. "Garbage-First")
 Parallel(JDK<=8) - Jest podobny do Serial Garbage Collector, ale działa równolegle na wielu wątkach
-CMS-Concurrent MarkSweep,
+CMS-Concurrent MarkSweep - deprecated
 Serial - Działa sekwencyjnie, co oznacza, że wstrzymuje wykonywanie aplikacji podczas procesu czyszczenia pamięci
 Shenandoah - from Open JDK - like ZGC
+
 System.gc();
 ```
 
