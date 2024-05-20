@@ -1065,7 +1065,6 @@ Biblioteki do Mockowania - Mockito, EasyMock
 Biblioteki do testów - Junit, Spock - Groovy
 
 Test-driven development (TDD)
-
     Red – phase where tests are implemented according to requirements, but they still fail
     Green – phase where module or feature is implemented and tests pass
     Refactor – phase where a working code is made more readable and well structured
@@ -1089,7 +1088,8 @@ each step from documentation should have underlying test code that manipulates t
 
 JUnit - @RunWith(Cucumber.class) 
 Selenium
-
+```
+```
 Rest-assured - Java DSL for easy testing of REST services
 given().
     params("firstName", "John", "lastName", "Doe").
