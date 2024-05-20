@@ -81,6 +81,9 @@ Hashing in its simplest form, is a way to assigning a unique code for any variab
 https://www.baeldung.com/java-equals-hashcode-contracts
 
 ```
+OOP principles - abstraction, encapsulation, inheritance, polymorphism
+
+Polimorfizm pozwala na przesłanianie (overriding) metod oraz tworzenie wielu implementacji tych samych metod w różnych klasach.
 - Polymorphism is the provision of a single interface to entities of different types
  Compile Time Polymorphism (static binding or method overloading)
  Runtime Polymorphism (dynamic binding or method overriding)
@@ -93,10 +96,16 @@ DB - When type of the object is determined at run-time
 https://www.javatpoint.com/static-binding-and-dynamic-binding
 
 ```
+Dziedziczenie pozwala na tworzenie nowych klas na podstawie istniejących klas, dziedzicząc ich właściwości i metody.
+- inheritance - key extends
 - Reflection - API which is used to examine or modify the behavior 
  of methods, classes, interfaces at runtime.
 - Immutable class - is one whose state can not be changed once created
+
+Abstrakcja polega na ukrywaniu szczegółów implementacyjnych obiektów i skupianiu się na ich istotnych cechach.
 - Abstraction - by interfaces and abstract classes
+
+Enkapsulacja polega na ukrywaniu wewnętrznych stanów i implementacji obiektów oraz udostępnianiu dostępu do nich tylko za pomocą zdefiniowanych interfejsów.
 - Encapsulation - access control - package access, protected, or private
 
 - Interface define contracts, which implementing classes need to honor.
