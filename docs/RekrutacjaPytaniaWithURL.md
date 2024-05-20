@@ -983,6 +983,7 @@ SecurityContext - jak działa: na ThreadLocal - Zmienna Globalna dla danego wąt
  Archaius - external configuration
  
  Microservices - API Gateway, Hystrix, Zuul(Gateway/Reverse proxy) i Matchowanie po URL
+```
 
 ### microservices <a name="microservices"></a> 
 ```
