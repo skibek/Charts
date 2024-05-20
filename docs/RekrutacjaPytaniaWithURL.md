@@ -1236,7 +1236,7 @@ Elementy Scruma:
 Program Increment (PI) Planning is a cadence-based, face-to-face event
 
 ```
-![Scrum]([https://media-exp1.licdn.com/dms/image/C5112AQEhnWoYEfazfg/article-inline_image-shrink_1000_1488/0?e=1589414400&v=beta&t=CpMZkqgQcU8Di_MNh__B6crSVxm7_Wvsi8URePDIgGs](https://www.neonrain.com/wp-content/uploads/2017/02/scrum_process_afa_5000.jpg))
+![Scrum](https://www.neonrain.com/wp-content/uploads/2017/02/scrum_process_afa_5000.jpg)
 
 
 
