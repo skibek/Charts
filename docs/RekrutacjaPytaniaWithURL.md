@@ -274,27 +274,101 @@ Date/Time API
 forEach
 Optional
 Stream API, Stream Filter
+- Static Method
+- Default Method
+--Method References
+- Reference to a Static Method - .anyMatch(User::isRealUser)
+- Reference to an Instance Method- .anyMatch(user::isLegalName)
+- Reference to an Instance Method of an Object of a Particular Type - .filter(String::isEmpty).count()
+- Reference to a Constructor - .map(User::new)
+--Optional<T>
 https://www.javatpoint.com/java-8-features
 
 from Java 9, 
-Project Jigsaw
-JShell
-private methods in interfaces
-Optional Class - ifPresentOrElse, stream, orElseThrow,  Optional.of(str)
+- Modular System – Jigsaw Project
+- HTTP Client
+- Process API
+- Try-With-Resources
+- Diamond Operator Extension
+- Interface Private Method
+- JCMD Sub-Commands
+- Мulti-Resolution Image API
+- Immutable Set - Collections.unmodifiableSet - Set.of, Map.of, List.copyOf(), toUnmodifiableList
+- JShell Command Line Tool
+- Optional Class - ifPresentOrElse, stream, orElseThrow,  Optional.of(str)
 List<String> listOpt = list != null ? list : new ArrayList<>();
 List<String> listOpt = getList().orElseGet(() -> new ArrayList<>());
-
-Immutable Collection Factory
-Collections.unmodifiableSet - Set.of, Map.of, List.copyOf(), toUnmodifiableList
 Enhancements in @Deprecated - since, forRemoval 
 
 Java 10 - Keyword “var” (Local-Variable Type Inference)
+- Local Variable Type Inference
+- Unmodifiable Collections - List.copyOf, Collectors.toUnmodifiableList()
+- Optional*.orElseThrow()
+- Container Awareness
+- Parallel Full GC for G1
 
 Java 11
 Launch Single-File Source-Code Programs
 new String methods : str1.isBlank() str.lines() ...
 Files.writeString
 Modularity, Version String Schema, Multi-jar releases, Var keyword, GC G1
+- New String Methods
+- New File Methods - Files.readString
+- Collection to an Array - sampleList.toArray(String[]::new)
+- The Not Predicate Method - .filter(Predicate.not(String::isBlank))
+- Local-Variable Syntax for Lambda
+- HTTP Client
+- Java Flight Recorder (JFR)
+
+12
+- String Class New Methods - indent, transform
+- File::mismatch Method
+- Teeing Collector
+- Switch Expressions
+- Pattern Matching for instanceof 
+- GC - Shenandoah
+- Microbenchmark Suite
+
+13
+- Switch Expressions
+- Text Blocks
+- Dynamic CDS Archives
+- GC - ZGC better
+
+14
+- Records
+
+15
+- Sealed Classes
+
+16
+- Day Period Support
+- Add Stream.toList Method
+
+17
+- Enhanced Pseudo-Random Number Generators
+- LTS Model
+
+19
+-  Virtual Threads -  join(Duration), sleep(Duration), and threadId()
+
+21 
+- Virtual Threads - instanceof 
+- Record Patterns
+- String Literal 
+- Sequenced Collections
+
+22
+- Unnamed Variables
+- Statements before super()
+- Foreign Function and Memory API
+- Class File API
+- Stream Gatherers
+- Structured Concurrency API
+- Scoped Values
+- Vector API
+- Multi-File Source Programs
+- Region Pinning for G1 Garbage Collector 
 ```
 
 ### Java Virtual machine (JVM) <a name="jvm"></a>
