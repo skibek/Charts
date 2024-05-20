@@ -1225,7 +1225,7 @@ Building blocks
 
 
 ### Scrum <a name="Scrum"></a> 
-
+```
 Elementy Scruma:
   daily, 
   planowanie, grooming
@@ -1240,6 +1240,9 @@ Elementy Scruma:
  Sprint Review, Sprint Retrospecitve
 
 Program Increment (PI) Planning is a cadence-based, face-to-face event
+```
+![Scrum](https://www.neonrain.com/wp-content/uploads/2017/02/scrum_process_afa_5000.jpg)
+
 
 
 # Algorithms <a name="Algorithms"></a> 
