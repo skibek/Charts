@@ -16,6 +16,7 @@ TOC
   - [Keys](#keys)
   - [Transaction](#Transaction)
   - [B-tree](#btree)
+  - [No SQL](#noSQL)
   
 - [JPA/Hibernate](#JPA/Hibernate)
 - [Spring](#Spring)
@@ -36,6 +37,7 @@ TOC
 - [Apache Spark](#Apache_Spark)
 
 - [Methodologies](#Methodologies)
+  - [Solid](solid)
   - [DDD](#ddd)
   - [Scrum](#Scrum)
 
@@ -43,6 +45,7 @@ TOC
   - [General alg](#General_alg)
   - [Big O](#bigO)
   - [SSL](#ssl)
+  - [Mesh](#mesh)
   - [Machine Learning](#Machine_Learning)
   
 - [Architecture](#Architecture)
@@ -562,7 +565,7 @@ strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(
 numbers.stream().mapToInt((x) -> x).summaryStatistics();
 
 Java Spliterator interface is an internal iterator that breaks the stream into the smaller parts. 
-These smaller parts can be processed in parallel
+These smaller parts can be processed in parallel - ParallelStreams
 ```
 https://www.tutorialspoint.com/java8/java8_streams.htm
 ```
@@ -797,6 +800,22 @@ List<Author> findAll();
 ```
 https://medium.com/@mansoor_ali/hibernate-n-1-queries-problem-8a926b69f618
 
+### No SQL <a name="noSQL"></a>
+```
+Różnice między bazami danych SQL a NoSQL można omówić pod wieloma względami:
+Model danych:
+ SQL: Bazy danych SQL są oparte na modelu danych relacyjnych, co oznacza, że dane są przechowywane w postaci tabel, które mają zdefiniowane relacje między sobą.
+ NoSQL: Bazy danych NoSQL oferują różne modele danych, takie jak dokumentowe, kolumnowe, grafowe czy klucz-wartość. Mogą one przechowywać dane w bardziej elastyczny sposób, bez konieczności ściśle zdefiniowanych schematów.
+Skalowalność:
+ SQL: Bazy danych SQL są zazwyczaj skalowalne wertykalnie (przez zwiększenie mocy obliczeniowej pojedynczego serwera). Skalowanie poziome (rozproszenie na wiele serwerów) może być trudniejsze lub ograniczone.
+ NoSQL: Bazy danych NoSQL są często zaprojektowane z myślą o skalowaniu poziomym, co oznacza, że mogą łatwo rozwijać się na więcej serwerów w miarę wzrostu obciążenia.
+Spójność i dostępność:
+ SQL: Bazy danych SQL zapewniają wysoką spójność danych poprzez transakcje ACID (Atomicity, Consistency, Isolation, Durability). Jednak mogą być mniej elastyczne w przypadku rozproszenia na wiele serwerów.
+ NoSQL: Bazy danych NoSQL często oferują elastyczniejsze podejście do spójności i dostępności danych, często kosztem konsystencji. Mogą stosować model CAP (Consistency, Availability, Partition tolerance), gdzie wybiera się dwa spośród trzech elementów.
+Zastosowania:
+ SQL: Bazy danych SQL są często wykorzystywane w przypadku aplikacji, gdzie spójność danych jest kluczowa, takich jak systemy transakcyjne, systemy zarządzania treścią czy systemy do raportowania.
+ NoSQL: Bazy danych NoSQL często znajdują zastosowanie w aplikacjach, które wymagają dużych ilości danych, elastyczności schematu oraz skalowalności, takich jak aplikacje internetowe, gry komputerowe czy systemy analizy danych.
+```
 
 ## Spring <a name="Spring"></a> 
 ```
@@ -809,10 +828,18 @@ Spring modules
 
 Jak działają Adnotacje np: @HasRole - wzorzec Proxy - dodaje kod poprzez AOP, Aspect
 
-Inversion of control (IoC) is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
+Inversion of control (IoC)
+IoC oznacza, że kontrola nad tworzeniem i zarządzaniem komponentami aplikacji jest odwrócona - nie są one tworzone ręcznie, ale są wstrzykiwane przez kontener Springa.
+Kontener Springa zarządza cyklem życia beanów i ich zależnościami, co ułatwia zarządzanie złożonymi aplikacjami.
+
+is a programming technique in which object coupling is bound at run time by an assembler object and is typically not known at compile time using static analysis.
 Inversion of control is a design paradigm with the goal of giving more control to the targeted components of your application, the ones that are actually doing the work
 
-Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
+Dependency injection
+DI polega na wstrzykiwaniu zależności (np. innych beanów, konfiguracji) do komponentów aplikacji, zamiast tworzenia ich wewnątrz tych komponentów.
+Dzięki DI komponenty są luźno powiązane ze sobą, co ułatwia testowanie, utrzymanie i rozszerzanie aplikacji.
+
+is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality
 
 Spring IoC container - BeanFactory - ApplicationContext 
 
@@ -1161,16 +1188,6 @@ ATDD - Acceptance Test Driven Development
 BDD - Behaviour Driven Development
   user story and 5 why's
  
-SOLID
- Single Responsibility Principle - A class should only have a single responsibility
- Open Closed Principle - “Software components should be open for extension, but closed for modification”
- Liskov’s Substitution Principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
- Interface Segregation Principle - Many client-specific interfaces are better than one general-purpose interface, “Clients should not be forced to implement unnecessary methods which they will not use”
- Dependency Inversion Principle - “Depend on abstractions, not on concretions”
-```
-https://en.wikipedia.org/wiki/SOLID
-
-```
 Twelve Factor App - from Heroku
  One codebase tracked in revision control, many deploys
  Explicitly declare and isolate dependencies
@@ -1188,6 +1205,28 @@ CQRS - Command Query Responsibility Segregation
  
 CQRS and Event Sourcing
 ```
+
+### Solid <a name="solid"></a> 
+```
+SOLID
+ Single Responsibility Principle - A class should only have a single responsibility
+ Open Closed Principle - “Software components should be open for extension, but closed for modification”
+ Liskov’s Substitution Principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+ Interface Segregation Principle - Many client-specific interfaces are better than one general-purpose interface, “Clients should not be forced to implement unnecessary methods which they will not use”
+ Dependency Inversion Principle - “Depend on abstractions, not on concretions”
+
+Single Responsibility Principle (SRP) - Klasa powinna mieć tylko jedną odpowiedzialność. Oznacza to, że klasa powinna być zmieniana tylko w przypadku zmiany w jednej części systemu.
+Open/Closed Principle (OCP) - Klasy powinny być otwarte na rozszerzenie, ale zamknięte dla modyfikacji. Można to osiągnąć poprzez tworzenie klas i modułów, które można rozszerzyć, ale bez potrzeby zmiany istniejącego kodu.
+Liskov Substitution Principle (LSP) - Obiekty powinny być zastępowalne przez ich podtypy bez zmiany właściwości aplikacji. Oznacza to, że klasa nadrzędna i jej podklasy mogą być używane zamiennie bez wpływu na poprawność programu.
+Interface Segregation Principle (ISP) - Klienci nie powinni być zmuszani do implementacji interfejsów, których nie używają. Zamiast tego należy tworzyć konkretne interfejsy, które zawierają tylko metody potrzebne danemu klientowi.
+Dependency Inversion Principle (DIP) - Moduły wysokopoziomowe nie powinny zależeć od modułów niskopoziomowych, ale od abstrakcji. Oznacza to, że kod powinien polegać na abstrakcjach, a nie na konkretnej implementacji.
+
+Przykładem zastosowania zasad SOLID w projekcie w języku Java może być system zarządzania zamówieniami. Możemy mieć interfejs Order z metodami takimi jak processOrder() czy cancelOrder().
+Implementacja tych metod w różnych klasach będzie zastosowaniem SRP, OCP i DIP.
+Na przykład, klasa OnlineOrder może implementować Order interfejs dla zamówień online, a klasa InStoreOrder dla zamówień składanych w sklepie.
+W ten sposób zachowujemy jednoznaczność odpowiedzialności, łatwość rozszerzania i zmniejszamy zależności między klasami.
+```
+https://en.wikipedia.org/wiki/SOLID
 
 ### DDD <a name="ddd"></a> 
 ```
@@ -1357,6 +1396,29 @@ Lean startup - Build(Experiment), Measure(Metrics), Learn(Pivot or persevere) ->
 Zoom - team eeting
 https://www.mentimeter.com - questionnaire during online presentation
 Hackathons - https://www.guaana.com/
+```
+
+## Mesh <a name="mesh"></a> 
+
+```
+Sharding:
+ Sharding to technika polegająca na podziale danych na mniejsze, niezależne fragmenty (shardy) i rozproszenie ich na wiele serwerów lub węzłów.
+ W przypadku aplikacji Java, sharding może być stosowany w bazach danych, gdzie dane są podzielone na części i przechowywane na różnych serwerach w celu równomiernego rozłożenia obciążenia i zwiększenia wydajności.
+Service Mesh:
+ Service Mesh to warstwa infrastrukturalna, która umożliwia komunikację między mikrousługami w aplikacji rozproszonej.
+ W kontekście aplikacji Java, Service Mesh może być używany do zarządzania komunikacją między mikrousługami, zapewnienia bezpieczeństwa, monitorowania wydajności oraz automatyzacji konfiguracji sieciowej.
+Data Mesh:
+ Data Mesh to podejście do zarządzania danymi w dużych organizacjach, które zakłada decentralizację zarządzania danymi poprzez tworzenie autonomicznych zespołów danych.
+ W projekcie Java, Data Mesh może być wykorzystywany do zarządzania danymi w aplikacjach wieloosobowych, zapewnienia skalowalności i niezawodności przetwarzania danych oraz zwiększenia elastyczności w zarządzaniu danymi.
+Kafka:
+ Kafka to rozproszona platforma do przetwarzania strumieni danych, która umożliwia publikowanie, przesyłanie i przetwarzanie dużych ilości danych w czasie rzeczywistym.
+ W aplikacjach Java, Kafka może być stosowany do budowy systemów przetwarzania strumieniowego, analizy danych w czasie rzeczywistym, integracji między aplikacjami oraz budowy zdarzeniowych architektur.
+Hadoop:
+ Hadoop to framework do przetwarzania i przechowywania dużych zbiorów danych w rozproszonych systemach.
+ W aplikacjach Java, Hadoop może być wykorzystywany do przetwarzania dużych zbiorów danych, analizy danych, budowy systemów raportowania oraz rozwiązania problemów związanych z Big Data.
+MapReduce:
+ MapReduce to model programowania do przetwarzania równoległego i rozproszonego dużych zbiorów danych.
+ W aplikacjach Java, MapReduce może być stosowany do przetwarzania dużych zbiorów danych w rozproszonych systemach, analizy danych, obliczeń równoległych oraz budowy systemów Big Data.
 ```
 
 ## Machine Learning <a name="Machine_Learning"></a> 
