@@ -1225,19 +1225,21 @@ Building blocks
 
 
 ### Scrum <a name="Scrum"></a> 
-```
+
 Elementy Scruma:
   daily, 
-  planowanie, 
+  planowanie, grooming
   różnica ready a done - 
   	Definition of Ready is focused on user story level characteristics,
 	Definition of Done is focused on the sprint or release level
+ Product Owner - Product Backlog
+ Scrum Master - Burndown Chart
+ Sprint planning meeting
+ Sprint Backlog
+ Team - Daily
+ Sprint Review, Sprint Retrospecitve
 
 Program Increment (PI) Planning is a cadence-based, face-to-face event
-
-```
-![Scrum](https://www.neonrain.com/wp-content/uploads/2017/02/scrum_process_afa_5000.jpg)
-
 
 
 # Algorithms <a name="Algorithms"></a> 
