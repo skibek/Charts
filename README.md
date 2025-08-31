@@ -8,6 +8,8 @@ Search in GitHub: term in:file,path
 
 Charts with knowledge
 
+[- AI](docs/AI.md)
+
 [- API](docs/API.md)
 
 [- AWS](docs/AWS.md)
